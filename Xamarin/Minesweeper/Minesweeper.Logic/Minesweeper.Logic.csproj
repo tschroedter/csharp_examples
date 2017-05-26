@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9C088C32-690C-482B-A55C-251099724611}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Minesweeper.Logic</RootNamespace>
+    <AssemblyName>Minesweeper.Logic</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
+    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac, Version=4.2.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.2.1\lib\netstandard1.1\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="JetBrains.Annotations.NetStandard, Version=10.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.10.2.1\lib\netstandard1.0\JetBrains.Annotations.NetStandard.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Mono.Android" />
+    <Reference Include="mscorlib" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\StringExtensions.cs" />
+    <Compile Include="DisplayHintField.cs" />
+    <Compile Include="DisplayMineField.cs" />
+    <Compile Include="DisplayPlayingField.cs" />
+    <Compile Include="Field.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="HintCompass.cs" />
+    <Compile Include="HintField.cs" />
+    <Compile Include="Installer.cs" />
+    <Compile Include="Interfaces\GameStatus.cs" />
+    <Compile Include="Interfaces\IConsole.cs" />
+    <Compile Include="Interfaces\IDisplayHintField.cs" />
+    <Compile Include="Interfaces\IDisplayMineField.cs" />
+    <Compile Include="Interfaces\IDisplayPlayingField.cs" />
+    <Compile Include="Interfaces\IGame.cs" />
+    <Compile Include="Interfaces\IHintCompass.cs" />
+    <Compile Include="Interfaces\IHintField.cs" />
+    <Compile Include="Interfaces\IMineField.cs" />
+    <Compile Include="Interfaces\IMineFieldManager.cs" />
+    <Compile Include="Interfaces\IMineLayer.cs" />
+    <Compile Include="Interfaces\IPlayingField.cs" />
+    <Compile Include="Interfaces\IRandom.cs" />
+    <Compile Include="Interfaces\IStringToMineFieldConverter.cs" />
+    <Compile Include="Interfaces\IUserInput.cs" />
+    <Compile Include="Interfaces\IUserOutput.cs" />
+    <Compile Include="Ioc\IComponentInfo.cs" />
+    <Compile Include="Ioc\ILogger.cs" />
+    <Compile Include="Ioc\IProjectComponentLoader.cs" />
+    <Compile Include="Ioc\Lifestyle.cs" />
+    <Compile Include="Ioc\ProjectComponentAttribute.cs" />
+    <Compile Include="Ioc\ProjectComponentLoader.cs" />
+    <Compile Include="MineField.cs" />
+    <Compile Include="MineFieldManager.cs" />
+    <Compile Include="MineLayer.cs" />
+    <Compile Include="MinesweeperConsole.cs" />
+    <Compile Include="MinesweeperLogger.cs" />
+    <Compile Include="MinesweeperRandom.cs" />
+    <Compile Include="PlayingField.cs" />
+    <Compile Include="Resources\Resource.Designer.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringToMineFieldConverter.cs" />
+    <Compile Include="UserInput.cs" />
+    <Compile Include="UserOutput.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\Values\Strings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

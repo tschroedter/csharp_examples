@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="Settings">Settings</string>
+    <string name="SettingsNumberOfColumns">Number of columns</string>
+    <string name="SettingsNumberOfRows">Number of rows</string>
+    <string name="TextNumberOfColumns">Number of columns</string>
+    <string name="TextNumberOfRows">Number of rows</string>
+    <string name="TextNumberOfMines">Number of mines</string>
+    <string name="Boom"> </string>
+    <string name="ActivityTextPlay">Play</string>
+    <string name="ActivityTextSettings">Settings</string>
+    <string name="ButtonTextNewGame">New Game</string>
+    <string name="ButtonTextApply">Apply</string>
+    <string name="ButtonTextCancel">Cancel</string>
+    <string name="ButtonTextHint">Hint</string>
+    <string name="ButtonTextBack">Back</string>
+    <string name="ButtonTextPlay">Play</string>
+    <string name="ButtonTextSettings">Settings</string>
+    <string name="ButtonTextExit">Exit</string>
+    <string name="ApplicationName">Minesweeper</string>
+    <string name="app_name">Minesweeper</string>
+</resources>

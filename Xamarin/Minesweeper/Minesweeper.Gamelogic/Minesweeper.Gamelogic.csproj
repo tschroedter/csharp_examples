@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AFBD0E4F-0158-431C-8874-E7CB85D437FE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Minesweeper.Gamelogic</RootNamespace>
+    <AssemblyName>Minesweeper.Gamelogic</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <TargetFrameworkProfile>Profile102</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="DisplayHintField.cs" />
+    <Compile Include="DisplayMineField.cs" />
+    <Compile Include="DisplayPlayingField.cs" />
+    <Compile Include="Field.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="HintCompass.cs" />
+    <Compile Include="HintField.cs" />
+    <Compile Include="Ioc\IComponentInfo.cs" />
+    <Compile Include="Interfaces\GameStatus.cs" />
+    <Compile Include="Interfaces\IConsole.cs" />
+    <Compile Include="Interfaces\IDisplayHintField.cs" />
+    <Compile Include="Interfaces\IDisplayMineField.cs" />
+    <Compile Include="Interfaces\IDisplayPlayingField.cs" />
+    <Compile Include="Interfaces\IDisplayPlayingFieldFactory.cs" />
+    <Compile Include="Interfaces\IGame.cs" />
+    <Compile Include="Interfaces\IHintCompass.cs" />
+    <Compile Include="Interfaces\IHintCompassFactory.cs" />
+    <Compile Include="Installer.cs" />
+    <Compile Include="Interfaces\IHintField.cs" />
+    <Compile Include="Interfaces\IHintFieldFactory.cs" />
+    <Compile Include="Interfaces\IMineField.cs" />
+    <Compile Include="Interfaces\IMineFieldFactory.cs" />
+    <Compile Include="Interfaces\IMineFieldManager.cs" />
+    <Compile Include="Interfaces\IMineLayer.cs" />
+    <Compile Include="Interfaces\IMineLayerFactory.cs" />
+    <Compile Include="Interfaces\IPlayingField.cs" />
+    <Compile Include="Interfaces\IPlayingFieldFactory.cs" />
+    <Compile Include="Interfaces\IRandom.cs" />
+    <Compile Include="Interfaces\IStringToMineFieldConverter.cs" />
+    <Compile Include="Interfaces\IUserInput.cs" />
+    <Compile Include="Interfaces\IUserOutput.cs" />
+    <Compile Include="Interfaces\IUserOutputFactory.cs" />
+    <Compile Include="Ioc\Lifestyle.cs" />
+    <Compile Include="MineField.cs" />
+    <Compile Include="MineFieldManager.cs" />
+    <Compile Include="MineLayer.cs" />
+    <Compile Include="MinesweeperConsole.cs" />
+    <Compile Include="MinesweeperRandom.cs" />
+    <Compile Include="PlayingField.cs" />
+    <Compile Include="Ioc\ProjectComponentAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Common\StringExtensions.cs" />
+    <Compile Include="StringToMineFieldConverter.cs" />
+    <Compile Include="UserInput.cs" />
+    <Compile Include="UserOutput.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations.PCL328, Version=10.2.1.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.10.2.1\lib\portable-net4+sl5+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\JetBrains.Annotations.PCL328.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
