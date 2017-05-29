@@ -187,3 +187,7 @@ FakesAssemblies/
 NuGet.Selkie.ACO/lib/
 coverage/
 nunit-test-reports.xml
+*.db
+Katas/KataPokerHand/KataPokerHand.VC.VC.opendb
+*.ncrunchsolution
+*.ncrunchproject
