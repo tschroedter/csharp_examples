@@ -1,4 +1,4 @@
-namespace KataPokerHand.Logic.Suits
+namespace KataPokerHand.Logic.Decks.Suits
 {
     public class Diamond
         : BaseSuit

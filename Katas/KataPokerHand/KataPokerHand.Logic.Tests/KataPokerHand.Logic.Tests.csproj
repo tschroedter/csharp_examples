@@ -35,6 +35,14 @@
       <HintPath>..\packages\JetBrains.Annotations.10.4.0\lib\net\JetBrains.Annotations.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="NSubstitute, Version=2.0.3.0, Culture=neutral, PublicKeyToken=92dd2e9066daa5ca, processorArchitecture=MSIL">
+      <HintPath>..\packages\NSubstitute.2.0.3\lib\net45\NSubstitute.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NSubstituteAutoMocker, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NSubstituteAutoMocker.1.1.0.0\lib\net45\NSubstituteAutoMocker.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="nunit.framework, Version=3.6.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
       <HintPath>..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
@@ -49,17 +57,39 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Suits\ClubTests.cs" />
-    <Compile Include="Suits\DiamondTests.cs" />
-    <Compile Include="Suits\HeartTests.cs" />
-    <Compile Include="Suits\SpadeTests.cs" />
-    <Compile Include="Suits\BaseSuitTests.cs" />
+    <Compile Include="Decks\Cards\CardTests.cs" />
+    <Compile Include="Decks\CardValues\AceTests.cs" />
+    <Compile Include="Decks\CardValues\BaseCardValueConstructorTests.cs" />
+    <Compile Include="Decks\CardValues\BaseCardValueTests.cs" />
+    <Compile Include="Decks\CardValues\EightTests.cs" />
+    <Compile Include="Decks\CardValues\FiveTests.cs" />
+    <Compile Include="Decks\CardValues\FourTests.cs" />
+    <Compile Include="Decks\CardValues\JacktTests.cs" />
+    <Compile Include="Decks\CardValues\KingTests.cs" />
+    <Compile Include="Decks\CardValues\NineTests.cs" />
+    <Compile Include="Decks\CardValues\QueenTests.cs" />
+    <Compile Include="Decks\CardValues\SevenTests.cs" />
+    <Compile Include="Decks\CardValues\SixTests.cs" />
+    <Compile Include="Decks\CardValues\ThreeTests.cs" />
+    <Compile Include="Decks\CardValues\TwoTests.cs" />
+    <Compile Include="Decks\PokerDeckTests.cs" />
+    <Compile Include="Decks\Suits\BaseSuitConstructorTests.cs" />
+    <Compile Include="Decks\Suits\ClubTests.cs" />
+    <Compile Include="Decks\Suits\DiamondTests.cs" />
+    <Compile Include="Decks\Suits\HeartTests.cs" />
+    <Compile Include="Decks\Suits\SpadeTests.cs" />
+    <Compile Include="Decks\Suits\BaseSuitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\KataPokerHand.Logic.Interfaces\KataPokerHand.Logic.Interfaces.csproj">
+      <Project>{8e75f510-d710-4c44-816b-220df9210ad5}</Project>
+      <Name>KataPokerHand.Logic.Interfaces</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KataPokerHand.Logic\KataPokerHand.Logic.csproj">
       <Project>{C630F12B-441E-4868-ADD2-2DAB4881687B}</Project>
       <Name>KataPokerHand.Logic</Name>

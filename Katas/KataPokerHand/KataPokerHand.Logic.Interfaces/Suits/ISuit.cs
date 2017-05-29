@@ -3,6 +3,6 @@
     public interface ISuit
     {
         string Name { get; }
-        string Id { get; }
+        char AsChar { get; }
     }
 }

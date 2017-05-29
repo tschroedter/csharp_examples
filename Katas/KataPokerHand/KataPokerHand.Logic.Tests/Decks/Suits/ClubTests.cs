@@ -1,8 +1,8 @@
 using System.Diagnostics.CodeAnalysis;
-using KataPokerHand.Logic.Suits;
+using KataPokerHand.Logic.Decks.Suits;
 using NUnit.Framework;
 
-namespace KataPokerHand.Logic.Tests.Suits
+namespace KataPokerHand.Logic.Tests.Decks.Suits
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]

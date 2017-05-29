@@ -45,11 +45,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Suits\Club.cs" />
-    <Compile Include="Suits\Diamond.cs" />
-    <Compile Include="Suits\Heart.cs" />
-    <Compile Include="Suits\Spade.cs" />
-    <Compile Include="Suits\BaseSuit.cs" />
+    <Compile Include="Decks\Cards\Card.cs" />
+    <Compile Include="Decks\Cards\ICard.cs" />
+    <Compile Include="Decks\CardValues\Ace.cs" />
+    <Compile Include="Decks\CardValues\BaseCardValue.cs" />
+    <Compile Include="Decks\CardValues\Eight.cs" />
+    <Compile Include="Decks\CardValues\Five.cs" />
+    <Compile Include="Decks\CardValues\Four.cs" />
+    <Compile Include="Decks\CardValues\Jack.cs" />
+    <Compile Include="Decks\CardValues\King.cs" />
+    <Compile Include="Decks\CardValues\Nine.cs" />
+    <Compile Include="Decks\CardValues\Queen.cs" />
+    <Compile Include="Decks\CardValues\Seven.cs" />
+    <Compile Include="Decks\CardValues\Six.cs" />
+    <Compile Include="Decks\CardValues\Three.cs" />
+    <Compile Include="Decks\CardValues\Two.cs" />
+    <Compile Include="Decks\IPokerDeck.cs" />
+    <Compile Include="Decks\ICardValueFactory.cs" />
+    <Compile Include="Decks\PokerDeck.cs" />
+    <Compile Include="Decks\Suits\Club.cs" />
+    <Compile Include="Decks\Suits\Diamond.cs" />
+    <Compile Include="Decks\Suits\Heart.cs" />
+    <Compile Include="Decks\Suits\Spade.cs" />
+    <Compile Include="Decks\Suits\BaseSuit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +79,7 @@
       <Name>KataPokerHand.Logic.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

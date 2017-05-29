@@ -1,9 +1,9 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
-using KataPokerHand.Logic.Suits;
+using KataPokerHand.Logic.Decks.Suits;
 using NUnit.Framework;
 
-namespace KataPokerHand.Logic.Tests.Suits
+namespace KataPokerHand.Logic.Tests.Decks.Suits
 {
     [ExcludeFromCodeCoverage]
     internal class BaseSuitTests <T>
@@ -13,23 +13,23 @@ namespace KataPokerHand.Logic.Tests.Suits
             [NotNull] string name)
         {
             m_ExpectedName = name;
-            m_ExpectedId = name [ 0 ].ToString();
+            m_ExpectedAsChar = name [ 0 ];
         }
 
-        private readonly string m_ExpectedId;
+        private readonly char m_ExpectedAsChar;
 
         private readonly string m_ExpectedName;
 
         private T m_Sut;
 
         [Test]
-        public void Id_Returns_String()
+        public void AsChar_Returns_String()
         {
             // Arrange
             // Act
             // Assert
-            Assert.AreEqual(m_ExpectedId,
-                            m_Sut.Id);
+            Assert.AreEqual(m_ExpectedAsChar,
+                            m_Sut.AsChar);
         }
 
         [Test]
@@ -46,6 +46,16 @@ namespace KataPokerHand.Logic.Tests.Suits
         public void Setup()
         {
             m_Sut = new T();
+        }
+
+        [Test]
+        public void ToString_Returns_String()
+        {
+            // Arrange
+            // Act
+            // Assert
+            Assert.AreEqual(m_ExpectedAsChar.ToString(),
+                            m_Sut.ToString());
         }
     }
 }

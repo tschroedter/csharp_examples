@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Diagnostics;
 using JetBrains.Annotations;
 using KataPokerHand.Logic.Interfaces.Suits;
 
-namespace KataPokerHand.Logic.Suits
+namespace KataPokerHand.Logic.Decks.Suits
 {
+    [DebuggerDisplay("{" + nameof(Name) + "}")]
     public abstract class BaseSuit
         : ISuit
     {
@@ -18,12 +20,17 @@ namespace KataPokerHand.Logic.Suits
             }
 
             Name = name;
-            Id = name [ 0 ].ToString();
+            AsChar = name [ 0 ];
         }
 
         [NotNull]
         public string Name { get; }
 
-        public string Id { get; }
+        public char AsChar { get; }
+
+        public override string ToString()
+        {
+            return AsChar.ToString();
+        }
     }
 }
