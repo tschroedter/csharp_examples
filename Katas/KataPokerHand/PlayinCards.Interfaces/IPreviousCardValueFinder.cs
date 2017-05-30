@@ -1,4 +1,4 @@
-﻿namespace PlayingCards
+﻿namespace PlayinCards.Interfaces
 {
     public interface IPreviousCardValueFinder
     {

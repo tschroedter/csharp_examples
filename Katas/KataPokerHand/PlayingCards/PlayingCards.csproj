@@ -77,8 +77,6 @@
     <Compile Include="Decks\Suits\Diamond.cs" />
     <Compile Include="Decks\Suits\Heart.cs" />
     <Compile Include="Decks\Suits\Spade.cs" />
-    <Compile Include="INextCardValueFinder.cs" />
-    <Compile Include="IPreviousCardValueFinder.cs" />
     <Compile Include="NextCardValueFinder.cs" />
     <Compile Include="PreviousCardValueFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
