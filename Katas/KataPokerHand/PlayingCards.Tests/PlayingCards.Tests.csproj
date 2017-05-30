@@ -76,12 +76,15 @@
     <Compile Include="Decks\CardValues\SixTests.cs" />
     <Compile Include="Decks\CardValues\ThreeTests.cs" />
     <Compile Include="Decks\CardValues\TwoTests.cs" />
+    <Compile Include="Decks\CardValues\UnknownTests.cs" />
     <Compile Include="Decks\Suits\BaseSuitConstructorTests.cs" />
     <Compile Include="Decks\Suits\BaseSuitTests.cs" />
     <Compile Include="Decks\Suits\ClubTests.cs" />
     <Compile Include="Decks\Suits\DiamondTests.cs" />
     <Compile Include="Decks\Suits\HeartTests.cs" />
     <Compile Include="Decks\Suits\SpadeTests.cs" />
+    <Compile Include="NextCardValueFinderTests.cs" />
+    <Compile Include="PreviousCardValueFinderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

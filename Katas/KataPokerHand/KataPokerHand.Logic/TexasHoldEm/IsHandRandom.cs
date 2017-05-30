@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
-using KataPokerHand.Logic.Decks.Cards;
+using PlayinCards.Interfaces.Decks.Cards;
 
 namespace KataPokerHand.Logic.TexasHoldEm
 {

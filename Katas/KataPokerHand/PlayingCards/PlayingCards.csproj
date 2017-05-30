@@ -71,11 +71,16 @@
     <Compile Include="Decks\CardValues\Six.cs" />
     <Compile Include="Decks\CardValues\Three.cs" />
     <Compile Include="Decks\CardValues\Two.cs" />
+    <Compile Include="Decks\CardValues\Unknown.cs" />
     <Compile Include="Decks\Suits\BaseSuit.cs" />
     <Compile Include="Decks\Suits\Club.cs" />
     <Compile Include="Decks\Suits\Diamond.cs" />
     <Compile Include="Decks\Suits\Heart.cs" />
     <Compile Include="Decks\Suits\Spade.cs" />
+    <Compile Include="INextCardValueFinder.cs" />
+    <Compile Include="IPreviousCardValueFinder.cs" />
+    <Compile Include="NextCardValueFinder.cs" />
+    <Compile Include="PreviousCardValueFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

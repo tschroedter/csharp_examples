@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 using JetBrains.Annotations;
-using KataPokerHand.Logic.Decks.Cards;
-using KataPokerHand.Logic.Interfaces.Decks.CardValues;
-using KataPokerHand.Logic.Interfaces.Decks.Suits;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm;
+using PlayinCards.Interfaces.Decks.Cards;
+using PlayinCards.Interfaces.Decks.CardValues;
+using PlayinCards.Interfaces.Decks.Suits;
 
-namespace KataPokerHand.Logic.Decks
+namespace KataPokerHand.Logic.TexasHoldEm
 {
     public class PokerDeck
         : IPokerDeck

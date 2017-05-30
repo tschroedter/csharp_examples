@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using KataPokerHand.Logic.Decks.Cards;
 using KataPokerHand.Logic.TexasHoldEm;
 using NSubstitute;
 using NUnit.Framework;
+using PlayinCards.Interfaces.Decks.Cards;
 
 namespace KataPokerHand.Logic.Tests.TexasHoldEm
 {

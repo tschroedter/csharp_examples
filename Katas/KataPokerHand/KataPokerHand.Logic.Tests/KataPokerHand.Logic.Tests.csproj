@@ -57,40 +57,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Decks\Cards\Clubs\AceOfClubsTests.cs" />
-    <Compile Include="Decks\Cards\Clubs\BaseClubsTests.cs" />
-    <Compile Include="Decks\Cards\Clubs\EightOfClubsTests.cs" />
-    <Compile Include="Decks\Cards\Clubs\FiveOfClubsTests.cs" />
-    <Compile Include="Decks\Cards\Clubs\FourOfClubsTests.cs" />
-    <Compile Include="Decks\Cards\Clubs\JackOfClubsTests.cs" />
-    <Compile Include="Decks\Cards\Clubs\KingOfClubsTests.cs" />
-    <Compile Include="Decks\Cards\Clubs\NineOfClubsTests.cs" />
-    <Compile Include="Decks\Cards\Clubs\QueenOfClubsTests.cs" />
-    <Compile Include="Decks\Cards\Clubs\SevenOfClubsTests.cs" />
-    <Compile Include="Decks\Cards\Clubs\SixOfClubsTests.cs" />
-    <Compile Include="Decks\Cards\Clubs\ThreeOfClubsTests.cs" />
-    <Compile Include="Decks\Cards\Clubs\TwoOfClubsTests.cs" />
-    <Compile Include="Decks\CardValues\AceTests.cs" />
-    <Compile Include="Decks\CardValues\BaseCardValueConstructorTests.cs" />
-    <Compile Include="Decks\CardValues\BaseCardValueTests.cs" />
-    <Compile Include="Decks\CardValues\EightTests.cs" />
-    <Compile Include="Decks\CardValues\FiveTests.cs" />
-    <Compile Include="Decks\CardValues\FourTests.cs" />
-    <Compile Include="Decks\CardValues\JacktTests.cs" />
-    <Compile Include="Decks\CardValues\KingTests.cs" />
-    <Compile Include="Decks\CardValues\NineTests.cs" />
-    <Compile Include="Decks\CardValues\QueenTests.cs" />
-    <Compile Include="Decks\CardValues\SevenTests.cs" />
-    <Compile Include="Decks\CardValues\SixTests.cs" />
-    <Compile Include="Decks\CardValues\ThreeTests.cs" />
-    <Compile Include="Decks\CardValues\TwoTests.cs" />
-    <Compile Include="Decks\PokerDeckTests.cs" />
-    <Compile Include="Decks\Suits\BaseSuitConstructorTests.cs" />
-    <Compile Include="Decks\Suits\ClubTests.cs" />
-    <Compile Include="Decks\Suits\DiamondTests.cs" />
-    <Compile Include="Decks\Suits\HeartTests.cs" />
-    <Compile Include="Decks\Suits\SpadeTests.cs" />
-    <Compile Include="Decks\Suits\BaseSuitTests.cs" />
     <Compile Include="TexasHoldEm\IsStraightFlushTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -106,6 +72,10 @@
     <ProjectReference Include="..\KataPokerHand.Logic\KataPokerHand.Logic.csproj">
       <Project>{C630F12B-441E-4868-ADD2-2DAB4881687B}</Project>
       <Name>KataPokerHand.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlayinCards.Interfaces\PlayinCards.Interfaces.csproj">
+      <Project>{AAA182AF-5ED1-4D5C-BE1F-83E0C47F484D}</Project>
+      <Name>PlayinCards.Interfaces</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

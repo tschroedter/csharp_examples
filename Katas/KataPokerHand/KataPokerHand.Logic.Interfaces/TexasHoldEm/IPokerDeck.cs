@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using KataPokerHand.Logic.Interfaces.Decks.Cards;
+using PlayinCards.Interfaces.Decks.Cards;
 
 namespace KataPokerHand.Logic.Interfaces.TexasHoldEm
 {
