@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2091286-E7A6-438C-BC56-92220FC6C297}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PlayingCards.Tests</RootNamespace>
+    <AssemblyName>PlayingCards.Tests</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="JetBrains.Annotations, Version=10.4.0.0, Culture=neutral, PublicKeyToken=1010a0d8d6380325, processorArchitecture=MSIL">
+      <HintPath>..\packages\JetBrains.Annotations.10.4.0\lib\net\JetBrains.Annotations.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="nunit.framework, Version=3.7.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.7.0\lib\net45\nunit.framework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Decks\Cards\Clubs\AceOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\BaseClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\EightOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\FiveOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\FourOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\JackOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\KingOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\NineOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\QueenOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\SevenOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\SixOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\ThreeOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\TwoOfClubsTests.cs" />
+    <Compile Include="Decks\CardValues\AceTests.cs" />
+    <Compile Include="Decks\CardValues\BaseCardValueConstructorTests.cs" />
+    <Compile Include="Decks\CardValues\BaseCardValueTests.cs" />
+    <Compile Include="Decks\CardValues\EightTests.cs" />
+    <Compile Include="Decks\CardValues\FiveTests.cs" />
+    <Compile Include="Decks\CardValues\FourTests.cs" />
+    <Compile Include="Decks\CardValues\JacktTests.cs" />
+    <Compile Include="Decks\CardValues\KingTests.cs" />
+    <Compile Include="Decks\CardValues\NineTests.cs" />
+    <Compile Include="Decks\CardValues\QueenTests.cs" />
+    <Compile Include="Decks\CardValues\SevenTests.cs" />
+    <Compile Include="Decks\CardValues\SixTests.cs" />
+    <Compile Include="Decks\CardValues\ThreeTests.cs" />
+    <Compile Include="Decks\CardValues\TwoTests.cs" />
+    <Compile Include="Decks\Suits\BaseSuitConstructorTests.cs" />
+    <Compile Include="Decks\Suits\BaseSuitTests.cs" />
+    <Compile Include="Decks\Suits\ClubTests.cs" />
+    <Compile Include="Decks\Suits\DiamondTests.cs" />
+    <Compile Include="Decks\Suits\HeartTests.cs" />
+    <Compile Include="Decks\Suits\SpadeTests.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PlayinCards.Interfaces\PlayinCards.Interfaces.csproj">
+      <Project>{aaa182af-5ed1-4d5c-be1f-83e0c47f484d}</Project>
+      <Name>PlayinCards.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlayingCards\PlayingCards.csproj">
+      <Project>{98d9f796-99eb-478c-8df8-87f58096d6dc}</Project>
+      <Name>PlayingCards</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

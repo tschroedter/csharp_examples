@@ -45,7 +45,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Decks\Cards\Card.cs" />
+    <Compile Include="Decks\Cards\Clubs\AceOfClubs.cs" />
+    <Compile Include="Decks\Cards\Clubs\BaseCard.cs" />
+    <Compile Include="Decks\Cards\Clubs\EightOfClubs.cs" />
+    <Compile Include="Decks\Cards\Clubs\FiveOfClubs.cs" />
+    <Compile Include="Decks\Cards\Clubs\FourOfClubs.cs" />
+    <Compile Include="Decks\Cards\Clubs\JackOfClubs.cs" />
+    <Compile Include="Decks\Cards\Clubs\KingOfClubs.cs" />
+    <Compile Include="Decks\Cards\Clubs\NineOfClubs.cs" />
+    <Compile Include="Decks\Cards\Clubs\QueenOfClubs.cs" />
+    <Compile Include="Decks\Cards\Clubs\SevenOfClubs.cs" />
+    <Compile Include="Decks\Cards\Clubs\SixOfClubs.cs" />
+    <Compile Include="Decks\Cards\Clubs\ThreeOfClubs.cs" />
+    <Compile Include="Decks\Cards\Clubs\TwoOfClubs.cs" />
     <Compile Include="Decks\Cards\ICard.cs" />
     <Compile Include="Decks\CardValues\Ace.cs" />
     <Compile Include="Decks\CardValues\BaseCardValue.cs" />
@@ -60,15 +72,15 @@
     <Compile Include="Decks\CardValues\Six.cs" />
     <Compile Include="Decks\CardValues\Three.cs" />
     <Compile Include="Decks\CardValues\Two.cs" />
-    <Compile Include="Decks\IPokerDeck.cs" />
-    <Compile Include="Decks\ICardValueFactory.cs" />
-    <Compile Include="Decks\PokerDeck.cs" />
+    <Compile Include="TexasHoldEm\IPokerDeck.cs" />
+    <Compile Include="TexasHoldEm\PokerDeck.cs" />
     <Compile Include="Decks\Suits\Club.cs" />
     <Compile Include="Decks\Suits\Diamond.cs" />
     <Compile Include="Decks\Suits\Heart.cs" />
     <Compile Include="Decks\Suits\Spade.cs" />
     <Compile Include="Decks\Suits\BaseSuit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TexasHoldEm\IsHandRandom.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

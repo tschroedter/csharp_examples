@@ -43,8 +43,8 @@
       <HintPath>..\packages\NSubstituteAutoMocker.1.1.0.0\lib\net45\NSubstituteAutoMocker.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="nunit.framework, Version=3.6.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
-      <HintPath>..\packages\NUnit.3.6.1\lib\net45\nunit.framework.dll</HintPath>
+    <Reference Include="nunit.framework, Version=3.7.0.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>..\packages\NUnit.3.7.0\lib\net45\nunit.framework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -57,7 +57,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Decks\Cards\CardTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\AceOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\BaseClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\EightOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\FiveOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\FourOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\JackOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\KingOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\NineOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\QueenOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\SevenOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\SixOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\ThreeOfClubsTests.cs" />
+    <Compile Include="Decks\Cards\Clubs\TwoOfClubsTests.cs" />
     <Compile Include="Decks\CardValues\AceTests.cs" />
     <Compile Include="Decks\CardValues\BaseCardValueConstructorTests.cs" />
     <Compile Include="Decks\CardValues\BaseCardValueTests.cs" />
@@ -79,6 +91,7 @@
     <Compile Include="Decks\Suits\HeartTests.cs" />
     <Compile Include="Decks\Suits\SpadeTests.cs" />
     <Compile Include="Decks\Suits\BaseSuitTests.cs" />
+    <Compile Include="TexasHoldEm\IsStraightFlushTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

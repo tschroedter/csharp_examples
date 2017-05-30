@@ -9,6 +9,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataPokerHand.Logic.Tests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataPokerHand.Logic.Interfaces", "KataPokerHand.Logic.Interfaces\KataPokerHand.Logic.Interfaces.csproj", "{8E75F510-D710-4C44-816B-220DF9210AD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayingCards", "PlayingCards\PlayingCards.csproj", "{98D9F796-99EB-478C-8DF8-87F58096D6DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayinCards.Interfaces", "PlayinCards.Interfaces\PlayinCards.Interfaces.csproj", "{AAA182AF-5ED1-4D5C-BE1F-83E0C47F484D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlayingCards.Tests", "PlayingCards.Tests\PlayingCards.Tests.csproj", "{F2091286-E7A6-438C-BC56-92220FC6C297}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +33,18 @@ Global
 		{8E75F510-D710-4C44-816B-220DF9210AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8E75F510-D710-4C44-816B-220DF9210AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8E75F510-D710-4C44-816B-220DF9210AD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98D9F796-99EB-478C-8DF8-87F58096D6DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98D9F796-99EB-478C-8DF8-87F58096D6DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98D9F796-99EB-478C-8DF8-87F58096D6DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98D9F796-99EB-478C-8DF8-87F58096D6DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAA182AF-5ED1-4D5C-BE1F-83E0C47F484D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAA182AF-5ED1-4D5C-BE1F-83E0C47F484D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAA182AF-5ED1-4D5C-BE1F-83E0C47F484D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAA182AF-5ED1-4D5C-BE1F-83E0C47F484D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2091286-E7A6-438C-BC56-92220FC6C297}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2091286-E7A6-438C-BC56-92220FC6C297}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2091286-E7A6-438C-BC56-92220FC6C297}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2091286-E7A6-438C-BC56-92220FC6C297}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

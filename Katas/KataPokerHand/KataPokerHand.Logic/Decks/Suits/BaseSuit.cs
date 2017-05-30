@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using JetBrains.Annotations;
-using KataPokerHand.Logic.Interfaces.Suits;
+using KataPokerHand.Logic.Interfaces.Decks.Suits;
 
 namespace KataPokerHand.Logic.Decks.Suits
 {

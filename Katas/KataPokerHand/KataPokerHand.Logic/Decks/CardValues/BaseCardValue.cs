@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using JetBrains.Annotations;
-using KataPokerHand.Logic.Interfaces.CardValues;
+using KataPokerHand.Logic.Interfaces.Decks.CardValues;
 
 namespace KataPokerHand.Logic.Decks.CardValues
 {
