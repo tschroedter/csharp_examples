@@ -9,20 +9,20 @@ namespace PlayingCards
     public class PlayerHand
         : IPlayerHand
     {
-        private readonly StringBuilder m_Builder = new StringBuilder();
-
-        private readonly List <ICard> m_Cards = new List <ICard>();
-
-        public IEnumerable <ICard> Cards => m_Cards;
-
         public PlayerHand()
         {
         }
+
         public PlayerHand(
             [NotNull] IEnumerable <ICard> cards)
         {
             m_Cards.AddRange(cards);
         }
+
+        public IEnumerable <ICard> Cards => m_Cards;
+        private readonly StringBuilder m_Builder = new StringBuilder();
+
+        private readonly List <ICard> m_Cards = new List <ICard>();
 
         public override string ToString()
         {

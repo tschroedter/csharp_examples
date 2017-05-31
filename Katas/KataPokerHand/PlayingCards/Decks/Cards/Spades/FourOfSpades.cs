@@ -4,7 +4,7 @@ using PlayingCards.Decks.Suits;
 namespace PlayingCards.Decks.Cards.Spades
 {
     public class FourOfSpades
-        : BaseCard<Spade, Four>
+        : BaseCard <Spade, Four>
     {
     }
 }

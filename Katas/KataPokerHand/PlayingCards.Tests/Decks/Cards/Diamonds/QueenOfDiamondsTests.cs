@@ -7,7 +7,7 @@ namespace Playing.Tests.Decks.Cards.Diamonds
     [TestFixture]
     [ExcludeFromCodeCoverage]
     internal sealed class QueenOfDiamondsTests
-        : BaseClubsTests<QueenOfDiamonds>
+        : BaseClubsTests <QueenOfDiamonds>
     {
         public QueenOfDiamondsTests()
             : base("QD")

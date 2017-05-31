@@ -7,7 +7,7 @@ namespace Playing.Tests.Decks.Cards.Spades
     [TestFixture]
     [ExcludeFromCodeCoverage]
     internal sealed class QueenOfSpadesTests
-        : BaseClubsTests<QueenOfSpades>
+        : BaseClubsTests <QueenOfSpades>
     {
         public QueenOfSpadesTests()
             : base("QS")

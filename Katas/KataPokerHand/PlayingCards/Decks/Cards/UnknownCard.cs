@@ -1,5 +1,4 @@
 ﻿using PlayinCards.Interfaces.Decks.Cards;
-using PlayingCards.Decks.Cards.Clubs;
 using PlayingCards.Decks.Suits;
 
 namespace PlayingCards.Decks.Cards

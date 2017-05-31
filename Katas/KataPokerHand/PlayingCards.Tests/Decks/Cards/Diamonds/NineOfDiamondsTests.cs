@@ -7,7 +7,7 @@ namespace Playing.Tests.Decks.Cards.Diamonds
     [TestFixture]
     [ExcludeFromCodeCoverage]
     internal sealed class NineOfDiamondsTests
-        : BaseClubsTests<NineOfDiamonds>
+        : BaseClubsTests <NineOfDiamonds>
     {
         public NineOfDiamondsTests()
             : base("9D")

@@ -7,7 +7,7 @@ namespace Playing.Tests.Decks.Cards.Spades
     [TestFixture]
     [ExcludeFromCodeCoverage]
     internal sealed class SevenOfSpadesTests
-        : BaseClubsTests<SevenOfSpades>
+        : BaseClubsTests <SevenOfSpades>
     {
         public SevenOfSpadesTests()
             : base("7S")

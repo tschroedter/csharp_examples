@@ -4,7 +4,7 @@ using PlayingCards.Decks.Suits;
 namespace PlayingCards.Decks.Cards.Diamonds
 {
     public class KingOfDiamonds
-        : BaseCard<Diamond, King>
+        : BaseCard <Diamond, King>
     {
     }
 }

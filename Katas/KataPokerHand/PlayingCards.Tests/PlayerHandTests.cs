@@ -10,16 +10,32 @@ namespace PlayingCards.Tests
     [ExcludeFromCodeCoverage]
     internal sealed class PlayerHandTests
     {
-        private PlayerHand m_Sut;
-
         [SetUp]
         public void Setup()
         {
             m_Sut = new PlayerHand(new ICard[]
-                                     {
-                                         new TwoOfClubs(),
-                                         new ThreeOfClubs()
-                                     });
+                                   {
+                                       new TwoOfClubs(),
+                                       new ThreeOfClubs()
+                                   });
+        }
+
+        private PlayerHand m_Sut;
+
+        [Test]
+        public void Cards_Returns_Cards()
+        {
+            // Arrange
+            // Act
+            ICard[] actual = m_Sut.Cards.ToArray();
+
+            // Assert
+            Assert.AreEqual(2,
+                            actual.Length);
+            Assert.AreEqual("2C",
+                            actual [ 0 ].ToString());
+            Assert.AreEqual("3C",
+                            actual [ 1 ].ToString());
         }
 
         [Test]
@@ -30,7 +46,8 @@ namespace PlayingCards.Tests
 
             // Act
             // Assert
-            Assert.AreEqual("", sut.ToString());
+            Assert.AreEqual("",
+                            sut.ToString());
         }
 
         [Test]
@@ -39,20 +56,8 @@ namespace PlayingCards.Tests
             // Arrange
             // Act
             // Assert
-            Assert.AreEqual("2C 3C", m_Sut.ToString());
-        }
-
-        [Test]
-        public void Cards_Returns_Cards()
-        {
-            // Arrange
-            // Act
-            var actual = m_Sut.Cards.ToArray();
-
-            // Assert
-            Assert.AreEqual(2, actual.Length);
-            Assert.AreEqual("2C", actual[0].ToString());
-            Assert.AreEqual("3C", actual[1].ToString());
+            Assert.AreEqual("2C 3C",
+                            m_Sut.ToString());
         }
     }
 }

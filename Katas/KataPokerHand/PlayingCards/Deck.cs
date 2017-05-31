@@ -85,7 +85,7 @@ namespace PlayingCards
             return card;
         }
 
-        public virtual IEnumerable<ICard> DrawCards(int numberOfCards)
+        public virtual IEnumerable <ICard> DrawCards(int numberOfCards)
         {
             ICard[] list = m_Cards.Take(numberOfCards).ToArray();
 

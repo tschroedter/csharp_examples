@@ -7,7 +7,7 @@ namespace Playing.Tests.Decks.Cards.Hearts
     [TestFixture]
     [ExcludeFromCodeCoverage]
     internal sealed class EightOfHeartsTests
-        : BaseClubsTests<EightOfHearts>
+        : BaseClubsTests <EightOfHearts>
     {
         public EightOfHeartsTests()
             : base("8H")
