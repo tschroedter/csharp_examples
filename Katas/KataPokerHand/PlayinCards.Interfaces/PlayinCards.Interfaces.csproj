@@ -44,6 +44,7 @@
     <Compile Include="Decks\Cards\ICard.cs" />
     <Compile Include="Decks\CardValues\ICardValue.cs" />
     <Compile Include="Decks\Suits\ISuit.cs" />
+    <Compile Include="IDeck.cs" />
     <Compile Include="INextCardValueFinder.cs" />
     <Compile Include="IPreviousCardValueFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

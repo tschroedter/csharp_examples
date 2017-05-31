@@ -2,6 +2,6 @@
 {
     public interface INextCardValueFinder
     {
-        char NextCard(char current);
+        char NextCardValue(char current);
     }
 }

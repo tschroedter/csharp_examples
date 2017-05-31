@@ -1,8 +1,8 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
-using PlayingCards.Decks.Suits;
 using NUnit.Framework;
+using PlayingCards.Decks.Suits;
 
 namespace Playing.Tests.Decks.Suits
 {

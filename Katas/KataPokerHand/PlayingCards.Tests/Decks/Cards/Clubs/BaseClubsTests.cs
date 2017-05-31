@@ -9,14 +9,14 @@ namespace Playing.Tests.Decks.Cards.Clubs
     internal class BaseClubsTests <T>
         where T : ICard, new()
     {
-        [NotNull]
-        private readonly string m_ExpectedValueAndSuite;
-
         protected BaseClubsTests(
             [NotNull] string expectedValueAndSuite)
         {
             m_ExpectedValueAndSuite = expectedValueAndSuite;
         }
+
+        [NotNull]
+        private readonly string m_ExpectedValueAndSuite;
 
         [Test]
         public void Constructor_Returns_Instance()

@@ -7,7 +7,7 @@ namespace Playing.Tests.Decks.CardValues
     [TestFixture]
     [ExcludeFromCodeCoverage]
     internal sealed class UnknownTests
-        : BaseCardValueTests<Unknown>
+        : BaseCardValueTests <Unknown>
     {
         public UnknownTests()
             : base("Unknown",

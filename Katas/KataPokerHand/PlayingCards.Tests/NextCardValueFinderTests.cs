@@ -33,7 +33,7 @@ namespace PlayingCards.Tests
             'A')]
         [TestCase('A',
             'U')]
-        public void NextCard_Returns_NextCard(
+        public void NextCardValue_Returns_NextCardValue(
             char current,
             char expected)
         {
@@ -43,7 +43,7 @@ namespace PlayingCards.Tests
             // Act
             // Assert
             Assert.AreEqual(expected,
-                            sut.NextCard(current));
+                            sut.NextCardValue(current));
         }
     }
 }

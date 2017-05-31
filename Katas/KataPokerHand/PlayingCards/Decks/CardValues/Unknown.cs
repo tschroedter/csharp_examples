@@ -5,8 +5,6 @@ namespace PlayingCards.Decks.CardValues
     public class Unknown
         : BaseCardValue
     {
-        public static ICardValue UnknownCardValue = new Unknown();
-
         public Unknown()
             : base("Unknown",
                    new[]
@@ -15,5 +13,7 @@ namespace PlayingCards.Decks.CardValues
                    })
         {
         }
+
+        public static ICardValue UnknownCardValue = new Unknown();
     }
 }

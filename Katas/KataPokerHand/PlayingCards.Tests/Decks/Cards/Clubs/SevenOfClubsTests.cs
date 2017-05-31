@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
-using PlayingCards.Decks.Cards.Clubs;
 using NUnit.Framework;
+using PlayingCards.Decks.Cards.Clubs;
 
 namespace Playing.Tests.Decks.Cards.Clubs
 {

@@ -1,8 +1,8 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using JetBrains.Annotations;
-using PlayingCards.Decks.CardValues;
 using NUnit.Framework;
+using PlayingCards.Decks.CardValues;
 
 namespace Playing.Tests.Decks.CardValues
 {

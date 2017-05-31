@@ -45,6 +45,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Deck.cs" />
+    <Compile Include="Decks\Cards\UnknownCard.cs" />
     <Compile Include="Decks\Cards\Clubs\AceOfClubs.cs" />
     <Compile Include="Decks\Cards\Clubs\BaseCard.cs" />
     <Compile Include="Decks\Cards\Clubs\EightOfClubs.cs" />
@@ -77,7 +79,10 @@
     <Compile Include="Decks\Suits\Diamond.cs" />
     <Compile Include="Decks\Suits\Heart.cs" />
     <Compile Include="Decks\Suits\Spade.cs" />
+    <Compile Include="Decks\Suits\Unknown.cs" />
+    <Compile Include="IRandom.cs" />
     <Compile Include="NextCardValueFinder.cs" />
+    <Compile Include="PlayingCardsRandom.cs" />
     <Compile Include="PreviousCardValueFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

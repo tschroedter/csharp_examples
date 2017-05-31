@@ -6,26 +6,52 @@ namespace PlayingCards
 {
     public class NextCardValueFinder
         : INextCardValueFinder
-    {   
+    {
         private readonly Dictionary <char, char> m_CardToNextCard =
-            new Dictionary <char, char>()
+            new Dictionary <char, char>
             {
-                { 'U', 'U' },
-                { '2', '3' },
-                { '3', '4' },
-                { '4', '5' },
-                { '5', '6' },
-                { '6', '7' },
-                { '7', '8' },
-                { '8', '9' },
-                { '9', 'J' },
-                { 'J', 'Q' },
-                { 'Q', 'K' },
-                { 'K', 'A' },
-                { 'A', 'U' },
+                {
+                    'U', 'U'
+                },
+                {
+                    '2', '3'
+                },
+                {
+                    '3', '4'
+                },
+                {
+                    '4', '5'
+                },
+                {
+                    '5', '6'
+                },
+                {
+                    '6', '7'
+                },
+                {
+                    '7', '8'
+                },
+                {
+                    '8', '9'
+                },
+                {
+                    '9', 'J'
+                },
+                {
+                    'J', 'Q'
+                },
+                {
+                    'Q', 'K'
+                },
+                {
+                    'K', 'A'
+                },
+                {
+                    'A', 'U'
+                }
             };
 
-        public char NextCard(char current)
+        public char NextCardValue(char current)
         {
             char next;
 

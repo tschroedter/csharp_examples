@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Diagnostics;
 using JetBrains.Annotations;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayinCards.Interfaces.Decks.CardValues;
@@ -7,7 +6,6 @@ using PlayinCards.Interfaces.Decks.Suits;
 
 namespace PlayingCards.Decks.Cards.Clubs
 {
-    [DebuggerDisplay("{Suit}{Value}")]
     public class BaseCard <TSuit, TCardValue>
         : ICard
         where TSuit : ISuit, new()

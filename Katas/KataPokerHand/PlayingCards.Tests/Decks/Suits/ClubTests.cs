@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
-using PlayingCards.Decks.Suits;
 using NUnit.Framework;
+using PlayingCards.Decks.Suits;
 
 namespace Playing.Tests.Decks.Suits
 {
