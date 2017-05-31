@@ -57,9 +57,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Decks\Cards\Diamonds\AceOfDiamondsTests.cs" />
+    <Compile Include="Decks\Cards\Diamonds\EightOfDiamondsTests.cs" />
+    <Compile Include="Decks\Cards\Diamonds\FiveOfDiamondsTests.cs" />
+    <Compile Include="Decks\Cards\Diamonds\FourOfDiamondsTests.cs" />
+    <Compile Include="Decks\Cards\Diamonds\JackOfDiamondsTests.cs" />
+    <Compile Include="Decks\Cards\Diamonds\KingOfDiamondsTests.cs" />
+    <Compile Include="Decks\Cards\Diamonds\NineOfDiamondsTests.cs" />
+    <Compile Include="Decks\Cards\Diamonds\QueenOfDiamondsTests.cs" />
+    <Compile Include="Decks\Cards\Diamonds\SevenOfDiamondsTests.cs" />
+    <Compile Include="Decks\Cards\Diamonds\SixOfDiamondsTests.cs" />
+    <Compile Include="Decks\Cards\Diamonds\ThreeOfDiamondsTests.cs" />
+    <Compile Include="Decks\Cards\Diamonds\TwoOfDiamondsTests.cs" />
+    <Compile Include="Decks\Cards\Hearts\AceOfHeartsTests.cs" />
+    <Compile Include="Decks\Cards\Hearts\EightOfHeartsTests.cs" />
+    <Compile Include="Decks\Cards\Hearts\FiveOfHeartsTests.cs" />
+    <Compile Include="Decks\Cards\Hearts\FourOfHeartsTests.cs" />
+    <Compile Include="Decks\Cards\Hearts\JackOfHeartsTests.cs" />
+    <Compile Include="Decks\Cards\Hearts\KingOfHeartsTests.cs" />
+    <Compile Include="Decks\Cards\Hearts\NineOfHeartsTests.cs" />
+    <Compile Include="Decks\Cards\Hearts\QueenOfHeartsTests.cs" />
+    <Compile Include="Decks\Cards\Hearts\SevenOfHeartsTests.cs" />
+    <Compile Include="Decks\Cards\Hearts\SixOfHeartsTests.cs" />
+    <Compile Include="Decks\Cards\Hearts\ThreeOfHeartsTests.cs" />
+    <Compile Include="Decks\Cards\Hearts\TwoOfHeartsTests.cs" />
+    <Compile Include="Decks\Cards\Spades\AceOfSpadesTests.cs" />
+    <Compile Include="Decks\Cards\Spades\EightOfSpadesTests.cs" />
+    <Compile Include="Decks\Cards\Spades\FiveOfSpadesTests.cs" />
+    <Compile Include="Decks\Cards\Spades\FourOfSpadesTests.cs" />
+    <Compile Include="Decks\Cards\Spades\JackOfSpadesTests.cs" />
+    <Compile Include="Decks\Cards\Spades\KingOfSpadesTests.cs" />
+    <Compile Include="Decks\Cards\Spades\NineOfSpadesTests.cs" />
+    <Compile Include="Decks\Cards\Spades\QueenOfSpadesTests.cs" />
+    <Compile Include="Decks\Cards\Spades\SevenOfSpadesTests.cs" />
+    <Compile Include="Decks\Cards\Spades\SixOfSpadesTests.cs" />
+    <Compile Include="Decks\Cards\Spades\ThreeOfSpadesTests.cs" />
+    <Compile Include="Decks\Cards\Spades\TwoOfSpadesTests.cs" />
     <Compile Include="DeckTests.cs" />
     <Compile Include="Decks\Cards\Clubs\AceOfClubsTests.cs" />
-    <Compile Include="Decks\Cards\Clubs\BaseClubsTests.cs" />
+    <Compile Include="Decks\Cards\BaseClubsTests.cs" />
     <Compile Include="Decks\Cards\Clubs\EightOfClubsTests.cs" />
     <Compile Include="Decks\Cards\Clubs\FiveOfClubsTests.cs" />
     <Compile Include="Decks\Cards\Clubs\FourOfClubsTests.cs" />
@@ -110,6 +146,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

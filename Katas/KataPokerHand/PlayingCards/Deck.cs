@@ -67,12 +67,12 @@ namespace PlayingCards
             }
         }
 
-        public void Reset()
+        public virtual void Reset()
         {
             m_Cards = CardsInDeck.ToList();
         }
 
-        public ICard DrawCard()
+        public virtual ICard DrawCard()
         {
             if ( !m_Cards.Any() )
             {
@@ -85,7 +85,7 @@ namespace PlayingCards
             return card;
         }
 
-        public IEnumerable <ICard> DrawCards(int numberOfCards)
+        public virtual IEnumerable<ICard> DrawCards(int numberOfCards)
         {
             ICard[] list = m_Cards.Take(numberOfCards).ToArray();
 

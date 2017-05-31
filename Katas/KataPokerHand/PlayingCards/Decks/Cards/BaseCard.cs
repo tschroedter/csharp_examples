@@ -4,7 +4,7 @@ using PlayinCards.Interfaces.Decks.Cards;
 using PlayinCards.Interfaces.Decks.CardValues;
 using PlayinCards.Interfaces.Decks.Suits;
 
-namespace PlayingCards.Decks.Cards.Clubs
+namespace PlayingCards.Decks.Cards
 {
     public class BaseCard <TSuit, TCardValue>
         : ICard

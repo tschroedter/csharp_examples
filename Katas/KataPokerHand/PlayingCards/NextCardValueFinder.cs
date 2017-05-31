@@ -4,6 +4,7 @@ using PlayingCards.Decks.CardValues;
 
 namespace PlayingCards
 {
+    // todo use class attribute on cards to specify next/previous
     public class NextCardValueFinder
         : INextCardValueFinder
     {

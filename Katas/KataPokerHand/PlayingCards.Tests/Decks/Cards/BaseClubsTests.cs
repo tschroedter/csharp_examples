@@ -3,7 +3,7 @@ using JetBrains.Annotations;
 using NUnit.Framework;
 using PlayinCards.Interfaces.Decks.Cards;
 
-namespace Playing.Tests.Decks.Cards.Clubs
+namespace Playing.Tests.Decks.Cards
 {
     [ExcludeFromCodeCoverage]
     internal class BaseClubsTests <T>
