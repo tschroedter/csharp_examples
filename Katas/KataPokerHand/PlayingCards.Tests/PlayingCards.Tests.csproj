@@ -130,6 +130,7 @@
     <Compile Include="Decks\Suits\HeartTests.cs" />
     <Compile Include="Decks\Suits\SpadeTests.cs" />
     <Compile Include="NextCardValueFinderTests.cs" />
+    <Compile Include="PlayerHandTests.cs" />
     <Compile Include="PreviousCardValueFinderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -46,7 +46,9 @@
     <Compile Include="Decks\Suits\ISuit.cs" />
     <Compile Include="IDeck.cs" />
     <Compile Include="INextCardValueFinder.cs" />
+    <Compile Include="IPlayerHand.cs" />
     <Compile Include="IPreviousCardValueFinder.cs" />
+    <Compile Include="IRandom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
