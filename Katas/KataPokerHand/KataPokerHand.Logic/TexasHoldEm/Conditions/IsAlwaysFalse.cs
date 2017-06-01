@@ -2,13 +2,13 @@
 
 namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 {
-    public class IsSuitEqual
+    public class IsAlwaysFalse  // todo testing
         : BaseCardCondition,
           ICondition
     {
         public override bool IsSatisfied()
         {
-            return CardOne.Suit == CardTwo.Suit;
+            return false;
         }
     }
 }

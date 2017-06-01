@@ -18,7 +18,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
             m_CardOne.Value.Returns('2');
 
             m_CardTwo = Substitute.For <ICard>();
-            m_CardOne.Value.Returns('3');
+            m_CardTwo.Value.Returns('3');
 
             m_Finder = Substitute.For <INextCardValueFinder>();
             m_Sut = new IsNextCardValue(m_Finder);
@@ -36,8 +36,8 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
             // Arrange
             m_Finder.NextCardValue(Arg.Any <char>()).Returns('3');
 
-            m_Sut.Actual = m_CardOne;
-            m_Sut.Threshold = m_CardTwo;
+            m_Sut.CardOne = m_CardOne;
+            m_Sut.CardTwo = m_CardTwo;
 
             // Act
             // Assert
@@ -50,8 +50,8 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
             // Arrange
             m_Finder.NextCardValue(Arg.Any <char>()).Returns('0');
 
-            m_Sut.Actual = m_CardOne;
-            m_Sut.Threshold = m_CardTwo;
+            m_Sut.CardOne = m_CardOne;
+            m_Sut.CardTwo = m_CardTwo;
 
             // Act
             // Assert

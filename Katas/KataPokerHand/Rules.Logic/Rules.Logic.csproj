@@ -45,7 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conditions\BaseCondition.cs" />
+    <Compile Include="Conditions\BaseIntegerCondition.cs" />
     <Compile Include="Conditions\IsEqual.cs" />
     <Compile Include="Conditions\IsLessThan.cs" />
     <Compile Include="Conditions\IsMoreThan.cs" />

@@ -3,8 +3,8 @@
 namespace Rules.Logic.Conditions
 {
     public class IsMoreThan
-        : BaseCondition <int>,
-          ICondition <int>
+        : BaseIntegerCondition,
+          ICondition
     {
         public override bool IsSatisfied()
         {

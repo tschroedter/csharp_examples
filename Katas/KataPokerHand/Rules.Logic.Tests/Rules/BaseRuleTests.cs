@@ -27,7 +27,7 @@ namespace Rules.Logic.Tests.Rules.Rules
             return testRule;
         }
 
-        private sealed class TestRule : BaseRule <ICellInformation, int>
+        private sealed class TestRule : BaseRule <ICellInformation>
         {
             public bool WasCalledInitialize { get; private set; }
 
@@ -47,8 +47,8 @@ namespace Rules.Logic.Tests.Rules.Rules
 
             public override void Initialize(ICellInformation info)
             {
-                Conditions.Add(Substitute.For <ICondition <int>>());
-                Conditions.Add(Substitute.For <ICondition <int>>());
+                Conditions.Add(Substitute.For <ICondition>());
+                Conditions.Add(Substitute.For <ICondition>());
 
                 WasCalledInitialize = true;
             }

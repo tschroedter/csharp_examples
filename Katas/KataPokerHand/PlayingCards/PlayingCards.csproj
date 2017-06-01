@@ -115,7 +115,7 @@
     <Compile Include="Decks\Suits\Diamond.cs" />
     <Compile Include="Decks\Suits\Heart.cs" />
     <Compile Include="Decks\Suits\Spade.cs" />
-    <Compile Include="Decks\Suits\Unknown.cs" />
+    <Compile Include="Decks\Suits\UnknownSuit.cs" />
     <Compile Include="NextCardValueFinder.cs" />
     <Compile Include="PlayerHand.cs" />
     <Compile Include="PlayingCardsRandom.cs" />

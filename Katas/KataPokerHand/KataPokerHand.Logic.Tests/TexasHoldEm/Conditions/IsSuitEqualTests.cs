@@ -22,8 +22,8 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
         public void IsSatisfied_Returns_False_For_Different_Suit()
         {
             // Arrange
-            m_Sut.Actual = new TwoOfClubs();
-            m_Sut.Threshold = new TwoOfHearts();
+            m_Sut.CardOne = new TwoOfClubs();
+            m_Sut.CardTwo = new TwoOfHearts();
 
             // Act
             // Assert
@@ -34,8 +34,8 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
         public void IsSatisfied_Returns_True_For_Same_Card()
         {
             // Arrange
-            m_Sut.Actual = new TwoOfClubs();
-            m_Sut.Threshold = m_Sut.Actual;
+            m_Sut.CardOne = new TwoOfClubs();
+            m_Sut.CardTwo = m_Sut.CardOne;
 
             // Act
             // Assert
@@ -46,8 +46,8 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
         public void IsSatisfied_Returns_True_For_Same_Suit()
         {
             // Arrange
-            m_Sut.Actual = new TwoOfClubs();
-            m_Sut.Threshold = new TwoOfClubs();
+            m_Sut.CardOne = new TwoOfClubs();
+            m_Sut.CardTwo = new TwoOfClubs();
 
             // Act
             // Assert
