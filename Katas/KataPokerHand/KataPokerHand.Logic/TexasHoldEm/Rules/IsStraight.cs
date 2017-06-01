@@ -12,17 +12,22 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
     public class IsStraight
         : IIsStraight
     {
-        public IsStraight(
-            [NotNull] ICard[] cards)
-        {
-            m_Conditions.AddRange(AddConditions(cards));
-        }
-
         private readonly List <ICondition> m_Conditions = new List <ICondition>();
 
         public bool IsSatisfied()
         {
             return m_Conditions.All(x => x.IsSatisfied());
+        }
+
+        [NotNull]
+        public ICard[] Cards
+        {
+            set
+            {
+                IEnumerable <ICondition> addConditions = AddConditions(value);
+                m_Conditions.Clear();
+                m_Conditions.AddRange(addConditions);
+            }
         }
 
         private IEnumerable <ICondition> AddConditions(ICard[] cards)

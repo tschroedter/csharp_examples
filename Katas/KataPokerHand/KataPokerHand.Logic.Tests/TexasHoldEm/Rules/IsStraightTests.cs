@@ -11,6 +11,14 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
     [ExcludeFromCodeCoverage]
     internal sealed class IsStraightTests
     {
+        private IsStraight m_Sut;
+
+        [SetUp]
+        public void SetUp()
+        {
+            m_Sut = new IsStraight();
+        }
+
         [Test]
         public void IsSatisfied_Returns_True_For__Straight()
         {
@@ -21,11 +29,11 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             cards.Add(new ThreeOfClubs());
             cards.Add(new FourOfClubs());
 
-            var sut = new IsStraight(cards.ToArray());
-
             // Act
+            m_Sut.Cards = cards.ToArray();
+
             // Assert
-            Assert.True(sut.IsSatisfied());
+            Assert.True(m_Sut.IsSatisfied());
         }
 
         [Test]
@@ -38,11 +46,11 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             cards.Add(new ThreeOfClubs());
             cards.Add(new FiveOfClubs());
 
-            var sut = new IsStraight(cards.ToArray());
-
             // Act
+            m_Sut.Cards = cards.ToArray();
+
             // Assert
-            Assert.False(sut.IsSatisfied());
+            Assert.False(m_Sut.IsSatisfied());
         }
     }
 }

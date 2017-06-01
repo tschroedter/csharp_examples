@@ -61,7 +61,10 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
             Conditions.Add(new IsNumberOfCardsValid(NumberOfCardsRequired,
                                                     cards));
             Conditions.Add(new IsSameSuitAllCards(cards));
-            Conditions.Add(new IsStraight(cards));
+            Conditions.Add(new IsStraight
+                           {
+                               Cards = cards
+                           });
         }
 
         private void AddConditionsForCardsEmpty()
