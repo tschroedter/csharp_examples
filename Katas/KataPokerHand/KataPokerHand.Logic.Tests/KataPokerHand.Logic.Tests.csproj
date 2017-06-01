@@ -61,6 +61,9 @@
     <Compile Include="TexasHoldEm\Conditions\IsNextCardValueTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsSuitEqualTests.cs" />
     <Compile Include="TexasHoldEm\IsStraightFlushRuleTests.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsNumberOfCardsValidTests.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsSameSuitAllCardsTests.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsStraightTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

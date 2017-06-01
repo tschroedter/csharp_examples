@@ -4,7 +4,7 @@ using PlayinCards.Interfaces.Decks.Cards;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Rules
 {
-    public class IsNumberOfCardsValid // todo testing
+    public class IsNumberOfCardsValid
         : IIsNumberOfCardsValid
     {
         public IsNumberOfCardsValid(

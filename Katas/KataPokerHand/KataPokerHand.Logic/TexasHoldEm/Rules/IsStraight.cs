@@ -9,7 +9,7 @@ using Rules.Logic.Interfaces.Conditions;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Rules
 {
-    public class IsStraight // todo testing
+    public class IsStraight
         : IIsStraight
     {
         public IsStraight(
