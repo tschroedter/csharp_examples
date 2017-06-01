@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using KataPokerHand.Logic.TexasHoldEm.Rules;
+using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using NUnit.Framework;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;
 
-namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
+namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]

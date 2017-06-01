@@ -50,9 +50,9 @@
     <Compile Include="TexasHoldEm\Conditions\IsAlwaysFalse.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsNextCardValue.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsSuitEqual.cs" />
-    <Compile Include="TexasHoldEm\Rules\IsSameSuitAllCards.cs" />
-    <Compile Include="TexasHoldEm\Rules\IsNumberOfCardsValid.cs" />
-    <Compile Include="TexasHoldEm\Rules\IsStraight.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsSameSuitAllCards.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsNumberOfCardsValid.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsStraight.cs" />
     <Compile Include="TexasHoldEm\Rules\IsStraightFlushRule.cs" />
     <Compile Include="TexasHoldEm\Rules\PlayerHandInformation.cs" />
   </ItemGroup>

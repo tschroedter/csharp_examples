@@ -1,8 +1,8 @@
 ﻿using JetBrains.Annotations;
-using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
 using PlayinCards.Interfaces.Decks.Cards;
 
-namespace KataPokerHand.Logic.TexasHoldEm.Rules
+namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 {
     public class IsNumberOfCardsValid
         : IIsNumberOfCardsValid

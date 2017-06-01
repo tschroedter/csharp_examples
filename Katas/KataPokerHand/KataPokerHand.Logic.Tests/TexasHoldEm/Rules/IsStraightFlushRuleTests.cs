@@ -10,7 +10,7 @@ using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;
 using PlayingCards.Decks.Cards.Hearts;
 
-namespace KataPokerHand.Logic.Tests.TexasHoldEm
+namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]

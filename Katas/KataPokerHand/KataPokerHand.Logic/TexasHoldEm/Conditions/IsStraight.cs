@@ -1,13 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
-using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
-using KataPokerHand.Logic.TexasHoldEm.Conditions;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards;
 using Rules.Logic.Interfaces.Conditions;
 
-namespace KataPokerHand.Logic.TexasHoldEm.Rules
+namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 {
     public class IsStraight
         : IIsStraight
