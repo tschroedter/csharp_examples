@@ -2,6 +2,7 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
+using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.TexasHoldEm.Rules;
 using NSubstitute;
 using NUnit.Framework;
@@ -25,7 +26,9 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Info.PlayerHand.Returns(m_Hand);
             m_Hand.Cards.Returns(m_Cards);
 
-            m_Sut = new IsStraightFlushRule();
+            m_Sut = new IsStraightFlushRule(new IsNumberOfCardsValid(),
+                                            new IsSameSuitAllCards(),
+                                            new IsStraight());
         }
 
         private IsStraightFlushRule m_Sut;

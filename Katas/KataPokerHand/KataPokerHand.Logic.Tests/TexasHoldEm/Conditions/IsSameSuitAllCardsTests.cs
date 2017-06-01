@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using KataPokerHand.Logic.TexasHoldEm.Conditions;
-using KataPokerHand.Logic.TexasHoldEm.Rules;
 using NUnit.Framework;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;

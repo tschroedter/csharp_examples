@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using JetBrains.Annotations;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using PlayinCards.Interfaces.Decks.Cards;
@@ -14,9 +15,27 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         : BaseRule <IPlayerHandInformation>,
           IRule <IPlayerHandInformation>
     {
+        public IsStraightFlushRule(
+            [NotNull] IIsNumberOfCardsValid valid,
+            [NotNull] IIsSameSuitAllCards same,
+            [NotNull] IIsStraight straight)
+        {
+            m_Valid = valid;
+            m_Same = same;
+            m_Straight = straight;
+        }
+
         [NotNull]
         private const int NumberOfCardsRequired = 5;
 
+        [NotNull]
+        private readonly IIsSameSuitAllCards m_Same;
+
+        [NotNull]
+        private readonly IIsStraight m_Straight;
+
+        [NotNull]
+        private readonly IIsNumberOfCardsValid m_Valid;
 
         public override IPlayerHandInformation Apply(IPlayerHandInformation info)
         {
@@ -57,20 +76,14 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
 
         private void AddConditionsForCards(ICard[] cards)
         {
-            // todo factories
-            Conditions.Add(new IsNumberOfCardsValid
-                           {
-                               NumberOfCardsRequired = NumberOfCardsRequired,
-                               Cards = cards
-                           });
-            Conditions.Add(new IsSameSuitAllCards
-                           {
-                               Cards = cards
-                           });
-            Conditions.Add(new IsStraight
-                           {
-                               Cards = cards
-                           });
+            m_Valid.NumberOfCardsRequired = NumberOfCardsRequired;
+            m_Valid.Cards = cards;
+            m_Same.Cards = cards;
+            m_Straight.Cards = cards;
+
+            Conditions.Add(m_Valid);
+            Conditions.Add(m_Same);
+            Conditions.Add(m_Straight);
         }
 
         private void AddConditionsForCardsEmpty()
