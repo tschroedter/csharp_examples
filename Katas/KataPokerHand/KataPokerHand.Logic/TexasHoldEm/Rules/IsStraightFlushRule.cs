@@ -1,10 +1,10 @@
 ﻿using System.Linq;
 using JetBrains.Annotations;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards;
 using PlayingCards.Decks.Suits;
-using Rules.Logic.Conditions;
 using Rules.Logic.Interfaces.Rules;
 using Rules.Logic.Rules;
 
@@ -42,21 +42,31 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
 
             if ( !cards.Any() )
             {
-                Conditions.Add(new IsAlwaysFalse());
-                return;
+                AddConditionsForCardsEmpty();
             }
-
-            ICard first = cards [ 0 ];
-
-            // todo factories
-            Conditions.Add(new IsNumberOfCardsValid(NumberOfCardsRequired, cards));
-            Conditions.Add(new IsAllSameSuit(cards)); 
-            Conditions.Add(new IsStraight(cards));
+            else
+            {
+                AddConditionsForCards(cards);
+            }
         }
 
         public override int GetPriority()
         {
             return 2;
+        }
+
+        private void AddConditionsForCards(ICard[] cards)
+        {
+            // todo factories
+            Conditions.Add(new IsNumberOfCardsValid(NumberOfCardsRequired,
+                                                    cards));
+            Conditions.Add(new IsSameSuitAllCards(cards));
+            Conditions.Add(new IsStraight(cards));
+        }
+
+        private void AddConditionsForCardsEmpty()
+        {
+            Conditions.Add(new IsAlwaysFalse());
         }
     }
 }

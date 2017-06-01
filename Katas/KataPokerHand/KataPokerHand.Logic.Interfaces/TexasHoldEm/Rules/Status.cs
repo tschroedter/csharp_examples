@@ -1,4 +1,4 @@
-﻿namespace KataPokerHand.Logic.TexasHoldEm.Rules
+﻿namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules
 {
     public enum Status
     {

@@ -50,16 +50,11 @@
     <Compile Include="TexasHoldEm\Conditions\IsAlwaysFalse.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsNextCardValue.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsSuitEqual.cs" />
-    <Compile Include="TexasHoldEm\Rules\IIsNumberOfCardsValid.cs" />
-    <Compile Include="TexasHoldEm\Rules\IIsStraight.cs" />
-    <Compile Include="TexasHoldEm\Rules\IsAllSameSuit.cs" />
-    <Compile Include="TexasHoldEm\Rules\IIsAllSameSuit.cs" />
-    <Compile Include="TexasHoldEm\Rules\IPlayerHandInformation.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsSameSuitAllCards.cs" />
     <Compile Include="TexasHoldEm\Rules\IsNumberOfCardsValid.cs" />
     <Compile Include="TexasHoldEm\Rules\IsStraight.cs" />
     <Compile Include="TexasHoldEm\Rules\IsStraightFlushRule.cs" />
     <Compile Include="TexasHoldEm\Rules\PlayerHandInformation.cs" />
-    <Compile Include="TexasHoldEm\Rules\Status.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

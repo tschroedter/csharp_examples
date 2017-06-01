@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm.Rules;
 using NSubstitute;
 using NUnit.Framework;
@@ -124,6 +125,18 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
         }
 
         [Test]
+        public void Initialize_Adds_Condition_For_Cards_Empty()
+        {
+            // Arrange
+            // Act
+            m_Sut.Initialize(m_Info);
+
+            // Assert
+            Assert.AreEqual(1,
+                            m_Sut.GetConditions().Count()); // todo maybe there is a better test
+        }
+
+        [Test]
         public void Initialize_Adds_Conditions()
         {
             // Arrange
@@ -134,18 +147,6 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
 
             // Assert
             Assert.AreEqual(3,
-                            m_Sut.GetConditions().Count()); // todo maybe there is a better test
-        }
-
-        [Test]
-        public void Initialize_Adds_Condition_For_Cards_Empty()
-        {
-            // Arrange
-            // Act
-            m_Sut.Initialize(m_Info);
-
-            // Assert
-            Assert.AreEqual(1,
                             m_Sut.GetConditions().Count()); // todo maybe there is a better test
         }
 
