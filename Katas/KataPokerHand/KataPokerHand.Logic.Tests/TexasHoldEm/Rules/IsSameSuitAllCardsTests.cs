@@ -12,6 +12,14 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
     [ExcludeFromCodeCoverage]
     internal sealed class IsSameSuitAllCardsTests
     {
+        private IsSameSuitAllCards m_Sut;
+
+        [SetUp]
+        public void Setup()
+        {
+            m_Sut = new IsSameSuitAllCards();
+        }
+
         [Test]
         public void IsSatisfied_Returns_True_For_All_Cards_Same_Suit()
         {
@@ -22,11 +30,11 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             cards.Add(new ThreeOfClubs());
             cards.Add(new FourOfClubs());
 
-            var sut = new IsSameSuitAllCards(cards.ToArray());
-
             // Act
+            m_Sut.Cards = cards.ToArray();
+
             // Assert
-            Assert.True(sut.IsSatisfied());
+            Assert.True(m_Sut.IsSatisfied());
         }
 
         [Test]
@@ -39,11 +47,11 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             cards.Add(new ThreeOfClubs());
             cards.Add(new FourOfHearts());
 
-            var sut = new IsSameSuitAllCards(cards.ToArray());
-
             // Act
+            m_Sut.Cards = cards.ToArray();
+
             // Assert
-            Assert.False(sut.IsSatisfied());
+            Assert.False(m_Sut.IsSatisfied());
         }
     }
 }

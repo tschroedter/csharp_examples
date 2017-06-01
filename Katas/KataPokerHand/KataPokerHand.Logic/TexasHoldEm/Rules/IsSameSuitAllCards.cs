@@ -8,16 +8,21 @@ using Rules.Logic.Interfaces.Conditions;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Rules
 {
-    public class IsSameSuitAllCards // todo testing
+    public class IsSameSuitAllCards
         : IIsSameSuitAllCards
     {
-        public IsSameSuitAllCards(
-            [NotNull] IEnumerable <ICard> cards)
-        {
-            m_Conditions.AddRange(AddConditions(cards));
-        }
-
         private readonly List <ICondition> m_Conditions = new List <ICondition>();
+
+        [NotNull]
+        public ICard[] Cards
+        {
+            set
+            {
+                IEnumerable <ICondition> addConditions = AddConditions(value);
+                m_Conditions.Clear();
+                m_Conditions.AddRange(addConditions);
+            }
+        }
 
         public bool IsSatisfied()
         {
