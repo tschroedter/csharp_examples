@@ -1,9 +1,9 @@
 ﻿namespace Rules.Logic.Interfaces.Conditions
 {
-    public interface ICondition
+    public interface ICondition <T>
     {
-        int Actual { get; set; }
-        int Threshold { get; set; }
+        T Actual { get; set; }
+        T Threshold { get; set; }
         bool IsSatisfied();
     }
 }

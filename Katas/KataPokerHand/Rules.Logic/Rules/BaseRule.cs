@@ -4,9 +4,9 @@ using Rules.Logic.Interfaces.Conditions;
 
 namespace Rules.Logic.Rules
 {
-    public abstract class BaseRule <T>
+    public abstract class BaseRule <T, TCondition>
     {
-        protected List <ICondition> Conditions { get; } = new List <ICondition>();
+        protected List <ICondition <TCondition>> Conditions { get; } = new List <ICondition <TCondition>>();
 
         public int Priority => GetPriority();
 
@@ -17,7 +17,7 @@ namespace Rules.Logic.Rules
             Conditions.Clear();
         }
 
-        public IEnumerable <ICondition> GetConditions()
+        public IEnumerable <ICondition <TCondition>> GetConditions()
         {
             return Conditions;
         }

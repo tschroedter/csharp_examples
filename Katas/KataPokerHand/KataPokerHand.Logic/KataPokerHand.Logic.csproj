@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsNextCardValue.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsSuitEqual.cs" />
+    <Compile Include="TexasHoldEm\Rules\IPlayerHandInformation.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsStraightFlushRule.cs" />
+    <Compile Include="TexasHoldEm\Rules\PlayerHandInformation.cs" />
+    <Compile Include="TexasHoldEm\Rules\Status.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -59,10 +65,20 @@
       <Project>{aaa182af-5ed1-4d5c-be1f-83e0c47f484d}</Project>
       <Name>PlayinCards.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PlayingCards\PlayingCards.csproj">
+      <Project>{98D9F796-99EB-478C-8DF8-87F58096D6DC}</Project>
+      <Name>PlayingCards</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rules.Logic.Interfaces\Rules.Logic.Interfaces.csproj">
+      <Project>{510514c7-f4dc-48f6-bda8-6cfe4a0d5f34}</Project>
+      <Name>Rules.Logic.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rules.Logic\Rules.Logic.csproj">
+      <Project>{D500D045-A57A-4119-908F-A631169B6756}</Project>
+      <Name>Rules.Logic</Name>
+    </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="TexasHoldEm\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

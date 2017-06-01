@@ -1,9 +1,9 @@
 ﻿namespace Rules.Logic.Conditions
 {
-    public abstract class BaseCondition
+    public abstract class BaseCondition <T>
     {
-        public int Actual { get; set; }
-        public int Threshold { get; set; }
+        public T Actual { get; set; }
+        public T Threshold { get; set; }
 
         public abstract bool IsSatisfied();
     }

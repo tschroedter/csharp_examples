@@ -23,9 +23,9 @@ namespace PlayingCards.Decks.Cards
         [NotNull]
         private readonly ICardValue m_Value;
 
-        public char Suit => m_Suit.AsChar;
+        public char Suit => m_Suit.AsChar; // todo test
 
-        public uint Value => m_Value.Value;
+        public char Value => m_Value.AsChar; // todo test
 
         public IEnumerable <uint> Values => m_Value.Values;
 

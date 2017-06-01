@@ -5,7 +5,7 @@ namespace PlayinCards.Interfaces.Decks.Cards
     public interface ICard
     {
         char Suit { get; }
-        uint Value { get; }
+        char Value { get; }
         IEnumerable <uint> Values { get; }
         bool HasMultipleValues { get; }
     }

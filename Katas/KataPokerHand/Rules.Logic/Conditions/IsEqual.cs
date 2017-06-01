@@ -3,8 +3,8 @@
 namespace Rules.Logic.Conditions
 {
     public class IsEqual
-        : BaseCondition,
-          ICondition
+        : BaseCondition <int>,
+          ICondition <int>
     {
         public override bool IsSatisfied()
         {

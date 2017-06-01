@@ -19,10 +19,11 @@ namespace PlayingCards
             m_Cards.AddRange(cards);
         }
 
-        public IEnumerable <ICard> Cards => m_Cards;
         private readonly StringBuilder m_Builder = new StringBuilder();
 
         private readonly List <ICard> m_Cards = new List <ICard>();
+
+        public IEnumerable <ICard> Cards => m_Cards;
 
         public override string ToString()
         {
