@@ -7,16 +7,17 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
     public class IsNumberOfCardsValid
         : IIsNumberOfCardsValid
     {
-        public IsNumberOfCardsValid(
-            int numberOfCardsRequired,
-            [NotNull] ICard[] cards)
+        [NotNull]
+        public ICard[] Cards
         {
-            NumberOfCardsRequired = numberOfCardsRequired;
-            NumberOfCards = cards.Length;
+            set
+            {
+                NumberOfCards = value.Length;
+            }
         }
 
-        public int NumberOfCardsRequired { get; }
-        public int NumberOfCards { get; }
+        public int NumberOfCardsRequired { get; set; }
+        public int NumberOfCards { get; private set; }
 
         public bool IsSatisfied()
         {

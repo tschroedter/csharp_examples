@@ -12,36 +12,19 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
     [ExcludeFromCodeCoverage]
     internal sealed class IsSameSuitAllCardsTests
     {
-        private IsSameSuitAllCards m_Sut;
-
         [SetUp]
         public void Setup()
         {
             m_Sut = new IsSameSuitAllCards();
         }
 
-        [Test]
-        public void IsSatisfied_Returns_True_For_All_Cards_Same_Suit()
-        {
-            // Arrange
-            var cards = new List<ICard>();
-
-            cards.Add(new TwoOfClubs());
-            cards.Add(new ThreeOfClubs());
-            cards.Add(new FourOfClubs());
-
-            // Act
-            m_Sut.Cards = cards.ToArray();
-
-            // Assert
-            Assert.True(m_Sut.IsSatisfied());
-        }
+        private IsSameSuitAllCards m_Sut;
 
         [Test]
         public void IsSatisfied_Returns_False_For_Not_All_Cards_Same_Suit()
         {
             // Arrange
-            var cards = new List<ICard>();
+            var cards = new List <ICard>();
 
             cards.Add(new TwoOfClubs());
             cards.Add(new ThreeOfClubs());
@@ -52,6 +35,23 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
 
             // Assert
             Assert.False(m_Sut.IsSatisfied());
+        }
+
+        [Test]
+        public void IsSatisfied_Returns_True_For_All_Cards_Same_Suit()
+        {
+            // Arrange
+            var cards = new List <ICard>();
+
+            cards.Add(new TwoOfClubs());
+            cards.Add(new ThreeOfClubs());
+            cards.Add(new FourOfClubs());
+
+            // Act
+            m_Sut.Cards = cards.ToArray();
+
+            // Assert
+            Assert.True(m_Sut.IsSatisfied());
         }
     }
 }

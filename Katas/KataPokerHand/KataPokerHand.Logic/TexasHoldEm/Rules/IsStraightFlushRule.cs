@@ -58,8 +58,11 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         private void AddConditionsForCards(ICard[] cards)
         {
             // todo factories
-            Conditions.Add(new IsNumberOfCardsValid(NumberOfCardsRequired,
-                                                    cards));
+            Conditions.Add(new IsNumberOfCardsValid
+                           {
+                               NumberOfCardsRequired = NumberOfCardsRequired,
+                               Cards = cards
+                           });
             Conditions.Add(new IsSameSuitAllCards
                            {
                                Cards = cards
