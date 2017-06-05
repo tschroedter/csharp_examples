@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
@@ -8,6 +9,7 @@ using NUnit.Framework;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards;
 using PlayingCards.Decks.Suits;
+using Rules.Logic.Interfaces.Conditions;
 
 namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
 {
@@ -93,8 +95,10 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Sut.Initialize(m_Info);
 
             // Assert
+            IEnumerable <ICondition> actual = m_Sut.GetConditions();
             Assert.AreEqual(1,
-                            m_Sut.GetConditions().Count()); // todo maybe there is a better test
+                            actual.Count());
+            Assert.True(actual.First() is IIsNumberOfCardsValid);
         }
     }
 }

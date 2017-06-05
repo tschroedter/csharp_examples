@@ -62,6 +62,7 @@
     <Compile Include="TexasHoldEm\Rules\IsFullHouseRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsNumberOfCardsIncorrectRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsStraightFlushRule.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsStraightRule.cs" />
     <Compile Include="TexasHoldEm\Rules\PlayerHandInformation.cs" />
     <Compile Include="TexasHoldEm\Rules\RulesPriority.cs" />
   </ItemGroup>

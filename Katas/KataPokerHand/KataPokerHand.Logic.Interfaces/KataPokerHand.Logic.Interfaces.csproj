@@ -53,6 +53,7 @@
     <Compile Include="TexasHoldEm\Conditions\IIsNumberOfCardsValid.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsSameSuitAllCards.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsStraight.cs" />
+    <Compile Include="TexasHoldEm\Rules\IIsNumberOfCardsIncorrectRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IPlayerHandInformation.cs" />
     <Compile Include="TexasHoldEm\Rules\Status.cs" />
   </ItemGroup>
