@@ -11,7 +11,8 @@ namespace Playing.Tests.Decks.Cards.Clubs
         : BaseCardTests <SevenOfClubs>
     {
         public SevenOfClubsTests()
-            : base("7C", CardRank.Seven)
+            : base("7C",
+                   CardRank.Seven)
         {
         }
     }

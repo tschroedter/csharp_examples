@@ -7,15 +7,15 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
     public class IsFourCardsSameValue
         : IIsFourCardsSameValue
     {
-        [NotNull]
-        private readonly IFourCardsWithSameValueValidator m_Validator;
-
         public IsFourCardsSameValue(
             [NotNull] IFourCardsWithSameValueValidator validator)
         {
             m_Validator = validator;
             Cards = new ICard[0];
         }
+
+        [NotNull]
+        private readonly IFourCardsWithSameValueValidator m_Validator;
 
         public bool IsSatisfied()
         {

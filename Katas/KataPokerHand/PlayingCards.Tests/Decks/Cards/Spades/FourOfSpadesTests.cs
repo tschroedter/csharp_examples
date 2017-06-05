@@ -11,7 +11,8 @@ namespace Playing.Tests.Decks.Cards.Spades
         : BaseCardTests <FourOfSpades>
     {
         public FourOfSpadesTests()
-            : base("4S", CardRank.Four)
+            : base("4S",
+                   CardRank.Four)
         {
         }
     }

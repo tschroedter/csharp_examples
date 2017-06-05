@@ -72,7 +72,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
 
             // Assert
             Assert.AreEqual(UnknownSuit.Unknown,
-                            actual.Suit); 
+                            actual.Suit);
         }
 
         [Test]
@@ -83,18 +83,6 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             // Assert
             Assert.AreEqual(( int ) RulesPriority.NumberOfCardsIncorrect,
                             m_Sut.GetPriority());
-        }
-
-        [Test]
-        public void Initialize_Adds_Condition_For_Cards_Empty()
-        {
-            // Arrange
-            // Act
-            m_Sut.Initialize(m_Info);
-
-            // Assert
-            Assert.AreEqual(1,
-                            m_Sut.GetConditions().Count()); // todo maybe there is a better test
         }
 
         [Test]

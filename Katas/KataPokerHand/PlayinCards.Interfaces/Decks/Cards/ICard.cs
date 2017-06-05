@@ -11,6 +11,7 @@ namespace PlayinCards.Interfaces.Decks.Cards
         IEnumerable <uint> Values { get; }
         bool HasMultipleValues { get; }
         CardRank Rank { get; }
+
         [NotNull]
         ISuit GetSuit(); // todo code smell Suit as char and class
     }

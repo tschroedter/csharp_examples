@@ -5,6 +5,6 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         Unknown,
         NumberOfCardsIncorrect,
         StraightFlush,
-        FourOfAKind,
+        FourOfAKind
     }
 }

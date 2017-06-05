@@ -11,7 +11,8 @@ namespace Playing.Tests.Decks.Cards.Diamonds
         : BaseCardTests <TwoOfDiamonds>
     {
         public TwoOfDiamondsTests()
-            : base("2D", CardRank.Two)
+            : base("2D",
+                   CardRank.Two)
         {
         }
     }

@@ -5,6 +5,6 @@
         Unknown,
         NumberOfCardsIncorrect,
         StraightFlush,
-        FourOfAKind,
+        FourOfAKind
     }
 }

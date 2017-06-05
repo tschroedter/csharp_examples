@@ -11,7 +11,8 @@ namespace Playing.Tests.Decks.Cards.Hearts
         : BaseCardTests <QueenOfHearts>
     {
         public QueenOfHeartsTests()
-            : base("QH", CardRank.Queen)
+            : base("QH",
+                   CardRank.Queen)
         {
         }
     }

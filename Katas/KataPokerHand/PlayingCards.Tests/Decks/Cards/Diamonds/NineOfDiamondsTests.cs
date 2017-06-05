@@ -1,7 +1,7 @@
 using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
-using PlayingCards.Decks.Cards.Diamonds;
 using PlayinCards.Interfaces.Decks.Cards;
+using PlayingCards.Decks.Cards.Diamonds;
 
 namespace Playing.Tests.Decks.Cards.Diamonds
 {
@@ -11,7 +11,8 @@ namespace Playing.Tests.Decks.Cards.Diamonds
         : BaseCardTests <NineOfDiamonds>
     {
         public NineOfDiamondsTests()
-            : base("9D", CardRank.Nine)
+            : base("9D",
+                   CardRank.Nine)
         {
         }
     }

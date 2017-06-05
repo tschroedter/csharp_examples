@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
-using PlayingCards.Decks.Cards.Clubs;
 using PlayinCards.Interfaces.Decks.Cards;
+using PlayingCards.Decks.Cards.Clubs;
 
 namespace Playing.Tests.Decks.Cards.Clubs
 {
@@ -11,7 +11,8 @@ namespace Playing.Tests.Decks.Cards.Clubs
         : BaseCardTests <ThreeOfClubs>
     {
         public ThreeOfClubsTests()
-            : base("3C", CardRank.Three)
+            : base("3C",
+                   CardRank.Three)
         {
         }
     }

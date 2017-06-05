@@ -11,7 +11,8 @@ namespace Playing.Tests.Decks.Cards.Spades
         : BaseCardTests <TwoOfSpades>
     {
         public TwoOfSpadesTests()
-            : base("2S", CardRank.Two)
+            : base("2S",
+                   CardRank.Two)
         {
         }
     }

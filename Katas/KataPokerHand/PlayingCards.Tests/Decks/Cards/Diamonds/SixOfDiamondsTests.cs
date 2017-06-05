@@ -11,7 +11,8 @@ namespace Playing.Tests.Decks.Cards.Diamonds
         : BaseCardTests <SixOfDiamonds>
     {
         public SixOfDiamondsTests()
-            : base("6D", CardRank.Six)
+            : base("6D",
+                   CardRank.Six)
         {
         }
     }

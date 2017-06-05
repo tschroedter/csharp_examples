@@ -1,6 +1,6 @@
 ﻿namespace PlayinCards.Interfaces.Decks.Cards
 {
-    public enum CardRank    // todo maybe use this
+    public enum CardRank // todo maybe use this
     {
         Unknown,
         Two,

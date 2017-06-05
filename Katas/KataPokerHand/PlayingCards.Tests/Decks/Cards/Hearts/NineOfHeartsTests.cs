@@ -11,7 +11,8 @@ namespace Playing.Tests.Decks.Cards.Hearts
         : BaseCardTests <NineOfHearts>
     {
         public NineOfHeartsTests()
-            : base("9H", CardRank.Nine)
+            : base("9H",
+                   CardRank.Nine)
         {
         }
     }

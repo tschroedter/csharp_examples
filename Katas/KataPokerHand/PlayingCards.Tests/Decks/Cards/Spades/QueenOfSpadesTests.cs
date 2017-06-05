@@ -11,7 +11,8 @@ namespace Playing.Tests.Decks.Cards.Spades
         : BaseCardTests <QueenOfSpades>
     {
         public QueenOfSpadesTests()
-            : base("QS", CardRank.Queen)
+            : base("QS",
+                   CardRank.Queen)
         {
         }
     }

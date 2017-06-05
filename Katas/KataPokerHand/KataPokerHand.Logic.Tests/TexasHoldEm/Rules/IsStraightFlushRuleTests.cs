@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.TexasHoldEm.Rules;
@@ -10,6 +11,8 @@ using PlayinCards.Interfaces;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;
 using PlayingCards.Decks.Cards.Hearts;
+using PlayingCards.Decks.Suits;
+using Rules.Logic.Interfaces.Conditions;
 
 namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
 {
@@ -26,8 +29,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Info.PlayerHand.Returns(m_Hand);
             m_Hand.Cards.Returns(m_Cards);
 
-            m_Sut = new IsStraightFlushRule(new IsNumberOfCardsValid(),
-                                            new IsSameSuitAllCards(),
+            m_Sut = new IsStraightFlushRule(new IsSameSuitAllCards(),
                                             new IsStraight());
         }
 
@@ -85,8 +87,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             IPlayerHandInformation actual = m_Sut.Apply(m_Info);
 
             // Assert
-            Assert.AreEqual("6C",
-                            actual.HighestCard.ToString());
+            Assert.True(actual.HighestCard is SixOfClubs);
         }
 
         [Test]
@@ -113,8 +114,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             IPlayerHandInformation actual = m_Sut.Apply(m_Info);
 
             // Assert
-            Assert.AreEqual('C',
-                            actual.Suit.AsChar);
+            Assert.True(actual.Suit is Club);
         }
 
         [Test]
@@ -128,18 +128,6 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
         }
 
         [Test]
-        public void Initialize_Adds_Condition_For_Cards_Empty()
-        {
-            // Arrange
-            // Act
-            m_Sut.Initialize(m_Info);
-
-            // Assert
-            Assert.AreEqual(1,
-                            m_Sut.GetConditions().Count()); // todo maybe there is a better test
-        }
-
-        [Test]
         public void Initialize_Adds_Conditions()
         {
             // Arrange
@@ -149,8 +137,11 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Sut.Initialize(m_Info);
 
             // Assert
-            Assert.AreEqual(3,
-                            m_Sut.GetConditions().Count()); // todo maybe there is a better test
+            IEnumerable <ICondition> actual = m_Sut.GetConditions();
+            Assert.AreEqual(2,
+                            actual.Count());
+            Assert.True(actual.ElementAt(0) is IIsSameSuitAllCards);
+            Assert.True(actual.ElementAt(1) is IIsStraight);
         }
 
         [Test]

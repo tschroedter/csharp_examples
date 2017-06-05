@@ -2,7 +2,6 @@
 using JetBrains.Annotations;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
-using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards;
 using PlayingCards.Decks.Suits;
@@ -16,26 +15,18 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
           IRule <IPlayerHandInformation>
     {
         public IsStraightFlushRule(
-            [NotNull] IIsNumberOfCardsValid valid,
             [NotNull] IIsSameSuitAllCards same,
             [NotNull] IIsStraight straight)
         {
-            m_Valid = valid;
             m_Same = same;
             m_Straight = straight;
         }
-
-        [NotNull]
-        private const int NumberOfCardsRequired = 5;
 
         [NotNull]
         private readonly IIsSameSuitAllCards m_Same;
 
         [NotNull]
         private readonly IIsStraight m_Straight;
-
-        [NotNull]
-        private readonly IIsNumberOfCardsValid m_Valid;
 
         public override IPlayerHandInformation Apply(IPlayerHandInformation info)
         {
@@ -60,36 +51,16 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         {
             ICard[] cards = info.PlayerHand.Cards as ICard[] ?? info.PlayerHand.Cards.ToArray();
 
-            if ( !cards.Any() )
-            {
-                AddConditionsForCardsEmpty();
-            }
-            else
-            {
-                AddConditionsForCards(cards);
-            }
-        }
-
-        public override int GetPriority()
-        {
-            return (int)RulesPriority.StraightFlush;
-        }
-
-        private void AddConditionsForCards(ICard[] cards)
-        {
-            m_Valid.NumberOfCardsRequired = NumberOfCardsRequired;
-            m_Valid.Cards = cards;
             m_Same.Cards = cards;
             m_Straight.Cards = cards;
 
-            Conditions.Add(m_Valid);
             Conditions.Add(m_Same);
             Conditions.Add(m_Straight);
         }
 
-        private void AddConditionsForCardsEmpty()
+        public override int GetPriority()
         {
-            Conditions.Add(new IsAlwaysFalse());
+            return ( int ) RulesPriority.StraightFlush;
         }
     }
 }

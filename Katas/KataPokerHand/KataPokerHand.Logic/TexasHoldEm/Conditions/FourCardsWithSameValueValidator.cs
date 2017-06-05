@@ -16,16 +16,16 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
         }
 
         [NotNull]
-        public IEnumerable<ICard> Cards { get; set; }
+        public IEnumerable <ICard> Cards { get; set; }
 
         public bool IsValid()
         {
-            IEnumerable<CardRank> values = Cards.Select(x => x.Rank);
+            IEnumerable <CardRank> values = Cards.Select(x => x.Rank);
 
-            IEnumerable<CardRank> cardRanks = values as CardRank[] ?? values.ToArray();
-            IEnumerable<IGrouping<CardRank, CardRank>> grouped = cardRanks.GroupBy(x => x);
+            IEnumerable <CardRank> cardRanks = values as CardRank[] ?? values.ToArray();
+            IEnumerable <IGrouping <CardRank, CardRank>> grouped = cardRanks.GroupBy(x => x);
 
-            if (grouped.Count() != 2)
+            if ( grouped.Count() != 2 )
             {
                 return false;
             }
@@ -43,7 +43,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
                 return true;
             }
 
-            if (cardRankTwo)
+            if ( cardRankTwo )
             {
                 FourCardsRanks = cardRanks.Last();
                 OtherCard = Cards.First(x => x.Rank == cardRanks.First());
@@ -60,11 +60,11 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 
         private bool AreThereFourCardsWithSameRank(
             CardRank cardRank,
-            [NotNull] IEnumerable<CardRank> cardRanks)
+            [NotNull] IEnumerable <CardRank> cardRanks)
         {
-            IEnumerable<CardRank> countSecond = cardRanks.Where(x => x == cardRank);
+            IEnumerable <CardRank> countSecond = cardRanks.Where(x => x == cardRank);
 
-            if (countSecond.Count() == 4)
+            if ( countSecond.Count() == 4 )
             {
                 return true;
             }

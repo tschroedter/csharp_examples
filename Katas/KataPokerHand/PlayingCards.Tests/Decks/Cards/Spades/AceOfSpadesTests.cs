@@ -11,7 +11,8 @@ namespace Playing.Tests.Decks.Cards.Spades
         : BaseCardTests <AceOfSpades>
     {
         public AceOfSpadesTests()
-            : base("AS", CardRank.Ace)
+            : base("AS",
+                   CardRank.Ace)
         {
         }
     }

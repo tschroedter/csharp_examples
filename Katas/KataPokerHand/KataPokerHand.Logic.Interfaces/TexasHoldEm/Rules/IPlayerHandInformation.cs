@@ -9,11 +9,15 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules
     {
         [NotNull]
         IPlayerHand PlayerHand { get; }
+
         Status Status { get; set; }
+
         [NotNull]
         ISuit Suit { get; set; }
+
         [NotNull]
         ICard HighestCard { get; set; }
+
         CardRank Rank { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.TexasHoldEm.Rules;
@@ -11,7 +12,7 @@ using PlayingCards.Decks.Cards.Clubs;
 using PlayingCards.Decks.Cards.Diamonds;
 using PlayingCards.Decks.Cards.Hearts;
 using PlayingCards.Decks.Cards.Spades;
-using System.Linq;
+using Rules.Logic.Interfaces.Conditions;
 
 namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
 {
@@ -29,8 +30,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Hand.Cards.Returns(m_Cards);
 
             var validator = new FourCardsWithSameValueValidator();
-            m_Sut = new IsFourOfAKindRule(new IsNumberOfCardsValid(),
-                                          new IsFourCardsSameValue(validator),
+            m_Sut = new IsFourOfAKindRule(new IsFourCardsSameValue(validator),
                                           validator);
         }
 
@@ -39,26 +39,38 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
         private List <ICard> m_Cards;
         private IPlayerHand m_Hand;
 
+        private ICard[] CreateCardsWithFourSameValue()
+        {
+            return new ICard[]
+                   {
+                       new TwoOfClubs(),
+                       new TwoOfDiamonds(),
+                       new TwoOfHearts(),
+                       new TwoOfSpades(),
+                       new AceOfHearts()
+                   };
+        }
+
+        private ICard[] CreateCardsWithFourDifferentValue()
+        {
+            return new ICard[]
+                   {
+                       new AceOfHearts(),
+                       new TwoOfClubs(),
+                       new TwoOfDiamonds(),
+                       new TwoOfHearts(),
+                       new KingOfSpades()
+                   };
+        }
+
         [Test]
         public void GetPriority_Returns_Value()
         {
             // Arrange
             // Act
             // Assert
-            Assert.AreEqual((int)RulesPriority.FourOfAKind,
+            Assert.AreEqual(( int ) RulesPriority.FourOfAKind,
                             m_Sut.GetPriority());
-        }
-
-        [Test]
-        public void Initialize_Adds_Condition_For_Cards_Empty()
-        {
-            // Arrange
-            // Act
-            m_Sut.Initialize(m_Info);
-
-            // Assert
-            Assert.AreEqual(1,
-                            m_Sut.GetConditions().Count()); // todo maybe there is a better test
         }
 
         [Test]
@@ -71,8 +83,11 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Sut.Initialize(m_Info);
 
             // Assert
-            Assert.AreEqual(2,
-                            m_Sut.GetConditions().Count()); // todo maybe there is a better test
+            IEnumerable <ICondition> actual = m_Sut.GetConditions();
+            Assert.AreEqual(1,
+                            actual.Count());
+
+            Assert.True(actual.First() is IIsFourCardsSameValue);
         }
 
         [Test]
@@ -98,29 +113,5 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             // Assert
             Assert.True(m_Sut.IsValid());
         }
-
-        private ICard[] CreateCardsWithFourSameValue()
-        {
-            return new ICard[]
-                   {
-                       new TwoOfClubs(),
-                       new TwoOfDiamonds(),
-                       new TwoOfHearts(),
-                       new TwoOfSpades(),
-                       new AceOfHearts()
-                   };
-        }
-        private ICard[] CreateCardsWithFourDifferentValue()
-        {
-            return new ICard[]
-                   {
-                       new AceOfHearts(),
-                       new TwoOfClubs(),
-                       new TwoOfDiamonds(),
-                       new TwoOfHearts(),
-                       new KingOfSpades()
-                   };
-        }
-
     }
 }

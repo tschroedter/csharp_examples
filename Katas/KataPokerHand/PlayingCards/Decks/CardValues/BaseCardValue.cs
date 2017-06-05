@@ -4,7 +4,6 @@ using System.Linq;
 using JetBrains.Annotations;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayinCards.Interfaces.Decks.CardValues;
-using PlayingCards.Decks.Cards;
 
 namespace PlayingCards.Decks.CardValues
 {
@@ -35,7 +34,7 @@ namespace PlayingCards.Decks.CardValues
             AsChar = name [ 0 ];
             Values = values;
             Value = values [ 0 ];
-            Rank = rank;    // todo testing
+            Rank = rank; // todo testing
         }
 
         [NotNull]

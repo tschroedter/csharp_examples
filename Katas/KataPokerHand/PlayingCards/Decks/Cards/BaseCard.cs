@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using JetBrains.Annotations;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayinCards.Interfaces.Decks.CardValues;
@@ -18,17 +17,18 @@ namespace PlayingCards.Decks.Cards
             m_Value = new TCardValue();
         }
 
-        public CardRank Rank => m_Value.Rank;
-        public ISuit GetSuit()
-        {
-            return m_Suit;  // todo testing
-        }
-
         [NotNull]
         private readonly ISuit m_Suit;
 
         [NotNull]
         private readonly ICardValue m_Value;
+
+        public CardRank Rank => m_Value.Rank;
+
+        public ISuit GetSuit()
+        {
+            return m_Suit; // todo testing
+        }
 
         public char Suit => m_Suit.AsChar; // todo test
 
