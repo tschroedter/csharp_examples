@@ -1,3 +1,5 @@
+using PlayinCards.Interfaces.Decks.Cards;
+
 namespace PlayingCards.Decks.CardValues
 {
     public class Jack
@@ -8,7 +10,8 @@ namespace PlayingCards.Decks.CardValues
                    new[]
                    {
                        10u
-                   })
+                   },
+                   CardRank.Jack)
         {
         }
     }

@@ -1,16 +1,17 @@
 using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
 using PlayingCards.Decks.Cards;
+using PlayinCards.Interfaces.Decks.Cards;
 
 namespace Playing.Tests.Decks.Cards
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
     internal sealed class UnknownCardTests
-        : BaseClubsTests <UnknownCard>
+        : BaseCardTests <UnknownCard>
     {
         public UnknownCardTests()
-            : base("UU")
+            : base("UU", CardRank.Unknown)
         {
         }
     }

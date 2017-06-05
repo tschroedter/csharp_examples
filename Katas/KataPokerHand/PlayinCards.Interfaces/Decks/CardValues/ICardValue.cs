@@ -1,3 +1,5 @@
+using PlayinCards.Interfaces.Decks.Cards;
+
 namespace PlayinCards.Interfaces.Decks.CardValues
 {
     public interface ICardValue
@@ -6,5 +8,6 @@ namespace PlayinCards.Interfaces.Decks.CardValues
         uint[] Values { get; }
         uint Value { get; }
         char AsChar { get; }
+        CardRank Rank { get; }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using JetBrains.Annotations;
+using PlayinCards.Interfaces.Decks.Suits;
 
 namespace PlayinCards.Interfaces.Decks.Cards
 {
@@ -8,5 +10,8 @@ namespace PlayinCards.Interfaces.Decks.Cards
         char Value { get; }
         IEnumerable <uint> Values { get; }
         bool HasMultipleValues { get; }
+        CardRank Rank { get; }
+        [NotNull]
+        ISuit GetSuit(); // todo code smell Suit as char and class
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using JetBrains.Annotations;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayinCards.Interfaces.Decks.CardValues;
@@ -15,6 +16,12 @@ namespace PlayingCards.Decks.Cards
         {
             m_Suit = new TSuit();
             m_Value = new TCardValue();
+        }
+
+        public CardRank Rank => m_Value.Rank;
+        public ISuit GetSuit()
+        {
+            return m_Suit;  // todo testing
         }
 
         [NotNull]

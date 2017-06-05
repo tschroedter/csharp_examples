@@ -1,3 +1,5 @@
+using PlayinCards.Interfaces.Decks.Cards;
+
 namespace PlayingCards.Decks.CardValues
 {
     public class Ace
@@ -9,7 +11,8 @@ namespace PlayingCards.Decks.CardValues
                    {
                        11u,
                        1u
-                   })
+                   },
+                   CardRank.Ace)
         {
         }
     }

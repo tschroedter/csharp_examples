@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
+using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Spades;
 
 namespace Playing.Tests.Decks.Cards.Spades
@@ -7,10 +8,10 @@ namespace Playing.Tests.Decks.Cards.Spades
     [TestFixture]
     [ExcludeFromCodeCoverage]
     internal sealed class FourOfSpadesTests
-        : BaseClubsTests <FourOfSpades>
+        : BaseCardTests <FourOfSpades>
     {
         public FourOfSpadesTests()
-            : base("4S")
+            : base("4S", CardRank.Four)
         {
         }
     }

@@ -39,17 +39,18 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
 
         public override IPlayerHandInformation Apply(IPlayerHandInformation info)
         {
-            info.Status = Status.StraightFlush;
-            info.Suit = UnknownSuit.Unknown.AsChar;
-            info.HighestCard = UnknownCard.Unknown.Value;
+            info.Status = Status.Unknown;
+            info.Suit = UnknownSuit.Unknown;
+            info.HighestCard = UnknownCard.Unknown;
 
             if ( !info.PlayerHand.Cards.Any() )
             {
                 return info;
             }
 
-            info.Suit = info.PlayerHand.Cards.First().Suit; // todo not sure if more enums
-            info.HighestCard = info.PlayerHand.Cards.Max(x => x.Values.First()); // todo testing
+            info.Status = Status.StraightFlush;
+            info.Suit = info.PlayerHand.Cards.First().GetSuit();
+            info.HighestCard = info.PlayerHand.Cards.OrderBy(x => x.Rank).Last();
 
             return info;
         }
@@ -71,7 +72,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
 
         public override int GetPriority()
         {
-            return 2;
+            return (int)RulesPriority.StraightFlush;
         }
 
         private void AddConditionsForCards(ICard[] cards)

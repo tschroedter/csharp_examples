@@ -3,6 +3,8 @@
     public enum Status
     {
         Unknown,
-        StraightFlush
+        NumberOfCardsIncorrect,
+        StraightFlush,
+        FourOfAKind,
     }
 }

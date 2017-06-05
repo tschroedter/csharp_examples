@@ -47,14 +47,21 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TexasHoldEm\Conditions\BaseCardCondition.cs" />
+    <Compile Include="TexasHoldEm\Conditions\FourCardsWithSameValueValidator.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IFourCardsWithSameValueValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsAlwaysFalse.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsNextCardValue.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsSuitEqual.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsSameSuitAllCards.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsNumberOfCardsValid.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsStraight.cs" />
+    <Compile Include="TexasHoldEm\Rules\IIsFourCardsSameValue.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsFourCardsSameValue.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsFourOfAKindRule.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsNumberOfCardsIncorrectRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsStraightFlushRule.cs" />
     <Compile Include="TexasHoldEm\Rules\PlayerHandInformation.cs" />
+    <Compile Include="TexasHoldEm\Rules\RulesPriority.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

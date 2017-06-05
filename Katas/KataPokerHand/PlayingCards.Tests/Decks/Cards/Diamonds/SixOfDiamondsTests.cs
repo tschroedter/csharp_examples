@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
+using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Diamonds;
 
 namespace Playing.Tests.Decks.Cards.Diamonds
@@ -7,10 +8,10 @@ namespace Playing.Tests.Decks.Cards.Diamonds
     [TestFixture]
     [ExcludeFromCodeCoverage]
     internal sealed class SixOfDiamondsTests
-        : BaseClubsTests <SixOfDiamonds>
+        : BaseCardTests <SixOfDiamonds>
     {
         public SixOfDiamondsTests()
-            : base("6D")
+            : base("6D", CardRank.Six)
         {
         }
     }

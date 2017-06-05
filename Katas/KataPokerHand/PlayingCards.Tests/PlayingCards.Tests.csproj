@@ -95,7 +95,7 @@
     <Compile Include="Decks\Cards\Spades\TwoOfSpadesTests.cs" />
     <Compile Include="DeckTests.cs" />
     <Compile Include="Decks\Cards\Clubs\AceOfClubsTests.cs" />
-    <Compile Include="Decks\Cards\BaseClubsTests.cs" />
+    <Compile Include="Decks\Cards\BaseCardTests.cs" />
     <Compile Include="Decks\Cards\Clubs\EightOfClubsTests.cs" />
     <Compile Include="Decks\Cards\Clubs\FiveOfClubsTests.cs" />
     <Compile Include="Decks\Cards\Clubs\FourOfClubsTests.cs" />

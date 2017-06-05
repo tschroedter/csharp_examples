@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
 using NUnit.Framework;
+using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.CardValues;
 
 namespace Playing.Tests.Decks.CardValues
@@ -15,9 +16,11 @@ namespace Playing.Tests.Decks.CardValues
         {
             public BaseCardValueTest(
                 [NotNull] string name,
-                [NotNull] uint[] values)
+                [NotNull] uint[] values,
+                CardRank rank)
                 : base(name,
-                       values)
+                       values,
+                       rank)
             {
             }
         }
@@ -33,7 +36,8 @@ namespace Playing.Tests.Decks.CardValues
                                                                           new[]
                                                                           {
                                                                               1u
-                                                                          }));
+                                                                          },
+                                                                          CardRank.Two));
         }
 
         [Test]
@@ -44,7 +48,8 @@ namespace Playing.Tests.Decks.CardValues
             // Assert
             Assert.Throws <ArgumentException>(() => new BaseCardValueTest(
                                                                           "2",
-                                                                          new uint[0]));
+                                                                          new uint[0],
+                                                                          CardRank.Two));
         }
     }
 }

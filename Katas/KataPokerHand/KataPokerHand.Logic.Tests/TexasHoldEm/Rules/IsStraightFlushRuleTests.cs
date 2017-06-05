@@ -85,8 +85,8 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             IPlayerHandInformation actual = m_Sut.Apply(m_Info);
 
             // Assert
-            Assert.AreEqual(6u,
-                            actual.HighestCard); // todo enum for suits
+            Assert.AreEqual("6C",
+                            actual.HighestCard.ToString());
         }
 
         [Test]
@@ -114,7 +114,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
 
             // Assert
             Assert.AreEqual('C',
-                            actual.Suit); // todo enum for suits
+                            actual.Suit.AsChar);
         }
 
         [Test]
@@ -123,7 +123,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             // Arrange
             // Act
             // Assert
-            Assert.AreEqual(2,
+            Assert.AreEqual(( int ) RulesPriority.StraightFlush,
                             m_Sut.GetPriority());
         }
 

@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using NUnit.Framework;
+using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;
 
 namespace Playing.Tests.Decks.Cards.Clubs
@@ -7,10 +8,10 @@ namespace Playing.Tests.Decks.Cards.Clubs
     [TestFixture]
     [ExcludeFromCodeCoverage]
     internal sealed class JackOfClubsTests
-        : BaseClubsTests <JackOfClubs>
+        : BaseCardTests <JackOfClubs>
     {
         public JackOfClubsTests()
-            : base("JC")
+            : base("JC", CardRank.Jack)
         {
         }
     }

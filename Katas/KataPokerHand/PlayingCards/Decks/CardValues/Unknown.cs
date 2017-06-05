@@ -1,3 +1,4 @@
+using PlayinCards.Interfaces.Decks.Cards;
 using PlayinCards.Interfaces.Decks.CardValues;
 
 namespace PlayingCards.Decks.CardValues
@@ -10,7 +11,8 @@ namespace PlayingCards.Decks.CardValues
                    new[]
                    {
                        0u
-                   })
+                   },
+                   CardRank.Unknown)
         {
         }
 

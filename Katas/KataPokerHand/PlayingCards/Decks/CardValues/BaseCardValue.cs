@@ -2,7 +2,9 @@ using System;
 using System.Diagnostics;
 using System.Linq;
 using JetBrains.Annotations;
+using PlayinCards.Interfaces.Decks.Cards;
 using PlayinCards.Interfaces.Decks.CardValues;
+using PlayingCards.Decks.Cards;
 
 namespace PlayingCards.Decks.CardValues
 {
@@ -12,7 +14,8 @@ namespace PlayingCards.Decks.CardValues
     {
         protected BaseCardValue(
             [NotNull] string name,
-            [NotNull] uint[] values)
+            [NotNull] uint[] values,
+            CardRank rank)
         {
             if ( string.IsNullOrEmpty(name) )
             {
@@ -32,6 +35,7 @@ namespace PlayingCards.Decks.CardValues
             AsChar = name [ 0 ];
             Values = values;
             Value = values [ 0 ];
+            Rank = rank;    // todo testing
         }
 
         [NotNull]
@@ -43,6 +47,8 @@ namespace PlayingCards.Decks.CardValues
         public uint Value { get; }
 
         public char AsChar { get; }
+
+        public CardRank Rank { get; }
 
         public override string ToString()
         {

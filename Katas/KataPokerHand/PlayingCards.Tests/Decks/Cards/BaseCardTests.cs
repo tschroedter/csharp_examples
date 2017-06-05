@@ -6,17 +6,20 @@ using PlayinCards.Interfaces.Decks.Cards;
 namespace Playing.Tests.Decks.Cards
 {
     [ExcludeFromCodeCoverage]
-    internal class BaseClubsTests <T>
+    internal class BaseCardTests <T>
         where T : ICard, new()
     {
-        protected BaseClubsTests(
-            [NotNull] string expectedValueAndSuite)
+        protected BaseCardTests(
+            [NotNull] string expectedValueAndSuite,
+            CardRank rank)
         {
             m_ExpectedValueAndSuite = expectedValueAndSuite;
+            m_ExpectedRank = rank;
         }
 
         [NotNull]
         private readonly string m_ExpectedValueAndSuite;
+        private CardRank m_ExpectedRank;
 
         [Test]
         public void Constructor_Returns_Instance()
@@ -28,6 +31,18 @@ namespace Playing.Tests.Decks.Cards
             // Assert
             Assert.AreEqual(m_ExpectedValueAndSuite,
                             sut.ToString());
+        }
+
+        [Test]
+        public void Constructor_Sets_Rank()
+        {
+            // Arrange
+            var sut = new T();
+
+            // Act
+            // Assert
+            Assert.AreEqual(m_ExpectedRank,
+                            sut.Rank);
         }
     }
 }
