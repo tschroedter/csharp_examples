@@ -57,6 +57,7 @@
     <Compile Include="TexasHoldEm\Conditions\IsStraight.cs" />
     <Compile Include="TexasHoldEm\Conditions\FullHouseValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsFourCardsSameValue.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsFlushRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFourOfAKindRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFullHouseRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsNumberOfCardsIncorrectRule.cs" />
