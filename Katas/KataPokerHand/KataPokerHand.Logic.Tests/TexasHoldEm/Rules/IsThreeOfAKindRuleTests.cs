@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.TexasHoldEm.Rules;
@@ -10,16 +9,16 @@ using NUnit.Framework;
 using PlayinCards.Interfaces;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;
+using PlayingCards.Decks.Cards.Diamonds;
 using PlayingCards.Decks.Cards.Hearts;
 using PlayingCards.Decks.Cards.Spades;
-using PlayingCards.Decks.Suits;
 using Rules.Logic.Interfaces.Conditions;
 
 namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal class IsFlushRuleTests
+    internal class IsThreeOfAKindRuleTests
     {
         [SetUp]
         public void Setup()
@@ -30,78 +29,87 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Info.PlayerHand.Returns(m_Hand);
             m_Hand.Cards.Returns(m_Cards);
 
-            m_Sut = new IsFlushRule(new IsSameSuitAllCards());
+            var validator = new ThreeCardsWithSameValueValidator();
+            m_Sut = new IsThreeOfAKindRule(new IsThreeOfAKind(validator),
+                                           validator);
         }
 
-        private IsFlushRule m_Sut;
+        private IsThreeOfAKindRule m_Sut;
         private IPlayerHandInformation m_Info;
         private List <ICard> m_Cards;
         private IPlayerHand m_Hand;
 
-        private IEnumerable <ICard> CreateFlush()
+        private ICard[] CreateCardsWithThreeSameValue()
         {
-            var cards = new List <ICard>();
-
-            cards.Add(new TwoOfClubs());
-            cards.Add(new FourOfClubs());
-            cards.Add(new SixOfClubs());
-            cards.Add(new EightOfClubs());
-            cards.Add(new JackOfClubs());
-
-            return cards;
+            return new ICard[]
+                   {
+                       new TwoOfClubs(),
+                       new TwoOfDiamonds(),
+                       new TwoOfHearts(),
+                       new JackOfSpades(),
+                       new AceOfHearts()
+                   };
         }
 
-        private IEnumerable <ICard> CreateNoFlush()
+        private ICard[] CreateCardsWithFourDifferentValue()
         {
-            var cards = new List <ICard>();
-
-            cards.Add(new TwoOfClubs());
-            cards.Add(new FourOfHearts());
-            cards.Add(new SixOfClubs());
-            cards.Add(new EightOfSpades());
-            cards.Add(new JackOfClubs());
-
-            return cards;
+            return new ICard[]
+                   {
+                       new AceOfHearts(),
+                       new TwoOfClubs(),
+                       new TwoOfDiamonds(),
+                       new JackOfHearts(),
+                       new KingOfSpades()
+                   };
         }
 
         [Test]
-        public void Apply_Updates_HighestCard()
+        public void Apply_Updates_Ranks()
         {
             // Arrange
-            m_Cards.AddRange(CreateFlush());
+            m_Cards.AddRange(CreateCardsWithThreeSameValue());
+            m_Sut.Initialize(m_Info);
 
             // Act
             IPlayerHandInformation actual = m_Sut.Apply(m_Info);
 
             // Assert
-            Assert.True(actual.HighestCard is JackOfClubs);
+            Assert.AreEqual(CardRank.Two,
+                            actual.Rank);
         }
 
         [Test]
         public void Apply_Updates_Status()
         {
             // Arrange
-            m_Cards.AddRange(CreateFlush());
+            m_Cards.AddRange(CreateCardsWithThreeSameValue());
+            m_Sut.Initialize(m_Info);
 
             // Act
             IPlayerHandInformation actual = m_Sut.Apply(m_Info);
 
             // Assert
-            Assert.AreEqual(Status.Flush,
+            Assert.AreEqual(Status.ThreeOfAKind,
                             actual.Status);
         }
 
         [Test]
-        public void Apply_Updates_Suit()
+        public void Apply_Updates_ThreeOfAKind()
         {
             // Arrange
-            m_Cards.AddRange(CreateFlush());
+            m_Cards.AddRange(CreateCardsWithThreeSameValue());
+            m_Sut.Initialize(m_Info);
 
             // Act
             IPlayerHandInformation actual = m_Sut.Apply(m_Info);
 
             // Assert
-            Assert.True(actual.Suit is Club);
+            ICard[] fourOfAKind = actual.ThreeOfAKind.ToArray();
+            Assert.AreEqual(3,
+                            fourOfAKind.Length);
+            Assert.True(fourOfAKind [ 0 ] is TwoOfClubs);
+            Assert.True(fourOfAKind [ 1 ] is TwoOfDiamonds);
+            Assert.True(fourOfAKind [ 2 ] is TwoOfHearts);
         }
 
         [Test]
@@ -110,7 +118,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             // Arrange
             // Act
             // Assert
-            Assert.AreEqual(( int ) RulesPriority.Flush,
+            Assert.AreEqual(( int ) RulesPriority.ThreeOfAKind,
                             m_Sut.GetPriority());
         }
 
@@ -118,7 +126,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
         public void Initialize_Adds_Conditions()
         {
             // Arrange
-            m_Cards.AddRange(CreateFlush());
+            m_Cards.AddRange(CreateCardsWithThreeSameValue());
 
             // Act
             m_Sut.Initialize(m_Info);
@@ -127,14 +135,15 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             IEnumerable <ICondition> actual = m_Sut.GetConditions();
             Assert.AreEqual(1,
                             actual.Count());
-            Assert.True(actual.ElementAt(0) is IIsSameSuitAllCards);
+
+            Assert.True(actual.First() is IIsThreeOfAKind);
         }
 
         [Test]
-        public void IsValid_Returns_False_For_NoFlush()
+        public void IsValid_Returns_False_For_Different_Kind()
         {
             // Arrange
-            m_Cards.AddRange(CreateNoFlush());
+            m_Cards.AddRange(CreateCardsWithFourDifferentValue());
             m_Sut.Initialize(m_Info);
 
             // Act
@@ -143,34 +152,10 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
         }
 
         [Test]
-        public void IsValid_Returns_False_For_Not_A_Flush()
+        public void IsValid_Returns_True_For_All_Cards_Same_Kind()
         {
             // Arrange
-            m_Cards.AddRange(CreateNoFlush());
-            m_Sut.Initialize(m_Info);
-
-            // Act
-            // Assert
-            Assert.False(m_Sut.IsValid());
-        }
-
-        [Test]
-        public void IsValid_Returns_True_For_All_Cards_Same_Suit()
-        {
-            // Arrange
-            m_Cards.AddRange(CreateFlush());
-            m_Sut.Initialize(m_Info);
-
-            // Act
-            // Assert
-            Assert.True(m_Sut.IsValid());
-        }
-
-        [Test]
-        public void IsValid_Returns_True_For_StraightFlush()
-        {
-            // Arrange
-            m_Cards.AddRange(CreateFlush());
+            m_Cards.AddRange(CreateCardsWithThreeSameValue());
             m_Sut.Initialize(m_Info);
 
             // Act

@@ -8,6 +8,7 @@
         FourOfAKind,
         FullHouse,
         Flush,
-        Straight
+        Straight,
+        ThreeOfAKind
     }
 }

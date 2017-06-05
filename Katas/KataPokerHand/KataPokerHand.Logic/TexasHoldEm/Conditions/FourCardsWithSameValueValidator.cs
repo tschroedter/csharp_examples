@@ -17,7 +17,6 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
             FourOfAKind = new ICard[0];
         }
 
-        [NotNull]
         public IEnumerable <ICard> Cards { get; set; }
 
         public bool IsValid()

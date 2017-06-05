@@ -57,12 +57,15 @@
     <Compile Include="TexasHoldEm\Conditions\IsStraight.cs" />
     <Compile Include="TexasHoldEm\Conditions\FullHouseValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsFourCardsSameValue.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsThreeOfAKind.cs" />
+    <Compile Include="TexasHoldEm\Conditions\ThreeCardsWithSameValueValidator.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFlushRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFourOfAKindRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFullHouseRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsNumberOfCardsIncorrectRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsStraightFlushRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsStraightRule.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsThreeOfAKindRule.cs" />
     <Compile Include="TexasHoldEm\Rules\PlayerHandInformation.cs" />
     <Compile Include="TexasHoldEm\Rules\RulesPriority.cs" />
   </ItemGroup>

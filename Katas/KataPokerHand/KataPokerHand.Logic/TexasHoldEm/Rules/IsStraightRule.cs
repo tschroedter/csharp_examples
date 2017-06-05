@@ -9,8 +9,8 @@ using Rules.Logic.Rules;
 namespace KataPokerHand.Logic.TexasHoldEm.Rules
 {
     public class IsStraightRule
-        : BaseRule<IPlayerHandInformation>,
-          IRule<IPlayerHandInformation>
+        : BaseRule <IPlayerHandInformation>,
+          IRule <IPlayerHandInformation>
     {
         public IsStraightRule(
             [NotNull] IIsStraight straight)
@@ -41,7 +41,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
 
         public override int GetPriority()
         {
-            return (int)RulesPriority.Straight;
+            return ( int ) RulesPriority.Straight;
         }
     }
 }
