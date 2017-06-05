@@ -17,10 +17,10 @@ namespace Playing.Tests.Decks.Cards
             m_ExpectedRank = rank;
         }
 
+        private readonly CardRank m_ExpectedRank;
+
         [NotNull]
         private readonly string m_ExpectedValueAndSuite;
-
-        private readonly CardRank m_ExpectedRank;
 
         [Test]
         public void Constructor_Returns_Instance()

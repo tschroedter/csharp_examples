@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using JetBrains.Annotations;
 using PlayinCards.Interfaces;
 using PlayinCards.Interfaces.Decks.Cards;
@@ -19,5 +20,14 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules
         ICard HighestCard { get; set; }
 
         CardRank Rank { get; set; }
+
+        [NotNull]
+        IEnumerable <ICard> TwoOfAKind { get; set; }
+
+        [NotNull]
+        IEnumerable <ICard> ThreeOfAKind { get; set; }
+
+        [NotNull]
+        IEnumerable <ICard> FourOfAKind { get; set; }
     }
 }

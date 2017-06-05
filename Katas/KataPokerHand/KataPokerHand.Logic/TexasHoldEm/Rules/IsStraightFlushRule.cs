@@ -3,8 +3,6 @@ using JetBrains.Annotations;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using PlayinCards.Interfaces.Decks.Cards;
-using PlayingCards.Decks.Cards;
-using PlayingCards.Decks.Suits;
 using Rules.Logic.Interfaces.Rules;
 using Rules.Logic.Rules;
 
@@ -30,15 +28,6 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
 
         public override IPlayerHandInformation Apply(IPlayerHandInformation info)
         {
-            info.Status = Status.Unknown;
-            info.Suit = UnknownSuit.Unknown;
-            info.HighestCard = UnknownCard.Unknown;
-
-            if ( !info.PlayerHand.Cards.Any() )
-            {
-                return info;
-            }
-
             info.Status = Status.StraightFlush;
             info.Suit = info.PlayerHand.Cards.First().GetSuit();
             info.HighestCard = info.PlayerHand.Cards.OrderBy(x => x.Rank).Last();

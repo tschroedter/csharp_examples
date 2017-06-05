@@ -1,4 +1,3 @@
-using System.Linq;
 using JetBrains.Annotations;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
@@ -7,50 +6,49 @@ using Rules.Logic.Rules;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Rules
 {
-    public class IsFourOfAKindRule
+    public class IsFullHouseRule
         : BaseRule <IPlayerHandInformation>,
           IRule <IPlayerHandInformation>
     {
-        public IsFourOfAKindRule(
-            [NotNull] IIsFourCardsSameValue same,
-            [NotNull] IFourCardsWithSameValueValidator validator)
+        public IsFullHouseRule(
+            [NotNull] IIsFullHouse fullHouse,
+            [NotNull] IFullHouseValidator validator)
         {
-            m_Same = same;
+            m_FullHouse = fullHouse;
             m_Validator = validator;
         }
 
         [NotNull]
-        private readonly IIsFourCardsSameValue m_Same;
+        private readonly IIsFullHouse m_FullHouse;
 
         [NotNull]
-        private readonly IFourCardsWithSameValueValidator m_Validator;
+        private readonly IFullHouseValidator m_Validator;
 
         public override IPlayerHandInformation Apply(IPlayerHandInformation info)
         {
             m_Validator.Cards = info.PlayerHand.Cards;
-            if ( !m_Validator.IsValid() )
+            if ( m_Validator.IsValid() )
             {
                 return info;
             }
 
-            info.Status = Status.FourOfAKind;
-            info.FourOfAKind = m_Validator.FourOfAKind;
-            info.Rank = m_Validator.FourCardsRanks;
-            info.HighestCard = m_Validator.OtherCard;
+            info.Status = Status.FullHouse;
+            info.TwoOfAKind = m_Validator.TwoOfAKind;
+            info.ThreeOfAKind = m_Validator.ThreeOfAKind;
 
             return info;
         }
 
         public override void Initialize(IPlayerHandInformation info)
         {
-            m_Same.Cards = info.PlayerHand.Cards.ToArray();
+            m_FullHouse.Cards = info.PlayerHand.Cards;
 
-            Conditions.Add(m_Same);
+            Conditions.Add(m_FullHouse);
         }
 
         public override int GetPriority()
         {
-            return ( int ) RulesPriority.FourOfAKind;
+            return ( int ) RulesPriority.FullHouse;
         }
     }
 }

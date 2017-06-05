@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.TexasHoldEm.Rules;
@@ -18,7 +19,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal class IsFourOfAKindTests
+    internal class IsFourOfAKindRuleTests
     {
         [SetUp]
         public void Setup()
@@ -61,6 +62,70 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
                        new TwoOfHearts(),
                        new KingOfSpades()
                    };
+        }
+
+        [Test]
+        public void Apply_Updates_FourOfAKind()
+        {
+            // Arrange
+            m_Cards.AddRange(CreateCardsWithFourSameValue());
+            m_Sut.Initialize(m_Info);
+
+            // Act
+            IPlayerHandInformation actual = m_Sut.Apply(m_Info);
+
+            // Assert
+            ICard[] fourOfAKind = actual.FourOfAKind.ToArray();
+            Assert.AreEqual(4,
+                            fourOfAKind.Length);
+            Assert.True(fourOfAKind [ 0 ] is TwoOfClubs);
+            Assert.True(fourOfAKind [ 1 ] is TwoOfDiamonds);
+            Assert.True(fourOfAKind [ 2 ] is TwoOfHearts);
+            Assert.True(fourOfAKind [ 3 ] is TwoOfSpades);
+        }
+
+        [Test]
+        public void Apply_Updates_HighestCard()
+        {
+            // Arrange
+            m_Cards.AddRange(CreateCardsWithFourSameValue());
+            m_Sut.Initialize(m_Info);
+
+            // Act
+            IPlayerHandInformation actual = m_Sut.Apply(m_Info);
+
+            // Assert
+            Assert.True(actual.HighestCard is AceOfHearts);
+        }
+
+        [Test]
+        public void Apply_Updates_Ranks()
+        {
+            // Arrange
+            m_Cards.AddRange(CreateCardsWithFourSameValue());
+            m_Sut.Initialize(m_Info);
+
+            // Act
+            IPlayerHandInformation actual = m_Sut.Apply(m_Info);
+
+            // Assert
+            Assert.AreEqual(CardRank.Two,
+                            actual.Rank);
+        }
+
+        [Test]
+        public void Apply_Updates_Status()
+        {
+            // Arrange
+            m_Cards.AddRange(CreateCardsWithFourSameValue());
+            m_Sut.Initialize(m_Info);
+
+            // Act
+            IPlayerHandInformation actual = m_Sut.Apply(m_Info);
+
+            // Assert
+            Assert.AreEqual(Status.FourOfAKind,
+                            actual.Status);
         }
 
         [Test]

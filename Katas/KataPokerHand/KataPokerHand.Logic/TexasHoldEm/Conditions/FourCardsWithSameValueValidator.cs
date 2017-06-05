@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards;
 
@@ -13,6 +14,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
         {
             Cards = new ICard[0];
             OtherCard = UnknownCard.Unknown;
+            FourOfAKind = new ICard[0];
         }
 
         [NotNull]
@@ -39,6 +41,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
             if ( cardRankOne )
             {
                 FourCardsRanks = cardRanks.First();
+                FourOfAKind = Cards.Where(x => x.Rank == cardRanks.First()); // todo testing
                 OtherCard = Cards.First(x => x.Rank == cardRanks.Last());
                 return true;
             }
@@ -46,6 +49,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
             if ( cardRankTwo )
             {
                 FourCardsRanks = cardRanks.Last();
+                FourOfAKind = Cards.Where(x => x.Rank == cardRanks.Last()); // todo testing
                 OtherCard = Cards.First(x => x.Rank == cardRanks.First());
                 return true;
             }
@@ -57,6 +61,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
         public ICard OtherCard { get; private set; }
 
         public CardRank FourCardsRanks { get; private set; }
+        public IEnumerable <ICard> FourOfAKind { get; set; }
 
         private bool AreThereFourCardsWithSameRank(
             CardRank cardRank,

@@ -9,24 +9,24 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class IsFourCardsSameValueTests
+    internal sealed class IsFullHouseTests
     {
         [SetUp]
         public void Setup()
         {
-            m_AutoMocker = new NSubstituteAutoMocker <IsFourCardsSameValue>();
+            m_AutoMocker = new NSubstituteAutoMocker <IsFullHouse>();
             m_Sut = m_AutoMocker.ClassUnderTest;
         }
 
-        private NSubstituteAutoMocker <IsFourCardsSameValue> m_AutoMocker;
-        private IsFourCardsSameValue m_Sut;
+        private NSubstituteAutoMocker <IsFullHouse> m_AutoMocker;
+        private IsFullHouse m_Sut;
 
 
         [Test]
         public void IsSatisfied_Calls_Validator()
         {
             // Arrange
-            m_AutoMocker.Get <IFourCardsWithSameValueValidator>().IsValid().Returns(true);
+            m_AutoMocker.Get <IFullHouseValidator>().IsValid().Returns(true);
 
             // Act
             // Assert

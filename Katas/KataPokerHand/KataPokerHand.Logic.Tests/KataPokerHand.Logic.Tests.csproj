@@ -60,10 +60,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TexasHoldEm\Conditions\FourCardsWithSameValueValidatorTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsFourCardsSameValueTests.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsFullHouseTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsNextCardValueTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsSuitEqualTests.cs" />
+    <Compile Include="TexasHoldEm\Conditions\FullHouseValidatorTests.cs" />
     <Compile Include="TexasHoldEm\Rules\IIsNumberOfCardsIncorrectRule.cs" />
-    <Compile Include="TexasHoldEm\Rules\IsFourOfAKindTests.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsFourOfAKindRuleTests.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsFullHouseRuleTests.cs" />
     <Compile Include="TexasHoldEm\Rules\IsNumberOfCardsIncorrectRuleTests.cs" />
     <Compile Include="TexasHoldEm\Rules\IsStraightFlushRuleTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsNumberOfCardsValidTests.cs" />

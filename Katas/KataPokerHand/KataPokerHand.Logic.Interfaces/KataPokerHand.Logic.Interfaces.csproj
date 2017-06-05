@@ -46,7 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IFourCardsWithSameValueValidator.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IFullHouseValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsFourCardsSameValue.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IIsFullHouse.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsNumberOfCardsValid.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsSameSuitAllCards.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsStraight.cs" />

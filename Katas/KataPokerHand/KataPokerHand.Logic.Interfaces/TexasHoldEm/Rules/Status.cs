@@ -5,6 +5,7 @@
         Unknown,
         NumberOfCardsIncorrect,
         StraightFlush,
-        FourOfAKind
+        FourOfAKind,
+        FullHouse
     }
 }
