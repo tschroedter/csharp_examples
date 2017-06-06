@@ -2,13 +2,11 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using PlayinCards.Interfaces.Decks.Cards;
 
-namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions
+namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators
 {
     public interface IFourCardsWithSameValueValidator
+        : IValidator
     {
-        [NotNull]
-        IEnumerable <ICard> Cards { get; set; }
-
         [NotNull]
         ICard OtherCard { get; }
 
@@ -16,7 +14,5 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions
 
         [NotNull]
         IEnumerable <ICard> FourOfAKind { get; set; }
-
-        bool IsValid();
     }
 }

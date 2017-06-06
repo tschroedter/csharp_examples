@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
-using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators;
 using PlayinCards.Interfaces.Decks.Cards;
 
-namespace KataPokerHand.Logic.TexasHoldEm.Conditions
+namespace KataPokerHand.Logic.TexasHoldEm.Conditions.Validators
 {
     public class FullHouseValidator
         : IFullHouseValidator

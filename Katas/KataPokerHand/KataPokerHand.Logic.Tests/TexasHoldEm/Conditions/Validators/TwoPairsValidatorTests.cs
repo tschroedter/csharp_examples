@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using KataPokerHand.Logic.TexasHoldEm.Conditions;
+using KataPokerHand.Logic.TexasHoldEm.Conditions.Validators;
 using NUnit.Framework;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;
@@ -8,38 +8,38 @@ using PlayingCards.Decks.Cards.Diamonds;
 using PlayingCards.Decks.Cards.Hearts;
 using PlayingCards.Decks.Cards.Spades;
 
-namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
+namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class ThreeCardsWithSameValueValidatorTests
+    internal sealed class TwoPairsValidatorTests
     {
         [SetUp]
         public void Setup()
         {
-            m_Sut = new ThreeCardsWithSameValueValidator();
+            m_Sut = new TwoPairsValidator();
         }
 
-        private ThreeCardsWithSameValueValidator m_Sut;
+        private TwoPairsValidator m_Sut;
 
-        private ICard[] CreateCardsWithThreeSameValue()
+        private ICard[] CreateCardsWithTwoPairs()
         {
             return new ICard[]
                    {
                        new TwoOfClubs(),
                        new TwoOfDiamonds(),
-                       new TwoOfHearts(),
-                       new JackOfSpades(),
+                       new ThreeOfHearts(),
+                       new ThreeOfSpades(),
                        new AceOfHearts()
                    };
         }
 
-        private ICard[] CreateCardsWithNotThreeSameValue()
+        private ICard[] CreateCardsWithNoPairs()
         {
             return new ICard[]
                    {
                        new TwoOfClubs(),
-                       new TwoOfDiamonds(),
+                       new ThreeOfDiamonds(),
                        new NineOfHearts(),
                        new JackOfSpades(),
                        new AceOfHearts()
@@ -47,10 +47,10 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
         }
 
         [Test]
-        public void IsSatisfied_Returns_False_For_Not_Three_Cards_Same_Value()
+        public void IsSatisfied_Returns_False_For_No_Two_Pairs()
         {
             // Arrange
-            m_Sut.Cards = CreateCardsWithNotThreeSameValue();
+            m_Sut.Cards = CreateCardsWithNoPairs();
 
             // Act
             // Assert
@@ -58,10 +58,10 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
         }
 
         [Test]
-        public void IsSatisfied_Returns_True_For_Three_Cards_Same_Value()
+        public void IsSatisfied_Returns_True_For_Two_Pairs()
         {
             // Arrange
-            m_Sut.Cards = CreateCardsWithThreeSameValue();
+            m_Sut.Cards = CreateCardsWithTwoPairs();
 
             // Act
             // Assert
@@ -69,35 +69,37 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
         }
 
         [Test]
-        public void IsSatisfied_Sets_Rank()
+        public void IsSatisfied_Sets_FirstPairOfCards()
         {
             // Arrange
-            m_Sut.Cards = CreateCardsWithThreeSameValue();
+            m_Sut.Cards = CreateCardsWithTwoPairs();
 
             // Act
             m_Sut.IsValid();
 
             // Assert
-            Assert.AreEqual(CardRank.Two,
-                            m_Sut.Rank);
-        }
-
-        [Test]
-        public void IsSatisfied_Sets_ThreeOfAKind()
-        {
-            // Arrange
-            m_Sut.Cards = CreateCardsWithThreeSameValue();
-
-            // Act
-            m_Sut.IsValid();
-
-            // Assert
-            ICard[] actual = m_Sut.ThreeOfAKind.ToArray();
-            Assert.AreEqual(3,
+            ICard[] actual = m_Sut.FirstPairOfCards.ToArray();
+            Assert.AreEqual(2,
                             actual.Length);
             Assert.True(actual [ 0 ] is TwoOfClubs);
             Assert.True(actual [ 1 ] is TwoOfDiamonds);
-            Assert.True(actual [ 2 ] is TwoOfHearts);
+        }
+
+        [Test]
+        public void IsSatisfied_Sets_SecondPairOfCards()
+        {
+            // Arrange
+            m_Sut.Cards = CreateCardsWithTwoPairs();
+
+            // Act
+            m_Sut.IsValid();
+
+            // Assert
+            ICard[] actual = m_Sut.SecondPairOfCards.ToArray();
+            Assert.AreEqual(2,
+                            actual.Length);
+            Assert.True(actual [ 0 ] is ThreeOfHearts);
+            Assert.True(actual [ 1 ] is ThreeOfSpades);
         }
     }
 }

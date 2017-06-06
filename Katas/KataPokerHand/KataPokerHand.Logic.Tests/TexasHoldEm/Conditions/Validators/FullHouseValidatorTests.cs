@@ -1,6 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
-using KataPokerHand.Logic.TexasHoldEm.Conditions;
+using KataPokerHand.Logic.TexasHoldEm.Conditions.Validators;
 using NUnit.Framework;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;
@@ -8,7 +8,7 @@ using PlayingCards.Decks.Cards.Diamonds;
 using PlayingCards.Decks.Cards.Hearts;
 using PlayingCards.Decks.Cards.Spades;
 
-namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
+namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]

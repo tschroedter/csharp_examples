@@ -1,8 +1,8 @@
 using System.Linq;
 using JetBrains.Annotations;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
-using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using Rules.Logic.Interfaces.Rules;
 using Rules.Logic.Rules;
 

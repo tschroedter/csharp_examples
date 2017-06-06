@@ -1,11 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using JetBrains.Annotations;
-using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards;
 
-namespace KataPokerHand.Logic.TexasHoldEm.Conditions
+namespace KataPokerHand.Logic.TexasHoldEm.Conditions.Validators
 {
     public class FourCardsWithSameValueValidator
         : IFourCardsWithSameValueValidator
@@ -56,7 +56,6 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
             return false;
         }
 
-        [NotNull]
         public ICard OtherCard { get; private set; }
 
         public CardRank FourCardsRanks { get; private set; }

@@ -1,5 +1,5 @@
 using System.Diagnostics.CodeAnalysis;
-using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators;
 using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using NSubstitute;
 using NSubstituteAutoMocker;

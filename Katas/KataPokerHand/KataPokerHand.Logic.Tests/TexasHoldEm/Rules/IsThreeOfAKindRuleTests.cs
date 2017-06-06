@@ -3,6 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm.Conditions;
+using KataPokerHand.Logic.TexasHoldEm.Conditions.Validators;
 using KataPokerHand.Logic.TexasHoldEm.Rules;
 using NSubstitute;
 using NUnit.Framework;

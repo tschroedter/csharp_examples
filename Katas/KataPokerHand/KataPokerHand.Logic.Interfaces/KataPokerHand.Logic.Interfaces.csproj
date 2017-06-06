@@ -46,16 +46,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TexasHoldEm\Conditions\IFourCardsWithSameValueValidator.cs" />
-    <Compile Include="TexasHoldEm\Conditions\IFullHouseValidator.cs" />
+    <Compile Include="TexasHoldEm\Conditions\Validators\IFourCardsWithSameValueValidator.cs" />
+    <Compile Include="TexasHoldEm\Conditions\Validators\IFullHouseValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsFourCardsSameValue.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsFullHouse.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsNumberOfCardsValid.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsSameSuitAllCards.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsStraight.cs" />
-    <Compile Include="TexasHoldEm\Conditions\IThreeCardsWithSameValueValidator.cs" />
-    <Compile Include="TexasHoldEm\Conditions\ITwoPairsValidator.cs" />
-    <Compile Include="TexasHoldEm\Rules\IIsNumberOfCardsIncorrectRule.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IIsTwoPairs.cs" />
+    <Compile Include="TexasHoldEm\Conditions\Validators\IThreeCardsWithSameValueValidator.cs" />
+    <Compile Include="TexasHoldEm\Conditions\Validators\ITwoPairsValidator.cs" />
+    <Compile Include="TexasHoldEm\Conditions\Validators\IValidator.cs" />
     <Compile Include="TexasHoldEm\Rules\IPlayerHandInformation.cs" />
     <Compile Include="TexasHoldEm\Rules\Status.cs" />
   </ItemGroup>
