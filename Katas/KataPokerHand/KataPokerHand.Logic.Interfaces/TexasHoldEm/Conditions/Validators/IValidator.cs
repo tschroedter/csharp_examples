@@ -7,7 +7,7 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators
     public interface IValidator
     {
         [NotNull]
-        IEnumerable<ICard> Cards { get; set; }
+        IEnumerable <ICard> Cards { get; set; }
 
         bool IsValid();
     }

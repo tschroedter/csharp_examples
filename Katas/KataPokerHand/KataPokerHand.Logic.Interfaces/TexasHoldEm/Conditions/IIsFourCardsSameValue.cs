@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using JetBrains.Annotations;
 using PlayinCards.Interfaces.Decks.Cards;
 using Rules.Logic.Interfaces.Conditions;
@@ -8,6 +9,6 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions
         : ICondition
     {
         [NotNull]
-        ICard[] Cards { set; }
+        IEnumerable <ICard> Cards { set; }
     }
 }
