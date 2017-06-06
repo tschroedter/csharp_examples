@@ -1,9 +1,10 @@
 using JetBrains.Annotations;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 {
-    public class IsThreeOfAKind // todo testing
+    public class IsThreeOfAKind
         : BaseCardValidatorCondition <IThreeCardsWithSameValueValidator>,
           IIsThreeOfAKind
     {

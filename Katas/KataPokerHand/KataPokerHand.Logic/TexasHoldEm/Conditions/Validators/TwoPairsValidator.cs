@@ -29,6 +29,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions.Validators
                 return false;
             }
 
+            // ReSharper disable PossibleMultipleEnumeration    // todo try to remove ReSharper comment 
             foreach ( IGrouping <CardRank, CardRank> grouping in grouped )
             {
                 int count = grouping.Count();
@@ -49,6 +50,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions.Validators
             }
 
             return FirstPairOfCards.Any() && SecondPairOfCards.Any();
+            // ReSharper restore PossibleMultipleEnumeration
         }
 
         public IEnumerable <ICard> FirstPairOfCards { get; set; }

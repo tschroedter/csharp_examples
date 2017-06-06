@@ -60,6 +60,8 @@
     <Compile Include="TexasHoldEm\Conditions\IsFourCardsSameValue.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsThreeOfAKind.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsTwoPairs.cs" />
+    <Compile Include="TexasHoldEm\Conditions\Validators\IPairsValidator.cs" />
+    <Compile Include="TexasHoldEm\Conditions\Validators\PairsValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\ThreeCardsWithSameValueValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\TwoPairsValidator.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFlushRule.cs" />

@@ -2,8 +2,9 @@ using System.Diagnostics.CodeAnalysis;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators;
 using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using NSubstitute;
-using NSubstituteAutoMocker;
 using NUnit.Framework;
+using PlayinCards.Interfaces.Decks.Cards;
+using PlayingCards.Decks.Cards.Clubs;
 
 namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
 {
@@ -14,23 +15,45 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
         [SetUp]
         public void Setup()
         {
-            m_AutoMocker = new NSubstituteAutoMocker <IsFullHouse>();
-            m_Sut = m_AutoMocker.ClassUnderTest;
+            m_Validator = Substitute.For<IFullHouseValidator>();
+            m_Validator.IsValid().Returns(true);
+            m_Sut = new IsFullHouse(m_Validator);
         }
 
-        private NSubstituteAutoMocker <IsFullHouse> m_AutoMocker;
         private IsFullHouse m_Sut;
-
+        private IFullHouseValidator m_Validator;
 
         [Test]
         public void IsSatisfied_Calls_Validator()
         {
             // Arrange
-            m_AutoMocker.Get <IFullHouseValidator>().IsValid().Returns(true);
+            m_Validator.IsValid().Returns(true);
 
             // Act
             // Assert
             Assert.True(m_Sut.IsSatisfied());
+        }
+
+
+        [Test]
+        public void IsSatisfied_Sets_Cards()
+        {
+            // Arrange
+            var cards = new ICard[]
+                        {
+                            new TwoOfClubs()
+                        };
+
+            m_Validator.IsValid().Returns(true);
+
+            m_Sut.Cards = cards;
+
+            // Act
+            m_Sut.IsSatisfied();
+
+            // Assert
+            Assert.AreEqual(cards,
+                            m_Validator.Cards);
         }
     }
 }
