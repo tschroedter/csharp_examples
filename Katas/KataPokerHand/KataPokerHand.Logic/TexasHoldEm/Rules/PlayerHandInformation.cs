@@ -22,6 +22,8 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
             TwoOfAKind = new ICard[0];
             ThreeOfAKind = new ICard[0];
             FourOfAKind = new ICard[0];
+            FirstPairOfCards = new ICard[0];
+            SecondPairOfCards = new ICard[0];
         }
 
         public IPlayerHand PlayerHand { get; }
@@ -32,5 +34,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         public IEnumerable <ICard> TwoOfAKind { get; set; }
         public IEnumerable <ICard> ThreeOfAKind { get; set; }
         public IEnumerable <ICard> FourOfAKind { get; set; }
+        public IEnumerable <ICard> FirstPairOfCards { get; set; }
+        public IEnumerable <ICard> SecondPairOfCards { get; set; }
     }
 }

@@ -29,5 +29,11 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules
 
         [NotNull]
         IEnumerable <ICard> FourOfAKind { get; set; }
+
+        [NotNull]
+        IEnumerable <ICard> FirstPairOfCards { get; set; }
+
+        [NotNull]
+        IEnumerable <ICard> SecondPairOfCards { get; set; }
     }
 }
