@@ -8,8 +8,8 @@ using Rules.Logic.Rules;
 namespace KataPokerHand.Logic.TexasHoldEm.Rules
 {
     public class IsHighCardRule
-        : BaseRule<IPlayerHandInformation>,
-          IRule<IPlayerHandInformation>
+        : BaseRule <IPlayerHandInformation>,
+          IRule <IPlayerHandInformation>
     {
         public IsHighCardRule(
             [NotNull] IIsAlwaysTrue condition)
@@ -36,7 +36,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
 
         public override int GetPriority()
         {
-            return (int)RulesPriority.HighCard;
+            return ( int ) RulesPriority.HighCard;
         }
     }
 }

@@ -11,8 +11,12 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
     [ExcludeFromCodeCoverage]
     internal sealed class IsNumberOfCardsInvalidTests
     {
-        [TestCase(3, 0, true)]
-        [TestCase(3, 3, false)]
+        [TestCase(3,
+            0,
+            true)]
+        [TestCase(3,
+            3,
+            false)]
         public void IsSatisfied_Returns_Expected_For_Given(
             int numberOfCardsRequired,
             int numberOfCards,

@@ -15,6 +15,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
     [ExcludeFromCodeCoverage]
     internal sealed class CardsRankEngineTests
     {
+        // todo SpecFlow test using all rules
         [SetUp]
         public void Setup()
         {
@@ -38,44 +39,57 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
             return rules;
         }
 
-        [Test]
-        public void ApplyRules_Updates_Status_For_Cards_Empty()
-        {
-            // Arrange
-            // Act
-            m_Sut.ApplyRules(new [] { m_Info });
-
-            // Assert
-            Assert.AreEqual(Status.NumberOfCardsIncorrect,
-                            m_Info.Status);
-        }
-
-        [TestCase(0, Status.NumberOfCardsIncorrect)]
-        [TestCase(1, Status.NumberOfCardsIncorrect)]
-        [TestCase(2, Status.NumberOfCardsIncorrect)]
-        [TestCase(3, Status.NumberOfCardsIncorrect)]
-        [TestCase(4, Status.NumberOfCardsIncorrect)]
-        [TestCase(5, Status.HighCard)]
-        [TestCase(6, Status.NumberOfCardsIncorrect)]
+        [TestCase(0,
+            Status.NumberOfCardsIncorrect)]
+        [TestCase(1,
+            Status.NumberOfCardsIncorrect)]
+        [TestCase(2,
+            Status.NumberOfCardsIncorrect)]
+        [TestCase(3,
+            Status.NumberOfCardsIncorrect)]
+        [TestCase(4,
+            Status.NumberOfCardsIncorrect)]
+        [TestCase(5,
+            Status.HighCard)]
+        [TestCase(6,
+            Status.NumberOfCardsIncorrect)]
         public void ApplyRules_Updates_Status_For_Cards(
             int numberOfCards,
             Status expected)
         {
             // Arrange
-            var cards = new List<ICard>();
+            var cards = new List <ICard>();
 
-            for (var i = 0; i < numberOfCards; i++)
+            for ( var i = 0 ; i < numberOfCards ; i++ )
             {
-                cards.Add(Substitute.For<ICard>());
+                cards.Add(Substitute.For <ICard>());
             }
 
             m_Info.Cards = cards;
 
             // Act
-            m_Sut.ApplyRules(new[] { m_Info });
+            m_Sut.ApplyRules(new[]
+                             {
+                                 m_Info
+                             });
 
             // Assert
             Assert.AreEqual(expected,
+                            m_Info.Status);
+        }
+
+        [Test]
+        public void ApplyRules_Updates_Status_For_Cards_Empty()
+        {
+            // Arrange
+            // Act
+            m_Sut.ApplyRules(new[]
+                             {
+                                 m_Info
+                             });
+
+            // Assert
+            Assert.AreEqual(Status.NumberOfCardsIncorrect,
                             m_Info.Status);
         }
     }
