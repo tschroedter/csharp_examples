@@ -63,6 +63,7 @@
     <Compile Include="Conditions\IsLessThanTests.cs" />
     <Compile Include="Conditions\IsMoreThanTests.cs" />
     <Compile Include="EngineTests.cs" />
+    <Compile Include="RuleRepositoryTests.cs" />
     <Compile Include="Rules\BaseRuleTests.cs" />
     <Compile Include="CellInformation.cs" />
   </ItemGroup>
