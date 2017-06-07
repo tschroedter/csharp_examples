@@ -10,6 +10,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         Flush,
         Straight,
         ThreeOfAKind,
-        TwoPairs
+        TwoPairs,
+        HighCard
     }
 }

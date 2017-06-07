@@ -73,6 +73,7 @@
     <Compile Include="TexasHoldEm\Rules\IsFlushRuleTests.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFourOfAKindRuleTests.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFullHouseRuleTests.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsHighCardRuleTests.cs" />
     <Compile Include="TexasHoldEm\Rules\IsNumberOfCardsIncorrectRuleTests.cs" />
     <Compile Include="TexasHoldEm\Rules\IsStraightFlushRuleTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsNumberOfCardsValidTests.cs" />
