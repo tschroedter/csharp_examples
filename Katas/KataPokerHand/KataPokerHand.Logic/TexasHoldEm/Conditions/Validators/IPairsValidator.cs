@@ -10,6 +10,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions.Validators
     {
         [NotNull]
         IEnumerable <ICard> PairOfCards { get; set; }
+
         [NotNull]
         IEnumerable <ICard> OtherCards { get; set; }
     }

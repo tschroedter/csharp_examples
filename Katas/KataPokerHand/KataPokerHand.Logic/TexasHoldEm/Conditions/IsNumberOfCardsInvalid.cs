@@ -4,8 +4,8 @@ using PlayinCards.Interfaces.Decks.Cards;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 {
-    public class IsNumberOfCardsValid
-        : IIsNumberOfCardsValid
+    public class IsNumberOfCardsInvalid
+        : IIsNumberOfCardsInvalid
     {
         [NotNull]
         public ICard[] Cards
@@ -21,7 +21,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 
         public bool IsSatisfied()
         {
-            return NumberOfCardsRequired == NumberOfCards;
+            return NumberOfCardsRequired != NumberOfCards;
         }
     }
 }

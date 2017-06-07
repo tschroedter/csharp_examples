@@ -7,7 +7,6 @@ using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.TexasHoldEm.Rules;
 using NSubstitute;
 using NUnit.Framework;
-using PlayinCards.Interfaces;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;
 using PlayingCards.Decks.Cards.Hearts;
@@ -24,11 +23,9 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
         [SetUp]
         public void Setup()
         {
-            m_Hand = Substitute.For <IPlayerHand>();
             m_Cards = new List <ICard>();
             m_Info = Substitute.For <IPlayerHandInformation>();
-            m_Info.PlayerHand.Returns(m_Hand);
-            m_Hand.Cards.Returns(m_Cards);
+            m_Info.Cards.Returns(m_Cards);
 
             m_Sut = new IsFlushRule(new IsSameSuitAllCards());
         }
@@ -36,7 +33,6 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
         private IsFlushRule m_Sut;
         private IPlayerHandInformation m_Info;
         private List <ICard> m_Cards;
-        private IPlayerHand m_Hand;
 
         private IEnumerable <ICard> CreateFlush()
         {

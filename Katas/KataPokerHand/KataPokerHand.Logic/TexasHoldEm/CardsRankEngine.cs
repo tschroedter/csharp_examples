@@ -11,7 +11,7 @@ namespace KataPokerHand.Logic.TexasHoldEm
         public CardsRankEngine(
             [NotNull] ICardsRankRuleRepository repository)
             : base(repository)
-        {   // todo continue here with SpecFlow tests
+        {
         }
     }
 }

@@ -15,16 +15,16 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
           IRule <IPlayerHandInformation>
     {
         public IsNumberOfCardsIncorrectRule(
-            [NotNull] IIsNumberOfCardsValid valid)
+            [NotNull] IIsNumberOfCardsInvalid invalid)
         {
-            m_Valid = valid;
+            m_Invalid = invalid;
         }
 
         [NotNull]
         private const int NumberOfCardsRequired = 5;
 
         [NotNull]
-        private readonly IIsNumberOfCardsValid m_Valid;
+        private readonly IIsNumberOfCardsInvalid m_Invalid;
 
         public override IPlayerHandInformation Apply(IPlayerHandInformation info)
         {
@@ -39,12 +39,12 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         public override void Initialize(
             [NotNull] IPlayerHandInformation info)
         {
-            ICard[] cards = info.PlayerHand.Cards as ICard[] ?? info.PlayerHand.Cards.ToArray();
+            ICard[] cards = info.Cards as ICard[] ?? info.Cards.ToArray();
 
-            m_Valid.NumberOfCardsRequired = NumberOfCardsRequired;
-            m_Valid.Cards = cards;
+            m_Invalid.NumberOfCardsRequired = NumberOfCardsRequired;
+            m_Invalid.Cards = cards;
 
-            Conditions.Add(m_Valid);
+            Conditions.Add(m_Invalid);
         }
 
         public override int GetPriority()

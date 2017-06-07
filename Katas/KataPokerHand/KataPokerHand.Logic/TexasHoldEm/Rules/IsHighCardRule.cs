@@ -23,7 +23,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         public override IPlayerHandInformation Apply(IPlayerHandInformation info)
         {
             info.Status = Status.HighCard;
-            info.HighestCard = info.PlayerHand.Cards.OrderBy(x => x.Rank).Last();
+            info.HighestCard = info.Cards.OrderBy(x => x.Rank).Last();
 
             return info;
         }

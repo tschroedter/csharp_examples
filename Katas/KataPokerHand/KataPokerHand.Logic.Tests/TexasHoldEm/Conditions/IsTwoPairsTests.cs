@@ -2,7 +2,6 @@ using System.Diagnostics.CodeAnalysis;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators;
 using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using NSubstitute;
-using NSubstituteAutoMocker;
 using NUnit.Framework;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;
@@ -16,7 +15,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
         [SetUp]
         public void Setup()
         {
-            m_Validator = Substitute.For<ITwoPairsValidator>();
+            m_Validator = Substitute.For <ITwoPairsValidator>();
             m_Validator.IsValid().Returns(true);
             m_Sut = new IsTwoPairs(m_Validator);
         }

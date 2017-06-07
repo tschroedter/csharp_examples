@@ -15,7 +15,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
         [SetUp]
         public void Setup()
         {
-            m_Validator = Substitute.For<IFullHouseValidator>();
+            m_Validator = Substitute.For <IFullHouseValidator>();
             m_Validator.IsValid().Returns(true);
             m_Sut = new IsFullHouse(m_Validator);
         }

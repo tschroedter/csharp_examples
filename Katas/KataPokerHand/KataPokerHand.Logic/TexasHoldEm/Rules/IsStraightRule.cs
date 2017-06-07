@@ -24,7 +24,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         public override IPlayerHandInformation Apply(IPlayerHandInformation info)
         {
             info.Status = Status.Straight;
-            info.HighestCard = info.PlayerHand.Cards.OrderBy(x => x.Rank).Last();
+            info.HighestCard = info.Cards.OrderBy(x => x.Rank).Last();
 
             return info;
         }
@@ -32,7 +32,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         public override void Initialize(
             [NotNull] IPlayerHandInformation info)
         {
-            ICard[] cards = info.PlayerHand.Cards as ICard[] ?? info.PlayerHand.Cards.ToArray();
+            ICard[] cards = info.Cards as ICard[] ?? info.Cards.ToArray();
 
             m_Straight.Cards = cards;
 

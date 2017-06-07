@@ -27,7 +27,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
 
         public override IPlayerHandInformation Apply(IPlayerHandInformation info)
         {
-            m_Validator.Cards = info.PlayerHand.Cards;
+            m_Validator.Cards = info.Cards;
             if ( m_Validator.IsValid() )
             {
                 return info;
@@ -42,7 +42,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
 
         public override void Initialize(IPlayerHandInformation info)
         {
-            m_FullHouse.Cards = info.PlayerHand.Cards;
+            m_FullHouse.Cards = info.Cards;
 
             Conditions.Add(m_FullHouse);
         }

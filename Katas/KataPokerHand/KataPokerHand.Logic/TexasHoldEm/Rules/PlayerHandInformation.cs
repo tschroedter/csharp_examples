@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using JetBrains.Annotations;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
-using PlayinCards.Interfaces;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayinCards.Interfaces.Decks.Suits;
 using PlayingCards.Decks.Cards;
@@ -12,10 +10,9 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
     public class PlayerHandInformation
         : IPlayerHandInformation // todo testing
     {
-        public PlayerHandInformation(
-            [NotNull] IPlayerHand playerHand)
+        public PlayerHandInformation()
         {
-            PlayerHand = playerHand;
+            Cards = new ICard[0];
             Status = Status.Unknown;
             Suit = UnknownSuit.Unknown;
             HighestCard = UnknownCard.Unknown;
@@ -26,7 +23,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
             SecondPairOfCards = new ICard[0];
         }
 
-        public IPlayerHand PlayerHand { get; }
+        public IEnumerable <ICard> Cards { get; set; }
         public Status Status { get; set; }
         public ISuit Suit { get; set; }
         public ICard HighestCard { get; set; }

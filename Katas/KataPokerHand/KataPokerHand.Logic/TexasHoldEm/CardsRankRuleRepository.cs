@@ -7,8 +7,8 @@ using Rules.Logic.Interfaces.Rules;
 namespace KataPokerHand.Logic.TexasHoldEm
 {
     public class CardsRankRuleRepository
-        : RuleRepository <IPlayerHandInformation>
-          , ICardsRankRuleRepository
+        : RuleRepository <IPlayerHandInformation>,
+          ICardsRankRuleRepository
     {
         public CardsRankRuleRepository()
         {

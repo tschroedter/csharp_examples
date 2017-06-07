@@ -20,6 +20,17 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
         private IsStraight m_Sut;
 
         [Test]
+        public void IsSatisfied_Returns_False_For_Cards_Empty()
+        {
+            // Arrange
+            // Act
+            m_Sut.Cards = new ICard[0];
+
+            // Assert
+            Assert.False(m_Sut.IsSatisfied());
+        }
+
+        [Test]
         public void IsSatisfied_Returns_False_For_Not_Straight()
         {
             // Arrange

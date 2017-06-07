@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using JetBrains.Annotations;
-using PlayinCards.Interfaces;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayinCards.Interfaces.Decks.Suits;
 
@@ -9,7 +8,7 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules
     public interface IPlayerHandInformation
     {
         [NotNull]
-        IPlayerHand PlayerHand { get; }
+        IEnumerable <ICard> Cards { get; set; }
 
         Status Status { get; set; }
 

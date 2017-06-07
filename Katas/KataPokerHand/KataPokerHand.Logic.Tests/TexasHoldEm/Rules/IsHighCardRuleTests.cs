@@ -7,7 +7,6 @@ using KataPokerHand.Logic.TexasHoldEm.Conditions;
 using KataPokerHand.Logic.TexasHoldEm.Rules;
 using NSubstitute;
 using NUnit.Framework;
-using PlayinCards.Interfaces;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;
 using PlayingCards.Decks.Cards.Diamonds;
@@ -24,19 +23,16 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
         [SetUp]
         public void Setup()
         {
-            m_Hand = Substitute.For<IPlayerHand>();
-            m_Cards = new List<ICard>();
-            m_Info = Substitute.For<IPlayerHandInformation>();
-            m_Info.PlayerHand.Returns(m_Hand);
-            m_Hand.Cards.Returns(m_Cards);
+            m_Cards = new List <ICard>();
+            m_Info = Substitute.For <IPlayerHandInformation>();
+            m_Info.Cards.Returns(m_Cards);
 
             m_Sut = new IsHighCardRule(new IsAlwaysTrue());
         }
 
         private IsHighCardRule m_Sut;
         private IPlayerHandInformation m_Info;
-        private List<ICard> m_Cards;
-        private IPlayerHand m_Hand;
+        private List <ICard> m_Cards;
 
         private ICard[] CreateCards()
         {
@@ -85,7 +81,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             // Arrange
             // Act
             // Assert
-            Assert.AreEqual((int)RulesPriority.HighCard,
+            Assert.AreEqual(( int ) RulesPriority.HighCard,
                             m_Sut.GetPriority());
         }
 
@@ -99,7 +95,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Sut.Initialize(m_Info);
 
             // Assert
-            IEnumerable<ICondition> actual = m_Sut.GetConditions();
+            IEnumerable <ICondition> actual = m_Sut.GetConditions();
             Assert.AreEqual(1,
                             actual.Count());
 

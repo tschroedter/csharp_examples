@@ -28,16 +28,14 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
             return m_Conditions.All(x => x.IsSatisfied());
         }
 
-        private IEnumerable <ICondition> AddConditions(
-            [NotNull] IEnumerable <ICard> cards)
+        private IEnumerable<ICondition> HandleCards(
+            [NotNull] ICard[] cards)
         {
-            var conditions = new List <ICondition>();
+            var conditions = new List<ICondition>();
 
-            ICard[] array = cards as ICard[] ?? cards.ToArray();
+            ICard first = cards [ 0 ];
 
-            ICard first = array [ 0 ];
-
-            foreach ( ICard card in array )
+            foreach ( ICard card in cards )
             {
                 conditions.Add(new IsSuitEqual // todo replace with factory
                                {
@@ -47,6 +45,29 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
             }
 
             return conditions;
+        }
+
+        private IEnumerable <ICondition> HandleCardsIsEmpty()
+        {
+            return new[]
+                   {
+                       new IsAlwaysFalse()
+                   };
+        }
+
+        private IEnumerable <ICondition> AddConditions(
+            [NotNull] IEnumerable <ICard> cards)
+        {
+            ICard[] array = cards as ICard[] ?? cards.ToArray();
+
+            if ( !array.Any() )
+            {
+                return HandleCardsIsEmpty();
+            }
+            else
+            {
+                return HandleCards(array);
+            }
         }
     }
 }
