@@ -12,6 +12,7 @@ namespace Playing.Tests.Decks.Cards.Hearts
     {
         public SixOfHeartsTests()
             : base("6H",
+                   "Six of Hearts",
                    CardRank.Six)
         {
         }

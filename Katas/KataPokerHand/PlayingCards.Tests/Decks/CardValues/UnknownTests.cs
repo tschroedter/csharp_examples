@@ -10,7 +10,8 @@ namespace Playing.Tests.Decks.CardValues
         : BaseCardValueTests <Unknown>
     {
         public UnknownTests()
-            : base("Unknown",
+            : base('U',
+                   "Unknown",
                    new[]
                    {
                        0u

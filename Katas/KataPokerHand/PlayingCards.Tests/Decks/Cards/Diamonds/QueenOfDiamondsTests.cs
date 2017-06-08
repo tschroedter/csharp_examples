@@ -12,6 +12,7 @@ namespace Playing.Tests.Decks.Cards.Diamonds
     {
         public QueenOfDiamondsTests()
             : base("QD",
+                   "Queen of Diamonds",
                    CardRank.Queen)
         {
         }

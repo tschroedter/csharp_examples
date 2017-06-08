@@ -12,6 +12,7 @@ namespace Playing.Tests.Decks.Cards.Diamonds
     {
         public FourOfDiamondsTests()
             : base("4D",
+                   "Four of Diamonds",
                    CardRank.Four)
         {
         }

@@ -38,6 +38,11 @@ namespace PlayingCards.Decks.Cards
 
         public bool HasMultipleValues => m_Value.Values.Length > 1;
 
+        public string Description()
+        {
+            return m_Value.Name + " of " + m_Suit.Name;
+        }
+
         public override string ToString()
         {
             return m_Value.AsChar + m_Suit.AsChar.ToString();

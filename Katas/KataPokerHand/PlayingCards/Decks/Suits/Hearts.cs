@@ -1,10 +1,10 @@
 ﻿namespace PlayingCards.Decks.Suits
 {
-    public class Club
+    public class Hearts
         : BaseSuit
     {
-        public Club()
-            : base("Club")
+        public Hearts()
+            : base("Hearts")
         {
         }
     }

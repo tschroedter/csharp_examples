@@ -6,7 +6,8 @@ namespace PlayingCards.Decks.CardValues
         : BaseCardValue
     {
         public Six()
-            : base("6",
+            : base('6',
+                   "Six",
                    new[]
                    {
                        6u

@@ -110,7 +110,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             IPlayerHandInformation actual = m_Sut.Apply(m_Info);
 
             // Assert
-            Assert.True(actual.Suit is Club);
+            Assert.True(actual.Suit is Clubs);
         }
 
         [Test]

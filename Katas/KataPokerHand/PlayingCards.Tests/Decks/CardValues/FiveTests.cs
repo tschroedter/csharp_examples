@@ -10,7 +10,8 @@ namespace Playing.Tests.Decks.CardValues
         : BaseCardValueTests <Five>
     {
         public FiveTests()
-            : base("5",
+            : base('5',
+                   "Five",
                    new[]
                    {
                        5u

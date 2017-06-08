@@ -12,6 +12,7 @@ namespace Playing.Tests.Decks.Cards.Spades
     {
         public FiveOfSpadesTests()
             : base("5S",
+                   "Five of Spades",
                    CardRank.Five)
         {
         }

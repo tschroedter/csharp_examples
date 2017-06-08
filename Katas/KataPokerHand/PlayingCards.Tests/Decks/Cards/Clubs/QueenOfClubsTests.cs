@@ -12,6 +12,7 @@ namespace Playing.Tests.Decks.Cards.Clubs
     {
         public QueenOfClubsTests()
             : base("QC",
+                   "Queen of Clubs",
                    CardRank.Queen)
         {
         }

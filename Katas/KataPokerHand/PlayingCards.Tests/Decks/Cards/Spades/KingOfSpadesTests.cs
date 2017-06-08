@@ -12,6 +12,7 @@ namespace Playing.Tests.Decks.Cards.Spades
     {
         public KingOfSpadesTests()
             : base("KS",
+                   "King of Spades",
                    CardRank.King)
         {
         }

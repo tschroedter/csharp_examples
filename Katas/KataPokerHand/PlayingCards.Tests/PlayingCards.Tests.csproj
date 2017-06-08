@@ -125,10 +125,10 @@
     <Compile Include="Decks\CardValues\UnknownTests.cs" />
     <Compile Include="Decks\Suits\BaseSuitConstructorTests.cs" />
     <Compile Include="Decks\Suits\BaseSuitTests.cs" />
-    <Compile Include="Decks\Suits\ClubTests.cs" />
-    <Compile Include="Decks\Suits\DiamondTests.cs" />
-    <Compile Include="Decks\Suits\HeartTests.cs" />
-    <Compile Include="Decks\Suits\SpadeTests.cs" />
+    <Compile Include="Decks\Suits\ClubsTests.cs" />
+    <Compile Include="Decks\Suits\DiamondsTests.cs" />
+    <Compile Include="Decks\Suits\HeartsTests.cs" />
+    <Compile Include="Decks\Suits\SpadesTests.cs" />
     <Compile Include="NextCardValueFinderTests.cs" />
     <Compile Include="PlayerHandTests.cs" />
     <Compile Include="PreviousCardValueFinderTests.cs" />

@@ -12,6 +12,7 @@ namespace Playing.Tests.Decks.Cards
     {
         public UnknownCardTests()
             : base("UU",
+                   "Unknown of Unknown",
                    CardRank.Unknown)
         {
         }

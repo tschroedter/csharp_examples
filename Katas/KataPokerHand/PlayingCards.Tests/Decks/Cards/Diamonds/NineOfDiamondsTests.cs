@@ -12,6 +12,7 @@ namespace Playing.Tests.Decks.Cards.Diamonds
     {
         public NineOfDiamondsTests()
             : base("9D",
+                   "Nine of Diamonds",
                    CardRank.Nine)
         {
         }

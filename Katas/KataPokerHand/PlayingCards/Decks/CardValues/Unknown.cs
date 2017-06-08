@@ -7,7 +7,8 @@ namespace PlayingCards.Decks.CardValues
         : BaseCardValue
     {
         public Unknown()
-            : base("Unknown",
+            : base('U',
+                   "Unknown",
                    new[]
                    {
                        0u

@@ -4,7 +4,7 @@ using PlayingCards.Decks.Suits;
 namespace PlayingCards.Decks.Cards.Hearts
 {
     public class JackOfHearts
-        : BaseCard <Heart, Jack>
+        : BaseCard <Suits.Hearts, Jack>
     {
     }
 }

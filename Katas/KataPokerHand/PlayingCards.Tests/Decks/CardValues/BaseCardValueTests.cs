@@ -11,11 +11,12 @@ namespace Playing.Tests.Decks.CardValues
         where T : BaseCardValue, new()
     {
         public BaseCardValueTests(
+            char asChar,
             [NotNull] string name,
             [NotNull] uint[] values)
         {
             m_ExpectedName = name;
-            m_ExpectedAsChar = name [ 0 ];
+            m_ExpectedAsChar = asChar;
             m_ExpectedValues = values;
             m_ExpectedValue = values [ 0 ];
         }

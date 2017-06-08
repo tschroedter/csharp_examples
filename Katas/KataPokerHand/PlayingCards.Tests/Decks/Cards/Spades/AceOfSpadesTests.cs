@@ -12,6 +12,7 @@ namespace Playing.Tests.Decks.Cards.Spades
     {
         public AceOfSpadesTests()
             : base("AS",
+                   "Ace of Spades",
                    CardRank.Ace)
         {
         }

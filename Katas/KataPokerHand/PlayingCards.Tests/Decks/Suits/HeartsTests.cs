@@ -6,11 +6,11 @@ namespace Playing.Tests.Decks.Suits
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class HeartTests
-        : BaseSuitTests <Heart>
+    internal sealed class HeartsTests
+        : BaseSuitTests <Hearts>
     {
-        public HeartTests()
-            : base("Heart")
+        public HeartsTests()
+            : base("Hearts")
         {
         }
     }

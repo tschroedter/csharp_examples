@@ -11,9 +11,11 @@ namespace Playing.Tests.Decks.Cards
     {
         protected BaseCardTests(
             [NotNull] string expectedValueAndSuite,
+            [NotNull] string expectedDescription,
             CardRank rank)
         {
             m_ExpectedValueAndSuite = expectedValueAndSuite;
+            m_ExpectedDescription = expectedDescription;
             m_ExpectedRank = rank;
         }
 
@@ -21,6 +23,7 @@ namespace Playing.Tests.Decks.Cards
 
         [NotNull]
         private readonly string m_ExpectedValueAndSuite;
+        private readonly string m_ExpectedDescription;
 
         [Test]
         public void Constructor_Returns_Instance()
@@ -44,6 +47,18 @@ namespace Playing.Tests.Decks.Cards
             // Assert
             Assert.AreEqual(m_ExpectedRank,
                             sut.Rank);
+        }
+
+        [Test]
+        public void Description_Returns_String()
+        {
+            // Arrange
+            var sut = new T();
+
+            // Act
+            // Assert
+            Assert.AreEqual(m_ExpectedDescription,
+                            sut.Description());
         }
     }
 }

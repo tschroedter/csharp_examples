@@ -57,6 +57,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardsEngine\CardsRankEngine.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CardsRankEngine.feature</DependentUpon>
+    </Compile>
+    <Compile Include="CardsEngine\CardsRankEngineSteps.cs" />
     <Compile Include="Example\Calculator.cs" />
     <Compile Include="Example\Calculator.feature.cs">
       <AutoGen>True</AutoGen>
@@ -68,6 +74,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="CardsEngine\CardsRankEngine.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CardsRankEngine.feature.cs</LastGenOutput>
+    </None>
     <None Include="Example\Calculator.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>Calculator.feature.cs</LastGenOutput>
@@ -84,6 +94,7 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

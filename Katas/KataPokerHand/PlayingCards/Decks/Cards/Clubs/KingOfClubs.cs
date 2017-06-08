@@ -4,7 +4,7 @@ using PlayingCards.Decks.Suits;
 namespace PlayingCards.Decks.Cards.Clubs
 {
     public class KingOfClubs
-        : BaseCard <Club, King>
+        : BaseCard <Suits.Clubs, King>
     {
     }
 }

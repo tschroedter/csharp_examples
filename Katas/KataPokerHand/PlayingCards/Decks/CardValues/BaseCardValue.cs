@@ -12,6 +12,7 @@ namespace PlayingCards.Decks.CardValues
         : ICardValue
     {
         protected BaseCardValue(
+            char asChar,
             [NotNull] string name,
             [NotNull] uint[] values,
             CardRank rank)
@@ -31,7 +32,7 @@ namespace PlayingCards.Decks.CardValues
             }
 
             Name = name;
-            AsChar = name [ 0 ];
+            AsChar = asChar;
             Values = values;
             Value = values [ 0 ];
             Rank = rank; // todo testing
