@@ -13,13 +13,13 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
           IRule <IPlayerHandInformation>
     {
         public IsStraightRule(
-            [NotNull] IIsStraight straight)
+            [NotNull] IIsStraightCondition straightCondition)
         {
-            m_Straight = straight;
+            m_StraightCondition = straightCondition;
         }
 
         [NotNull]
-        private readonly IIsStraight m_Straight;
+        private readonly IIsStraightCondition m_StraightCondition;
 
         public override IPlayerHandInformation Apply(IPlayerHandInformation info)
         {
@@ -34,9 +34,9 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         {
             ICard[] cards = info.Cards as ICard[] ?? info.Cards.ToArray();
 
-            m_Straight.Cards = cards;
+            m_StraightCondition.Cards = cards;
 
-            Conditions.Add(m_Straight);
+            Conditions.Add(m_StraightCondition);
         }
 
         public override int GetPriority()

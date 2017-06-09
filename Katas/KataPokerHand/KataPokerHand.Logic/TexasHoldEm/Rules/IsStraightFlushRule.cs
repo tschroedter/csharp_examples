@@ -14,17 +14,17 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
     {
         public IsStraightFlushRule(
             [NotNull] IIsSameSuitAllCards same,
-            [NotNull] IIsStraight straight)
+            [NotNull] IIsStraightCondition straightCondition)
         {
             m_Same = same;
-            m_Straight = straight;
+            m_StraightCondition = straightCondition;
         }
 
         [NotNull]
         private readonly IIsSameSuitAllCards m_Same;
 
         [NotNull]
-        private readonly IIsStraight m_Straight;
+        private readonly IIsStraightCondition m_StraightCondition;
 
         public override IPlayerHandInformation Apply(IPlayerHandInformation info)
         {
@@ -41,10 +41,10 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
             ICard[] cards = info.Cards as ICard[] ?? info.Cards.ToArray();
 
             m_Same.Cards = cards;
-            m_Straight.Cards = cards;
+            m_StraightCondition.Cards = cards;
 
             Conditions.Add(m_Same);
-            Conditions.Add(m_Straight);
+            Conditions.Add(m_StraightCondition);
         }
 
         public override int GetPriority()

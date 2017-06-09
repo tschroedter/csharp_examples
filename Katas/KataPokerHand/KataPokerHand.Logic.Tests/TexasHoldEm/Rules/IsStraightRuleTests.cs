@@ -27,7 +27,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Info = Substitute.For <IPlayerHandInformation>();
             m_Info.Cards.Returns(m_Cards);
 
-            m_Sut = new IsStraightRule(new IsStraight());
+            m_Sut = new IsStraightRule(new IsStraightCondition());
         }
 
         private IsStraightRule m_Sut;
@@ -110,7 +110,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             IEnumerable <ICondition> actual = m_Sut.GetConditions();
             Assert.AreEqual(1,
                             actual.Count());
-            Assert.True(actual.ElementAt(0) is IIsStraight);
+            Assert.True(actual.ElementAt(0) is IIsStraightCondition);
         }
 
         [Test]

@@ -27,7 +27,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Info.Cards.Returns(m_Cards);
 
             m_Sut = new IsStraightFlushRule(new IsSameSuitAllCards(),
-                                            new IsStraight());
+                                            new IsStraightCondition());
         }
 
         private IsStraightFlushRule m_Sut;
@@ -137,7 +137,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             Assert.AreEqual(2,
                             actual.Count());
             Assert.True(actual.ElementAt(0) is IIsSameSuitAllCards);
-            Assert.True(actual.ElementAt(1) is IIsStraight);
+            Assert.True(actual.ElementAt(1) is IIsStraightCondition);
         }
 
         [Test]

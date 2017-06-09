@@ -8,8 +8,8 @@ using Rules.Logic.Interfaces.Conditions;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 {
-    public class IsStraight
-        : IIsStraight
+    public class IsStraightCondition
+        : IIsStraightCondition
     {
         private readonly List <ICondition> m_Conditions = new List <ICondition>();
 

@@ -9,15 +9,15 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class IsStraightTests
+    internal sealed class IsStraightConditionTests
     {
         [SetUp]
         public void SetUp()
         {
-            m_Sut = new IsStraight();
+            m_Sut = new IsStraightCondition();
         }
 
-        private IsStraight m_Sut;
+        private IsStraightCondition m_Sut;
 
         [Test]
         public void IsSatisfied_Returns_False_For_Cards_Empty()
