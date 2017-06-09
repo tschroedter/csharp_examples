@@ -10,17 +10,17 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class IsOnePairTests
+    internal sealed class IsOnePairConditionTests
     {
         [SetUp]
         public void Setup()
         {
             m_Validator = Substitute.For <IOnePairValidator>();
             m_Validator.IsValid().Returns(true);
-            m_Sut = new IsOnePair(m_Validator);
+            m_Sut = new IsOnePairCondition(m_Validator);
         }
 
-        private IsOnePair m_Sut;
+        private IsOnePairCondition m_Sut;
         private IOnePairValidator m_Validator;
 
         [Test]

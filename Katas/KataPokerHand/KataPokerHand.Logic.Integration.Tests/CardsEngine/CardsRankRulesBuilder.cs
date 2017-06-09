@@ -26,7 +26,7 @@ namespace KataPokerHand.Logic.Integration.Tests.CardsEngine
                                        new ThreeCardsWithSameValueValidator()),
                 new IsTwoPairsRule(new IsTwoPairsCondition(new TwoPairsValidator()),
                                    new TwoPairsValidator()),
-                new IsOnePairRule(new IsOnePair(new OnePairValidator()),
+                new IsOnePairRule(new IsOnePairCondition(new OnePairValidator()),
                                   new OnePairValidator()),
                 new IsHighCardRule(new IsAlwaysTrue())
             };

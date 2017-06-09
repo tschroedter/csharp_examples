@@ -29,7 +29,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Info.Cards.Returns(m_Cards);
 
             var validator = new OnePairValidator();
-            m_Sut = new IsOnePairRule(new IsOnePair(validator),
+            m_Sut = new IsOnePairRule(new IsOnePairCondition(validator),
                                       validator);
         }
 
@@ -137,7 +137,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             Assert.AreEqual(1,
                             actual.Count());
 
-            Assert.True(actual.First() is IIsOnePair);
+            Assert.True(actual.First() is IIsOnePairCondition);
         }
 
         [Test]
