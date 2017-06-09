@@ -67,7 +67,7 @@
     <Compile Include="TexasHoldEm\Conditions\IsNextCardValueTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsSuitEqualTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\FullHouseValidatorTests.cs" />
-    <Compile Include="TexasHoldEm\Conditions\IsTwoPairsTests.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsTwoPairsConditionTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\OnePairValidatorTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\PairsValidatorrTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\ThreeCardsWithSameValueValidatorTests.cs" />

@@ -63,7 +63,7 @@
     <Compile Include="TexasHoldEm\Conditions\Validators\FullHouseValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsFourCardsSameValue.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsThreeOfAKind.cs" />
-    <Compile Include="TexasHoldEm\Conditions\IsTwoPairs.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsTwoPairsCondition.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\OnePairValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\ThreeCardsWithSameValueValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\TwoPairsValidator.cs" />

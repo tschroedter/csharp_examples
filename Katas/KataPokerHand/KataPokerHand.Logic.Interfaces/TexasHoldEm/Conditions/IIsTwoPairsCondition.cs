@@ -5,7 +5,7 @@ using Rules.Logic.Interfaces.Conditions;
 
 namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions
 {
-    public interface IIsTwoPairs
+    public interface IIsTwoPairsCondition
         : ICondition
     {
         [NotNull]

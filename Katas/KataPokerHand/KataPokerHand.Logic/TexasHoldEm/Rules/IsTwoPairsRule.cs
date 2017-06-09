@@ -13,15 +13,15 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
           IRule <IPlayerHandInformation>
     {
         public IsTwoPairsRule(
-            [NotNull] IIsTwoPairs twoPairs,
+            [NotNull] IIsTwoPairsCondition twoPairsCondition,
             [NotNull] ITwoPairsValidator validator)
         {
-            m_TwoPairs = twoPairs;
+            m_TwoPairsCondition = twoPairsCondition;
             m_Validator = validator;
         }
 
         [NotNull]
-        private readonly IIsTwoPairs m_TwoPairs;
+        private readonly IIsTwoPairsCondition m_TwoPairsCondition;
 
         [NotNull]
         private readonly ITwoPairsValidator m_Validator;
@@ -44,9 +44,9 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
 
         public override void Initialize(IPlayerHandInformation info)
         {
-            m_TwoPairs.Cards = info.Cards.ToArray();
+            m_TwoPairsCondition.Cards = info.Cards.ToArray();
 
-            Conditions.Add(m_TwoPairs);
+            Conditions.Add(m_TwoPairsCondition);
         }
 
         public override int GetPriority()

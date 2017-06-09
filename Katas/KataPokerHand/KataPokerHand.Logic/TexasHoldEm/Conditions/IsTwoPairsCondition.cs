@@ -4,11 +4,11 @@ using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 {
-    public class IsTwoPairs
+    public class IsTwoPairsCondition
         : BaseCardValidatorCondition <ITwoPairsValidator>,
-          IIsTwoPairs
+          IIsTwoPairsCondition
     {
-        public IsTwoPairs(
+        public IsTwoPairsCondition(
             [NotNull] ITwoPairsValidator validator)
             : base(validator)
         {
