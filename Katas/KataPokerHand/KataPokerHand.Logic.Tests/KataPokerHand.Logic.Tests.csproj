@@ -80,7 +80,7 @@
     <Compile Include="TexasHoldEm\Rules\IsNumberOfCardsIncorrectRuleTests.cs" />
     <Compile Include="TexasHoldEm\Rules\IsOnePairRuleTests.cs" />
     <Compile Include="TexasHoldEm\Rules\IsStraightFlushRuleTests.cs" />
-    <Compile Include="TexasHoldEm\Conditions\IsNumberOfCardsInvalidTests.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsNumberOfCardsInvalidConditionTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsSameSuitAllCardsConditionTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsStraightConditionTests.cs" />
     <Compile Include="TexasHoldEm\Rules\IsStraightRuleTests.cs" />

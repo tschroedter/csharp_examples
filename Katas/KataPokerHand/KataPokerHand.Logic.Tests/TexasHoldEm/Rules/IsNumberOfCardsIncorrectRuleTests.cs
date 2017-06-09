@@ -21,13 +21,13 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
         public void Setup()
         {
             m_Info = Substitute.For <IPlayerHandInformation>();
-            m_Invalid = Substitute.For <IIsNumberOfCardsInvalid>();
-            m_Sut = new IsNumberOfCardsIncorrectRule(m_Invalid);
+            m_InvalidCondition = Substitute.For <IIsNumberOfCardsInvalidCondition>();
+            m_Sut = new IsNumberOfCardsIncorrectRule(m_InvalidCondition);
         }
 
         private IPlayerHandInformation m_Info;
         private IsNumberOfCardsIncorrectRule m_Sut;
-        private IIsNumberOfCardsInvalid m_Invalid;
+        private IIsNumberOfCardsInvalidCondition m_InvalidCondition;
 
         [Test]
         public void Apply_Updates_HighestCard()
@@ -98,7 +98,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             IEnumerable <ICondition> actual = m_Sut.GetConditions();
             Assert.AreEqual(1,
                             actual.Count());
-            Assert.True(actual.First() is IIsNumberOfCardsInvalid);
+            Assert.True(actual.First() is IIsNumberOfCardsInvalidCondition);
         }
     }
 }

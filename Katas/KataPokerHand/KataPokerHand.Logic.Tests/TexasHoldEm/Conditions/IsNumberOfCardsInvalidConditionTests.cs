@@ -9,7 +9,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class IsNumberOfCardsInvalidTests
+    internal sealed class IsNumberOfCardsInvalidConditionTests
     {
         [TestCase(3,
             0,
@@ -30,7 +30,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
                 cards.Add(Substitute.For <ICard>());
             }
 
-            var sut = new IsNumberOfCardsInvalid
+            var sut = new IsNumberOfCardsInvalidCondition
                       {
                           NumberOfCardsRequired = numberOfCardsRequired,
                           Cards = cards.ToArray()

@@ -34,7 +34,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
         {
             var rules = new List <IRule <IPlayerHandInformation>>();
 
-            rules.Add(new IsNumberOfCardsIncorrectRule(new IsNumberOfCardsInvalid()));
+            rules.Add(new IsNumberOfCardsIncorrectRule(new IsNumberOfCardsInvalidCondition()));
             rules.Add(new IsHighCardRule(new IsAlwaysTrue()));
 
             return rules;
