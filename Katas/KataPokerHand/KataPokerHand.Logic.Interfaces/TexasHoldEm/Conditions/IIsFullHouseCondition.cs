@@ -4,7 +4,7 @@ using Rules.Logic.Interfaces.Conditions;
 
 namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions
 {
-    public interface IIsFullHouse
+    public interface IIsFullHouseCondition
         : ICondition
     {
         IEnumerable <ICard> Cards { get; set; }

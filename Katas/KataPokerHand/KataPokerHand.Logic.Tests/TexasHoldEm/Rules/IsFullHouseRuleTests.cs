@@ -23,7 +23,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
         public void Setup()
         {
             m_Info = Substitute.For <IPlayerHandInformation>();
-            m_Condition = Substitute.For <IIsFullHouse>();
+            m_Condition = Substitute.For <IIsFullHouseCondition>();
             m_Validator = Substitute.For <IFullHouseValidator>();
             m_Sut = new IsFullHouseRule(m_Condition,
                                         m_Validator);
@@ -31,7 +31,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
 
         private IPlayerHandInformation m_Info;
         private IsFullHouseRule m_Sut;
-        private IIsFullHouse m_Condition;
+        private IIsFullHouseCondition m_Condition;
         private IFullHouseValidator m_Validator;
 
         [Test]
@@ -107,7 +107,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             IEnumerable <ICondition> actual = m_Sut.GetConditions();
             Assert.AreEqual(1,
                             actual.Count());
-            Assert.True(actual.First() is IIsFullHouse);
+            Assert.True(actual.First() is IIsFullHouseCondition);
         }
     }
 }

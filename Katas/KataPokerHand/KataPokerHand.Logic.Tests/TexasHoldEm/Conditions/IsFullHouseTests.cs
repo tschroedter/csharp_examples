@@ -17,10 +17,10 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
         {
             m_Validator = Substitute.For <IFullHouseValidator>();
             m_Validator.IsValid().Returns(true);
-            m_Sut = new IsFullHouse(m_Validator);
+            m_Sut = new IsFullHouseCondition(m_Validator);
         }
 
-        private IsFullHouse m_Sut;
+        private IsFullHouseCondition m_Sut;
         private IFullHouseValidator m_Validator;
 
         [Test]

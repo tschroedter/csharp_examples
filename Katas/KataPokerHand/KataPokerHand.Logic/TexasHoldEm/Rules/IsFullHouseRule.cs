@@ -12,15 +12,15 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
           IRule <IPlayerHandInformation>
     {
         public IsFullHouseRule(
-            [NotNull] IIsFullHouse fullHouse,
+            [NotNull] IIsFullHouseCondition fullHouseCondition,
             [NotNull] IFullHouseValidator validator)
         {
-            m_FullHouse = fullHouse;
+            m_FullHouseCondition = fullHouseCondition;
             m_Validator = validator;
         }
 
         [NotNull]
-        private readonly IIsFullHouse m_FullHouse;
+        private readonly IIsFullHouseCondition m_FullHouseCondition;
 
         [NotNull]
         private readonly IFullHouseValidator m_Validator;
@@ -42,9 +42,9 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
 
         public override void Initialize(IPlayerHandInformation info)
         {
-            m_FullHouse.Cards = info.Cards;
+            m_FullHouseCondition.Cards = info.Cards;
 
-            Conditions.Add(m_FullHouse);
+            Conditions.Add(m_FullHouseCondition);
         }
 
         public override int GetPriority()

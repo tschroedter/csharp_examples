@@ -9,7 +9,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class IsNextCardValueTests
+    internal sealed class IsNextCardValueConditionTests
     {
         [SetUp]
         public void Setup() // todo use AutoFixture

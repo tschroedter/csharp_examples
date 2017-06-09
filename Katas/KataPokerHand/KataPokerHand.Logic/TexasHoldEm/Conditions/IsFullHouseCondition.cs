@@ -4,11 +4,11 @@ using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 {
-    public class IsFullHouse
+    public class IsFullHouseCondition
         : BaseCardValidatorCondition <IFullHouseValidator>,
-          IIsFullHouse
+          IIsFullHouseCondition
     {
-        public IsFullHouse(
+        public IsFullHouseCondition(
             [NotNull] IFullHouseValidator validator)
             : base(validator)
         {
