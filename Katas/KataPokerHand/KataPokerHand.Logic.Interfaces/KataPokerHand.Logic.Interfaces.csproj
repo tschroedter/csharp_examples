@@ -56,7 +56,7 @@
     <Compile Include="TexasHoldEm\Conditions\IIsFourCardsSameValue.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsFullHouse.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsNumberOfCardsInvalid.cs" />
-    <Compile Include="TexasHoldEm\Conditions\IIsSameSuitAllCards.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IIsSameSuitAllConditionCards.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsStraightCondition.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsTwoPairsCondition.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\IOnePairValidator.cs" />

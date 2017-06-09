@@ -27,7 +27,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Info = Substitute.For <IPlayerHandInformation>();
             m_Info.Cards.Returns(m_Cards);
 
-            m_Sut = new IsFlushRule(new IsSameSuitAllCards());
+            m_Sut = new IsFlushRule(new IsSameSuitAllConditionCards());
         }
 
         private IsFlushRule m_Sut;
@@ -123,7 +123,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             IEnumerable <ICondition> actual = m_Sut.GetConditions();
             Assert.AreEqual(1,
                             actual.Count());
-            Assert.True(actual.ElementAt(0) is IIsSameSuitAllCards);
+            Assert.True(actual.ElementAt(0) is IIsSameSuitAllConditionCards);
         }
 
         [Test]

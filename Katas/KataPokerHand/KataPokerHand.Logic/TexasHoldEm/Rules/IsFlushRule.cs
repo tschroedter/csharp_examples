@@ -13,13 +13,13 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
           IRule <IPlayerHandInformation>
     {
         public IsFlushRule(
-            [NotNull] IIsSameSuitAllCards same)
+            [NotNull] IIsSameSuitAllConditionCards same)
         {
             m_Same = same;
         }
 
         [NotNull]
-        private readonly IIsSameSuitAllCards m_Same;
+        private readonly IIsSameSuitAllConditionCards m_Same;
 
         public override IPlayerHandInformation Apply(IPlayerHandInformation info)
         {

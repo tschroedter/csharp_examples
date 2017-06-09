@@ -14,13 +14,13 @@ namespace KataPokerHand.Logic.Integration.Tests.CardsEngine
         public IEnumerable <IRule <IPlayerHandInformation>> Rules =
             new IRule <IPlayerHandInformation>[]
             {
-                new IsStraightFlushRule(new IsSameSuitAllCards(),
+                new IsStraightFlushRule(new IsSameSuitAllConditionCards(),
                                         new IsStraightCondition()),
                 new IsFourOfAKindRule(new IsFourCardsSameValue(new FourCardsWithSameValueValidator()),
                                       new FourCardsWithSameValueValidator()),
                 new IsFullHouseRule(new IsFullHouse(new FullHouseValidator()),
                                     new FullHouseValidator()),
-                new IsFlushRule(new IsSameSuitAllCards()),
+                new IsFlushRule(new IsSameSuitAllConditionCards()),
                 new IsStraightRule(new IsStraightCondition()),
                 new IsThreeOfAKindRule(new IsThreeOfAKindCondition(new ThreeCardsWithSameValueValidator()),
                                        new ThreeCardsWithSameValueValidator()),

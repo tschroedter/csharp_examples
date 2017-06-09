@@ -10,15 +10,15 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class IsSameSuitAllCardsTests
+    internal sealed class IsSameSuitAllCardsConditionTests
     {
         [SetUp]
         public void Setup()
         {
-            m_Sut = new IsSameSuitAllCards();
+            m_Sut = new IsSameSuitAllConditionCards();
         }
 
-        private IsSameSuitAllCards m_Sut;
+        private IsSameSuitAllConditionCards m_Sut;
 
         [Test]
         public void IsSatisfied_Returns_False_For_Cards_Empty()

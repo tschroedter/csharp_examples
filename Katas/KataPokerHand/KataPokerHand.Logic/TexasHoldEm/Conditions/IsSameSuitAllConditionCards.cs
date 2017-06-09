@@ -7,8 +7,8 @@ using Rules.Logic.Interfaces.Conditions;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 {
-    public class IsSameSuitAllCards
-        : IIsSameSuitAllCards
+    public class IsSameSuitAllConditionCards
+        : IIsSameSuitAllConditionCards
     {
         private readonly List <ICondition> m_Conditions = new List <ICondition>();
 

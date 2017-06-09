@@ -13,7 +13,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
           IRule <IPlayerHandInformation>
     {
         public IsStraightFlushRule(
-            [NotNull] IIsSameSuitAllCards same,
+            [NotNull] IIsSameSuitAllConditionCards same,
             [NotNull] IIsStraightCondition straightCondition)
         {
             m_Same = same;
@@ -21,7 +21,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         }
 
         [NotNull]
-        private readonly IIsSameSuitAllCards m_Same;
+        private readonly IIsSameSuitAllConditionCards m_Same;
 
         [NotNull]
         private readonly IIsStraightCondition m_StraightCondition;
