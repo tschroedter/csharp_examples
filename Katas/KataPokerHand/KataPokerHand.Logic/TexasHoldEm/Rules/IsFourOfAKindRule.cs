@@ -13,7 +13,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
           IRule <IPlayerHandInformation>
     {
         public IsFourOfAKindRule(
-            [NotNull] IIsFourCardsSameValue same,
+            [NotNull] IIsFourCardsSameValueCondition same,
             [NotNull] IFourCardsWithSameValueValidator validator)
         {
             m_Same = same;
@@ -21,7 +21,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         }
 
         [NotNull]
-        private readonly IIsFourCardsSameValue m_Same;
+        private readonly IIsFourCardsSameValueCondition m_Same;
 
         [NotNull]
         private readonly IFourCardsWithSameValueValidator m_Validator;

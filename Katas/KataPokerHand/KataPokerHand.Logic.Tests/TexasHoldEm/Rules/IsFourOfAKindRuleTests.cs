@@ -29,7 +29,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Info.Cards.Returns(m_Cards);
 
             var validator = new FourCardsWithSameValueValidator();
-            m_Sut = new IsFourOfAKindRule(new IsFourCardsSameValue(validator),
+            m_Sut = new IsFourOfAKindRule(new IsFourCardsSameValueCondition(validator),
                                           validator);
         }
 
@@ -149,7 +149,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             Assert.AreEqual(1,
                             actual.Count());
 
-            Assert.True(actual.First() is IIsFourCardsSameValue);
+            Assert.True(actual.First() is IIsFourCardsSameValueCondition);
         }
 
         [Test]

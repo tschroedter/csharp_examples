@@ -4,11 +4,11 @@ using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 {
-    public class IsFourCardsSameValue
+    public class IsFourCardsSameValueCondition
         : BaseCardValidatorCondition <IFourCardsWithSameValueValidator>,
-          IIsFourCardsSameValue
+          IIsFourCardsSameValueCondition
     {
-        public IsFourCardsSameValue(
+        public IsFourCardsSameValueCondition(
             [NotNull] IFourCardsWithSameValueValidator validator)
             : base(validator)
         {

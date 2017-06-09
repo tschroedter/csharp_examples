@@ -16,7 +16,7 @@ namespace KataPokerHand.Logic.Integration.Tests.CardsEngine
             {
                 new IsStraightFlushRule(new IsSameSuitAllConditionCards(),
                                         new IsStraightCondition()),
-                new IsFourOfAKindRule(new IsFourCardsSameValue(new FourCardsWithSameValueValidator()),
+                new IsFourOfAKindRule(new IsFourCardsSameValueCondition(new FourCardsWithSameValueValidator()),
                                       new FourCardsWithSameValueValidator()),
                 new IsFullHouseRule(new IsFullHouseCondition(new FullHouseValidator()),
                                     new FullHouseValidator()),

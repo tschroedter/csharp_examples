@@ -10,12 +10,12 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class IsFourCardsSameValueTests
+    internal sealed class IsFourCardsSameValueConditionTests
     {
         [SetUp]
         public void Setup()
         {
-            m_Validator = Substitute.For <IFourCardsWithSameValueValidator>();
+            m_Validator = Substitute.For<IFourCardsWithSameValueValidator>();
             m_Validator.IsValid().Returns(true);
             m_Sut = new IsFourCardsSameValueCondition(m_Validator);
         }
