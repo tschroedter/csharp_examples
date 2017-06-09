@@ -29,7 +29,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Info.Cards.Returns(m_Cards);
 
             var validator = new ThreeCardsWithSameValueValidator();
-            m_Sut = new IsThreeOfAKindRule(new IsThreeOfAKind(validator),
+            m_Sut = new IsThreeOfAKindRule(new IsThreeOfAKindCondition(validator),
                                            validator);
         }
 
@@ -134,7 +134,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             Assert.AreEqual(1,
                             actual.Count());
 
-            Assert.True(actual.First() is IIsThreeOfAKind);
+            Assert.True(actual.First() is IIsThreeOfAKindCondition);
         }
 
         [Test]

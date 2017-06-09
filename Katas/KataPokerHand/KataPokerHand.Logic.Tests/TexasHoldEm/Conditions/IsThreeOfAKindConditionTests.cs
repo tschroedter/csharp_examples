@@ -10,17 +10,17 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class IsThreeOfAKindTests
+    internal sealed class IsThreeOfAKindConditionTests
     {
         [SetUp]
         public void Setup()
         {
             m_Validator = Substitute.For <IThreeCardsWithSameValueValidator>();
             m_Validator.IsValid().Returns(true);
-            m_Sut = new IsThreeOfAKind(m_Validator);
+            m_Sut = new IsThreeOfAKindCondition(m_Validator);
         }
 
-        private IsThreeOfAKind m_Sut;
+        private IsThreeOfAKindCondition m_Sut;
         private IThreeCardsWithSameValueValidator m_Validator;
 
         [Test]

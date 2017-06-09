@@ -12,7 +12,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
           IRule <IPlayerHandInformation>
     {
         public IsThreeOfAKindRule(
-            [NotNull] IIsThreeOfAKind fullHouse,
+            [NotNull] IIsThreeOfAKindCondition fullHouse,
             [NotNull] IThreeCardsWithSameValueValidator validator)
         {
             m_FullHouse = fullHouse;
@@ -20,7 +20,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         }
 
         [NotNull]
-        private readonly IIsThreeOfAKind m_FullHouse;
+        private readonly IIsThreeOfAKindCondition m_FullHouse;
 
         [NotNull]
         private readonly IThreeCardsWithSameValueValidator m_Validator;

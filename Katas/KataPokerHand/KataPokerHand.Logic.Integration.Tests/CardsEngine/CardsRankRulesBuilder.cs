@@ -22,7 +22,7 @@ namespace KataPokerHand.Logic.Integration.Tests.CardsEngine
                                     new FullHouseValidator()),
                 new IsFlushRule(new IsSameSuitAllCards()),
                 new IsStraightRule(new IsStraight()),
-                new IsThreeOfAKindRule(new IsThreeOfAKind(new ThreeCardsWithSameValueValidator()),
+                new IsThreeOfAKindRule(new IsThreeOfAKindCondition(new ThreeCardsWithSameValueValidator()),
                                        new ThreeCardsWithSameValueValidator()),
                 new IsTwoPairsRule(new IsTwoPairsCondition(new TwoPairsValidator()),
                                    new TwoPairsValidator()),
