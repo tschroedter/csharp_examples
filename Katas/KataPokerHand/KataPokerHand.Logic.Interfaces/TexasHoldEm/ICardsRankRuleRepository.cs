@@ -1,7 +1,7 @@
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
-using Rules.Logic;
+using Rules.Logic.Interfaces;
 
-namespace KataPokerHand.Logic.TexasHoldEm
+namespace KataPokerHand.Logic.Interfaces.TexasHoldEm
 {
     public interface ICardsRankRuleRepository
         : IRuleRepository <IPlayerHandInformation>

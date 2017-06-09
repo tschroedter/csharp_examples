@@ -2,7 +2,7 @@
 using JetBrains.Annotations;
 using Rules.Logic.Interfaces.Rules;
 
-namespace Rules.Logic
+namespace Rules.Logic.Interfaces
 {
     public interface IRuleRepository <T>
     {

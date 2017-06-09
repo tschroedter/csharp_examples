@@ -15,10 +15,12 @@ namespace Playing.Tests.Decks.CardValues
             : BaseCardValue
         {
             public BaseCardValueTest(
+                char asChar,
                 [NotNull] string name,
                 [NotNull] uint[] values,
                 CardRank rank)
-                : base(name,
+                : base(asChar,
+                       name,
                        values,
                        rank)
             {
@@ -31,7 +33,7 @@ namespace Playing.Tests.Decks.CardValues
             // Arrange
             // Act
             // Assert
-            Assert.Throws <ArgumentException>(() => new BaseCardValueTest(
+            Assert.Throws <ArgumentException>(() => new BaseCardValueTest(' ',
                                                                           string.Empty,
                                                                           new[]
                                                                           {
@@ -46,8 +48,8 @@ namespace Playing.Tests.Decks.CardValues
             // Arrange
             // Act
             // Assert
-            Assert.Throws <ArgumentException>(() => new BaseCardValueTest(
-                                                                          "2",
+            Assert.Throws <ArgumentException>(() => new BaseCardValueTest('2',
+                                                                          "Two",
                                                                           new uint[0],
                                                                           CardRank.Two));
         }

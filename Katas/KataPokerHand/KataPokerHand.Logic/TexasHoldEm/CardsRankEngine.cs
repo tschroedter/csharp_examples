@@ -1,4 +1,5 @@
 ﻿using JetBrains.Annotations;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using Rules.Logic;
 

@@ -34,5 +34,11 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules
 
         [NotNull]
         IEnumerable <ICard> SecondPairOfCards { get; set; }
+
+        [NotNull]
+        IEnumerable <ICard> PairOfCards { get; set; }
+
+        [NotNull]
+        IEnumerable <ICard> OtherCards { get; set; }
     }
 }

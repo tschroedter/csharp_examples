@@ -51,6 +51,7 @@
     <Compile Include="TexasHoldEm\Conditions\BaseCardCondition.cs" />
     <Compile Include="TexasHoldEm\Conditions\BaseCardValidatorCondition.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsAlwaysTrue.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsOnePair.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\FourCardsWithSameValueValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsAlwaysFalse.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsFullHouse.cs" />
@@ -63,17 +64,15 @@
     <Compile Include="TexasHoldEm\Conditions\IsFourCardsSameValue.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsThreeOfAKind.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsTwoPairs.cs" />
-    <Compile Include="TexasHoldEm\Conditions\Validators\IPairsValidator.cs" />
-    <Compile Include="TexasHoldEm\Conditions\Validators\PairsValidator.cs" />
+    <Compile Include="TexasHoldEm\Conditions\Validators\OnePairValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\ThreeCardsWithSameValueValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\TwoPairsValidator.cs" />
-    <Compile Include="TexasHoldEm\ICardsRankEngine.cs" />
-    <Compile Include="TexasHoldEm\ICardsRankRuleRepository.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFlushRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFourOfAKindRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFullHouseRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsHighCardRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsNumberOfCardsIncorrectRule.cs" />
+    <Compile Include="TexasHoldEm\Rules\IsOnePairRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsStraightFlushRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsStraightRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsThreeOfAKindRule.cs" />

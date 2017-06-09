@@ -8,7 +8,7 @@ using PlayingCards.Decks.Suits;
 namespace KataPokerHand.Logic.TexasHoldEm.Rules
 {
     public class PlayerHandInformation
-        : IPlayerHandInformation // todo testing
+        : IPlayerHandInformation // todo testing, check set we set OtherCards, reduce properties
     {
         public PlayerHandInformation()
         {
@@ -21,6 +21,8 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
             FourOfAKind = new ICard[0];
             FirstPairOfCards = new ICard[0];
             SecondPairOfCards = new ICard[0];
+            PairOfCards = new ICard[0];
+            OtherCards = new ICard[0];
         }
 
         public IEnumerable <ICard> Cards { get; set; }
@@ -33,5 +35,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         public IEnumerable <ICard> FourOfAKind { get; set; }
         public IEnumerable <ICard> FirstPairOfCards { get; set; }
         public IEnumerable <ICard> SecondPairOfCards { get; set; }
+        public IEnumerable <ICard> PairOfCards { get; set; }
+        public IEnumerable <ICard> OtherCards { get; set; }
     }
 }

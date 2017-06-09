@@ -12,7 +12,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class PairsValidatorrTests
+    internal sealed class OnePairValidatorTests
     {
         [SetUp]
         public void Setup()
@@ -22,7 +22,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
 
         private OnePairValidator m_Sut;
 
-        private ICard[] CreateCardsWithPairs()
+        private ICard[] CreateCardsWithOnePair()
         {
             return new ICard[]
                    {
@@ -34,23 +34,23 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
                    };
         }
 
-        private ICard[] CreateCardsWithNoPair()
+        private ICard[] CreateCardsWithNoPairs()
         {
             return new ICard[]
                    {
                        new TwoOfClubs(),
                        new ThreeOfDiamonds(),
-                       new FiveOfHearts(),
-                       new SevenOfSpades(),
-                       new NineOfHearts()
+                       new NineOfHearts(),
+                       new JackOfSpades(),
+                       new AceOfHearts()
                    };
         }
 
         [Test]
-        public void IsSatisfied_Returns_False_For_No_Two_Pairs()
+        public void IsSatisfied_Returns_False_For_No_Pair()
         {
             // Arrange
-            m_Sut.Cards = CreateCardsWithNoPair();
+            m_Sut.Cards = CreateCardsWithNoPairs();
 
             // Act
             // Assert
@@ -58,10 +58,10 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
         }
 
         [Test]
-        public void IsSatisfied_Returns_True_For_Pair()
+        public void IsSatisfied_Returns_True_For_One_Pair()
         {
             // Arrange
-            m_Sut.Cards = CreateCardsWithPairs();
+            m_Sut.Cards = CreateCardsWithOnePair();
 
             // Act
             // Assert
@@ -72,7 +72,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
         public void IsSatisfied_Sets_OtherCards()
         {
             // Arrange
-            m_Sut.Cards = CreateCardsWithPairs();
+            m_Sut.Cards = CreateCardsWithOnePair();
 
             // Act
             m_Sut.IsValid();
@@ -90,7 +90,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
         public void IsSatisfied_Sets_PairOfCards()
         {
             // Arrange
-            m_Sut.Cards = CreateCardsWithPairs();
+            m_Sut.Cards = CreateCardsWithOnePair();
 
             // Act
             m_Sut.IsValid();

@@ -57,12 +57,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardsEngine\CardsBuilder.cs" />
     <Compile Include="CardsEngine\CardsRankEngine.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CardsRankEngine.feature</DependentUpon>
     </Compile>
     <Compile Include="CardsEngine\CardsRankEngineSteps.cs" />
+    <Compile Include="CardsEngine\CardsRankRulesBuilder.cs" />
     <Compile Include="Example\Calculator.cs" />
     <Compile Include="Example\Calculator.feature.cs">
       <AutoGen>True</AutoGen>
@@ -94,7 +96,32 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\KataPokerHand.Logic.Interfaces\KataPokerHand.Logic.Interfaces.csproj">
+      <Project>{8E75F510-D710-4C44-816B-220DF9210AD5}</Project>
+      <Name>KataPokerHand.Logic.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KataPokerHand.Logic\KataPokerHand.Logic.csproj">
+      <Project>{C630F12B-441E-4868-ADD2-2DAB4881687B}</Project>
+      <Name>KataPokerHand.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlayinCards.Interfaces\PlayinCards.Interfaces.csproj">
+      <Project>{AAA182AF-5ED1-4D5C-BE1F-83E0C47F484D}</Project>
+      <Name>PlayinCards.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PlayingCards\PlayingCards.csproj">
+      <Project>{98D9F796-99EB-478C-8DF8-87F58096D6DC}</Project>
+      <Name>PlayingCards</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rules.Logic.Interfaces\Rules.Logic.Interfaces.csproj">
+      <Project>{510514c7-f4dc-48f6-bda8-6cfe4a0d5f34}</Project>
+      <Name>Rules.Logic.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rules.Logic\Rules.Logic.csproj">
+      <Project>{d500d045-a57a-4119-908f-a631169b6756}</Project>
+      <Name>Rules.Logic</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

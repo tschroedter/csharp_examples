@@ -11,6 +11,7 @@
         Straight,
         ThreeOfAKind,
         TwoPairs,
+        OnePair,
         HighCard
     }
 }

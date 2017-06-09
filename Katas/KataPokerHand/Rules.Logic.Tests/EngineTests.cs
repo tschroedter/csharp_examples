@@ -4,6 +4,7 @@ using JetBrains.Annotations;
 using NSubstitute;
 using NSubstituteAutoMocker;
 using NUnit.Framework;
+using Rules.Logic.Interfaces;
 using Rules.Logic.Interfaces.Rules;
 
 namespace Rules.Logic.Tests

@@ -12,9 +12,9 @@ namespace PlayinCards.Interfaces.Decks.Cards
         bool HasMultipleValues { get; }
         CardRank Rank { get; }
 
+        string Description();
+
         [NotNull]
         ISuit GetSuit(); // todo code smell Suit as char and class
-
-        string Description();
     }
 }

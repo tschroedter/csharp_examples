@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IRuleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Conditions\ICondition.cs" />
     <Compile Include="IEngine.cs" />

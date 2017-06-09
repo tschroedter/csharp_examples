@@ -133,6 +133,7 @@
     <Compile Include="PlayerHandTests.cs" />
     <Compile Include="PreviousCardValueFinderTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringToCardFactoryTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PlayinCards.Interfaces\PlayinCards.Interfaces.csproj">

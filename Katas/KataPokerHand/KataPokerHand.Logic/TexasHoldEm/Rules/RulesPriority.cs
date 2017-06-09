@@ -11,6 +11,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         Straight,
         ThreeOfAKind,
         TwoPairs,
+        OnePairs,
         HighCard
     }
 }

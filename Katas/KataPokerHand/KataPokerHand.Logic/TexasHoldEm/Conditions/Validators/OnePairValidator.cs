@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators;
 using PlayinCards.Interfaces.Decks.Cards;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Conditions.Validators
 {
-    public class PairsValidator
-        : IPairsValidator
+    public class OnePairValidator
+        : IOnePairValidator
     {
-        public PairsValidator()
+        public OnePairValidator()
         {
             Cards = new ICard[0];
             PairOfCards = new ICard[0];

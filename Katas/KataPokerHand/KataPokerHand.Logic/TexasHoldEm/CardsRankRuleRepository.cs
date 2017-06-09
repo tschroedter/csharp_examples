@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using JetBrains.Annotations;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using Rules.Logic;
 using Rules.Logic.Interfaces.Rules;

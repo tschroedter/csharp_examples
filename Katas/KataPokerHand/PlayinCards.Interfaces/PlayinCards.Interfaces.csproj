@@ -54,6 +54,7 @@
     <Compile Include="IPlayerHand.cs" />
     <Compile Include="IPreviousCardValueFinder.cs" />
     <Compile Include="IRandom.cs" />
+    <Compile Include="IStringToCardFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

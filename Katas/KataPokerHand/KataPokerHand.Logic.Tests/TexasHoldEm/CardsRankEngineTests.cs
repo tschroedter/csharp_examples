@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm;
 using KataPokerHand.Logic.TexasHoldEm.Conditions;
