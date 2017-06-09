@@ -21,10 +21,10 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
             m_CardTwo.Value.Returns('3');
 
             m_Finder = Substitute.For <INextCardValueFinder>();
-            m_Sut = new IsNextCardValue(m_Finder);
+            m_Sut = new IsNextCardValueCondition(m_Finder);
         }
 
-        private IsNextCardValue m_Sut;
+        private IsNextCardValueCondition m_Sut;
         private INextCardValueFinder m_Finder;
         private ICard m_CardOne;
         private ICard m_CardTwo;

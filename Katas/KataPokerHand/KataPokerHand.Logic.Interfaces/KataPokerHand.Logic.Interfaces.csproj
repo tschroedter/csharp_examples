@@ -48,6 +48,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsAlwaysFalse.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsAlwaysTrue.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IIsNextCardValueCondition.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsOnePairCondition.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsThreeOfAKindCondition.cs" />
     <Compile Include="TexasHoldEm\Conditions\IIsSuitEqualCondition.cs" />

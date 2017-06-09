@@ -1,14 +1,15 @@
 ﻿using JetBrains.Annotations;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
 using PlayinCards.Interfaces;
 using Rules.Logic.Interfaces.Conditions;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 {
-    public class IsNextCardValue
+    public class IsNextCardValueCondition
         : BaseCardCondition,
-          ICondition
+          IIsNextCardValueCondition
     {
-        public IsNextCardValue(
+        public IsNextCardValueCondition(
             [NotNull] INextCardValueFinder finder)
         {
             m_Finder = finder;
