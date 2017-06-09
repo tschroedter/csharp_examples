@@ -59,12 +59,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TexasHoldEm\CardsRankEngineTests.cs" />
-    <Compile Include="TexasHoldEm\Conditions\IsFourCardsSameValueConditionTests.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsAlwaysFalseConditionTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsOnePairConditionTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsThreeOfAKindConditionTests.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsAlwaysTrueConditionTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\FourCardsWithSameValueValidatorTests.cs" />
-    <Compile Include="TexasHoldEm\Conditions\IsFourCardsSameValueTests.cs" />
-    <Compile Include="TexasHoldEm\Conditions\IsFullHouseTests.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsFourCardsSameValueConditionTests.cs" />
+    <Compile Include="TexasHoldEm\Conditions\IsFullHouseConditionTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsNextCardValueConditionTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\IsSuitEqualConditionTests.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\FullHouseValidatorTests.cs" />

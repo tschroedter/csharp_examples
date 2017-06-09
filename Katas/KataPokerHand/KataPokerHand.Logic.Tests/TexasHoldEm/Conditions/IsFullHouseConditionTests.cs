@@ -10,18 +10,18 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class IsFourCardsSameValueTests
+    internal sealed class IsFullHouseConditionTests
     {
         [SetUp]
         public void Setup()
         {
-            m_Validator = Substitute.For <IFourCardsWithSameValueValidator>();
+            m_Validator = Substitute.For <IFullHouseValidator>();
             m_Validator.IsValid().Returns(true);
-            m_Sut = new IsFourCardsSameValueCondition(m_Validator);
+            m_Sut = new IsFullHouseCondition(m_Validator);
         }
 
-        private IsFourCardsSameValueCondition m_Sut;
-        private IFourCardsWithSameValueValidator m_Validator;
+        private IsFullHouseCondition m_Sut;
+        private IFullHouseValidator m_Validator;
 
         [Test]
         public void IsSatisfied_Calls_Validator()

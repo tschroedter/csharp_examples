@@ -2,9 +2,9 @@
 
 namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 {
-    public class IsAlwaysFalse // todo testing
+    public class IsAlwaysFalseCondition
         : BaseCardCondition,
-          IIsAlwaysFalse
+          IIsAlwaysFalseCondition
     {
         public override bool IsSatisfied()
         {

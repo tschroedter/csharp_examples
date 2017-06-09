@@ -12,13 +12,13 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
           IRule <IPlayerHandInformation>
     {
         public IsHighCardRule(
-            [NotNull] IIsAlwaysTrue condition)
+            [NotNull] IIsAlwaysTrueCondition condition)
         {
             m_Condition = condition;
         }
 
         [NotNull]
-        private readonly IIsAlwaysTrue m_Condition;
+        private readonly IIsAlwaysTrueCondition m_Condition;
 
         public override IPlayerHandInformation Apply(IPlayerHandInformation info)
         {

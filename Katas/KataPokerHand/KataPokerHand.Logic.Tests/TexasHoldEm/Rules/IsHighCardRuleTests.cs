@@ -27,7 +27,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             m_Info = Substitute.For <IPlayerHandInformation>();
             m_Info.Cards.Returns(m_Cards);
 
-            m_Sut = new IsHighCardRule(new IsAlwaysTrue());
+            m_Sut = new IsHighCardRule(new IsAlwaysTrueCondition());
         }
 
         private IsHighCardRule m_Sut;
@@ -99,7 +99,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
             Assert.AreEqual(1,
                             actual.Count());
 
-            Assert.True(actual.First() is IIsAlwaysTrue);
+            Assert.True(actual.First() is IIsAlwaysTrueCondition);
         }
     }
 }

@@ -63,7 +63,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
         {
             return new[]
                    {
-                       new IsAlwaysFalse()
+                       new IsAlwaysFalseCondition()
                    };
         }
     }

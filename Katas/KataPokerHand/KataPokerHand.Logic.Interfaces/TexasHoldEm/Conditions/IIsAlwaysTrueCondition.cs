@@ -2,7 +2,7 @@
 
 namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions
 {
-    public interface IIsAlwaysTrue
+    public interface IIsAlwaysTrueCondition
         : ICondition
     {
     }
