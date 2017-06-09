@@ -8,15 +8,15 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class IsSuitEqualTests
+    internal sealed class IsSuitEqualConditionTests
     {
         [SetUp]
         public void Setup() // todo use AutoFixture
         {
-            m_Sut = new IsSuitEqual();
+            m_Sut = new IsSuitEqualCondition();
         }
 
-        private IsSuitEqual m_Sut;
+        private IsSuitEqualCondition m_Sut;
 
         [Test]
         public void IsSatisfied_Returns_False_For_Different_Suit()

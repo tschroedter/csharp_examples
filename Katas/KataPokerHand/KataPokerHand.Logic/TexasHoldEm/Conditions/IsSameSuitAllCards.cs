@@ -49,7 +49,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 
             foreach ( ICard card in cards )
             {
-                conditions.Add(new IsSuitEqual // todo replace with factory
+                conditions.Add(new IsSuitEqualCondition // todo replace with factory
                                {
                                    CardOne = card,
                                    CardTwo = first
