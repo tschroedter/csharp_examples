@@ -1,7 +1,6 @@
 ﻿using JetBrains.Annotations;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions;
 using PlayinCards.Interfaces;
-using Rules.Logic.Interfaces.Conditions;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Conditions
 {

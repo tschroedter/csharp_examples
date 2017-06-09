@@ -1,7 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
-using NUnit.Framework;
-using NUnit.Framework.Internal;
 using KataPokerHand.Logic.TexasHoldEm.Conditions;
+using NUnit.Framework;
 
 namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
 {
@@ -9,7 +8,6 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions
     [ExcludeFromCodeCoverage]
     internal sealed class IsAlwaysFalseConditionTests
     {
-
         [Test]
         public void Method_Scenario_ExpectedBehavior()
         {

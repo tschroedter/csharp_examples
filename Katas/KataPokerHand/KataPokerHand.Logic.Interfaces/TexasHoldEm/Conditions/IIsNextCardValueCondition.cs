@@ -9,6 +9,7 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions
     {
         [NotNull]
         ICard CardOne { get; set; }
+
         [NotNull]
         ICard CardTwo { get; set; }
     }

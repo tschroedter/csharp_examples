@@ -49,7 +49,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions
             for ( var i = 0 ; i < cards.Length - 1 ; i++ )
             {
                 conditions.Add(new IsNextCardValueCondition( // todo factory
-                                                   new NextCardValueFinder())
+                                                            new NextCardValueFinder())
                                {
                                    CardOne = cards [ i ],
                                    CardTwo = cards [ i + 1 ]
