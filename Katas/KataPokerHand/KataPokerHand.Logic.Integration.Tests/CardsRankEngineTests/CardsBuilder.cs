@@ -5,7 +5,7 @@ using PlayingCards.Decks.Cards.Diamonds;
 using PlayingCards.Decks.Cards.Hearts;
 using PlayingCards.Decks.Cards.Spades;
 
-namespace KataPokerHand.Logic.Integration.Tests.CardsEngine
+namespace KataPokerHand.Logic.Integration.Tests.CardsRankEngineTests
 {
     public sealed class CardsBuilder
     {

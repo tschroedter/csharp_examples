@@ -57,14 +57,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CardsEngine\CardsBuilder.cs" />
-    <Compile Include="CardsEngine\CardsRankEngine.feature.cs">
+    <Compile Include="CardsRankEngineTests\CardsBuilder.cs" />
+    <Compile Include="CardsRankEngineTests\CardsRankEngine.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CardsRankEngine.feature</DependentUpon>
     </Compile>
-    <Compile Include="CardsEngine\CardsRankEngineSteps.cs" />
-    <Compile Include="CardsEngine\CardsRankRulesBuilder.cs" />
+    <Compile Include="CardsRankEngineTests\CardsRankEngineSteps.cs" />
+    <Compile Include="CardsRankEngineTests\CardsRankRulesBuilder.cs" />
     <Compile Include="Example\Calculator.cs" />
     <Compile Include="Example\Calculator.feature.cs">
       <AutoGen>True</AutoGen>
@@ -76,7 +76,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="CardsEngine\CardsRankEngine.feature">
+    <None Include="CardsRankEngineTests\CardsRankEngine.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CardsRankEngine.feature.cs</LastGenOutput>
     </None>

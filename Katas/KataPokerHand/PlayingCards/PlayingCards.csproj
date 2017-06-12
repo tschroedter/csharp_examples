@@ -122,6 +122,7 @@
     <Compile Include="PreviousCardValueFinder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StringToCardFactory.cs" />
+    <Compile Include="StringToCardRankFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PlayinCards.Interfaces\PlayinCards.Interfaces.csproj">

@@ -6,7 +6,7 @@ using KataPokerHand.Logic.TexasHoldEm.Conditions.Validators;
 using KataPokerHand.Logic.TexasHoldEm.Rules;
 using Rules.Logic.Interfaces.Rules;
 
-namespace KataPokerHand.Logic.Integration.Tests.CardsEngine
+namespace KataPokerHand.Logic.Integration.Tests.CardsRankEngineTests
 {
     [ExcludeFromCodeCoverage]
     public class CardsRankRulesBuilder
