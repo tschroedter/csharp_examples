@@ -18,9 +18,21 @@ Scenario: Engine detects four of a kind
        And I added a card 'two of spades' to player cards
        And I added a card 'two of hearts' to player cards
        And I added a card 'two of diamonds' to player cards
-       And I added a card 'six of Clubs' to player cards
+       And I added a card 'six of clubs' to player cards
        When I apply the rules
        Then the status should be 'FourOfAKind'
        And the HighestCard should be 'six of Clubs'
        And the FourOfAKind should be 'two of clubs, two of spades, two of hearts, two of diamonds'
        And the Rank should be 'two'
+
+@fullHouse
+Scenario: Engine detects full house
+       Given I added a card 'two of clubs' to player cards
+       And I added a card 'two of spades' to player cards
+       And I added a card 'two of hearts' to player cards
+       And I added a card 'three of diamonds' to player cards
+       And I added a card 'three of clubs' to player cards
+       When I apply the rules
+       Then the status should be 'FullHouse'
+       And the TwoOfAkind should be 'three of diamonds, three of clubs'
+       And the ThreeOfAkind should be 'two of clubs, two of spades, two of hearts'

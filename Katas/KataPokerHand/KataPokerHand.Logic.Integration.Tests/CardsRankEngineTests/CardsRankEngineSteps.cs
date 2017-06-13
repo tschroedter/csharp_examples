@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using JetBrains.Annotations;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm;
 using KataPokerHand.Logic.TexasHoldEm.Rules;
@@ -33,8 +34,8 @@ namespace KataPokerHand.Logic.Integration.Tests.CardsRankEngineTests
         private readonly List <ICard> m_Cards;
         private readonly IPlayerHandInformation m_Info;
         private readonly IStringToCardFactory m_StringToCard;
-        private readonly CardsRankEngine m_Sut;
         private readonly IStringToCardRankFactory m_StringToCardRank;
+        private readonly CardsRankEngine m_Sut;
 
         [Given(@"I added a card '(.*)' to player cards")]
         public void GivenIAddedACardToPlayerCards(string cardAsString)
@@ -45,7 +46,7 @@ namespace KataPokerHand.Logic.Integration.Tests.CardsRankEngineTests
         [Then(@"the Rank should be '(.*)'")]
         public void ThenTheCardRankShouldBe(string cardRankAsString)
         {
-            var expected = m_StringToCardRank.ToCardRank(cardRankAsString);
+            CardRank expected = m_StringToCardRank.ToCardRank(cardRankAsString);
 
             Assert.AreEqual(expected,
                             m_Info.Rank);
@@ -56,16 +57,9 @@ namespace KataPokerHand.Logic.Integration.Tests.CardsRankEngineTests
         {
             List <ICard> cards = ConvertCardsStringsToList(cardsAsString);
 
-            foreach ( ICard card in cards )
-            {
-                WriteLine("'FourOfAKind' should contain expected card: {0}",
-                          card);
-
-                Assert.True(m_Info.FourOfAKind.Any(x => x.ToString() == card.ToString())); // todo need equals
-
-                WriteLine("Found card: {0}",
-                          card);
-            }
+            AssertCards(m_Info.FourOfAKind,
+                        cards,
+                        "FourOfAKind");
         }
 
         [Then(@"the HighestCard should be '(.*)'")]
@@ -87,6 +81,26 @@ namespace KataPokerHand.Logic.Integration.Tests.CardsRankEngineTests
                             m_Info.Status);
         }
 
+        [Then(@"the ThreeOfAkind should be '(.*)'")]
+        public void ThenTheThreeOfAkindShouldBe(string cardsAsString)
+        {
+            List <ICard> cards = ConvertCardsStringsToList(cardsAsString);
+
+            AssertCards(m_Info.ThreeOfAKind,
+                        cards,
+                        "ThreeOfAKind");
+        }
+
+        [Then(@"the TwoOfAkind should be '(.*)'")]
+        public void ThenTheTwoOfAkindShouldBe(string cardsAsString)
+        {
+            List <ICard> cards = ConvertCardsStringsToList(cardsAsString);
+
+            AssertCards(m_Info.TwoOfAKind,
+                        cards,
+                        "TwoOfAKind");
+        }
+
         [When(@"I apply the rules")]
         public void WhenIApplyTheRules()
         {
@@ -94,6 +108,26 @@ namespace KataPokerHand.Logic.Integration.Tests.CardsRankEngineTests
                              {
                                  m_Info
                              });
+        }
+
+        private void AssertCards(
+            [NotNull] IEnumerable <ICard> expected,
+            [NotNull] IEnumerable <ICard> actual,
+            [NotNull] string description)
+        {
+            IEnumerable <ICard> array = expected as ICard[] ?? expected.ToArray();
+
+            foreach ( ICard card in actual )
+            {
+                WriteLine("'{0}' should contain expected card: {1}",
+                          description,
+                          card);
+
+                Assert.True(array.Any(x => x.ToString() == card.ToString())); // todo need equals
+
+                WriteLine("Found card: {0}",
+                          card);
+            }
         }
 
         private List <ICard> ConvertCardsStringsToList(string cardsAsString)

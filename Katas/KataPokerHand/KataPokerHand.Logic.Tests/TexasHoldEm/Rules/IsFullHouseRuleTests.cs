@@ -38,6 +38,8 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
         public void Apply_Updates_Status()
         {
             // Arrange
+            m_Validator.IsValid().Returns(true);
+
             // Act
             IPlayerHandInformation actual = m_Sut.Apply(m_Info);
 
@@ -57,6 +59,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
                             new TwoOfHearts(),
                             new TwoOfDiamonds()
                         };
+            m_Validator.IsValid().Returns(true);
             m_Validator.ThreeOfAKind = cards;
 
             // Act
@@ -76,6 +79,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
                             new TwoOfClubs(),
                             new TwoOfHearts()
                         };
+            m_Validator.IsValid().Returns(true);
             m_Validator.TwoOfAKind = cards;
 
             // Act

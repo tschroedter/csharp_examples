@@ -110,7 +110,7 @@ this.ScenarioSetup(scenarioInfo);
 #line 20
        testRunner.And("I added a card \'two of diamonds\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 21
-       testRunner.And("I added a card \'six of Clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+       testRunner.And("I added a card \'six of clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 22
        testRunner.When("I apply the rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 23
@@ -122,6 +122,37 @@ this.ScenarioSetup(scenarioInfo);
                     "monds\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 26
        testRunner.And("the Rank should be \'two\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Engine detects full house")]
+        [NUnit.Framework.CategoryAttribute("fullHouse")]
+        public virtual void EngineDetectsFullHouse()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Engine detects full house", new string[] {
+                        "fullHouse"});
+#line 29
+this.ScenarioSetup(scenarioInfo);
+#line 30
+       testRunner.Given("I added a card \'two of clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 31
+       testRunner.And("I added a card \'two of spades\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 32
+       testRunner.And("I added a card \'two of hearts\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 33
+       testRunner.And("I added a card \'three of diamonds\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+       testRunner.And("I added a card \'three of clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 35
+       testRunner.When("I apply the rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 36
+       testRunner.Then("the status should be \'FullHouse\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 37
+       testRunner.And("the TwoOfAkind should be \'three of diamonds, three of clubs\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 38
+       testRunner.And("the ThreeOfAkind should be \'two of clubs, two of spades, two of hearts\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             this.ScenarioCleanup();
         }
