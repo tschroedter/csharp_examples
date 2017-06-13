@@ -24,6 +24,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
         {
             info.Status = Status.HighCard;
             info.HighestCard = info.Cards.OrderBy(x => x.Rank).Last();
+            info.OtherCards = info.Cards.Where(x => x != info.HighestCard);
 
             return info;
         }

@@ -284,6 +284,36 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Engine detects highest card")]
+        [NUnit.Framework.CategoryAttribute("highestCard")]
+        public virtual void EngineDetectsHighestCard()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Engine detects highest card", new string[] {
+                        "highestCard"});
+#line 91
+this.ScenarioSetup(scenarioInfo);
+#line 92
+       testRunner.Given("I added a card \'two of clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 93
+       testRunner.And("I added a card \'four of spades\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 94
+       testRunner.And("I added a card \'eight of diamonds\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 95
+       testRunner.And("I added a card \'jack of clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 96
+       testRunner.When("I apply the rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 97
+       testRunner.Then("the status should be \'HighCard\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 98
+       testRunner.And("the HighestCard should be \'jack of clubs\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 99
+       testRunner.And("the OtherCards should be \'two of clubs, four of spades, six of hearts, eight of d" +
+                    "iamonds\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
