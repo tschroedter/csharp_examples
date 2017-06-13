@@ -91,6 +91,17 @@ namespace KataPokerHand.Logic.Integration.Tests.CardsRankEngineTests
                         "OtherCards");
         }
 
+        [Then(@"the PairOfCards should be '(.*)'")]
+        public void ThenThePairOfCardsShouldBe(string cardsAsString)
+        {
+            List <ICard> cards = ConvertCardsStringsToList(cardsAsString);
+
+            AssertCards(m_Info.PairOfCards,
+                        cards,
+                        "PairOfCards");
+            ;
+        }
+
         [Then(@"the SecondPairOfCards should be '(.*)'")]
         public void ThenTheSecondPairOfCardsShouldBe(string cardsAsString)
         {

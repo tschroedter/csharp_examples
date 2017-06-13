@@ -69,6 +69,19 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
         }
 
         [Test]
+        public void IsSatisfied_Sets_HighestCard()
+        {
+            // Arrange
+            m_Sut.Cards = CreateCardsWithOnePair();
+
+            // Act
+            m_Sut.IsValid();
+
+            // Assert
+            Assert.True(m_Sut.HighestCard is AceOfHearts);
+        }
+
+        [Test]
         public void IsSatisfied_Sets_OtherCards()
         {
             // Arrange

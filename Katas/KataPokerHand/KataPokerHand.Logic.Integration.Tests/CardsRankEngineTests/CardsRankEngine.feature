@@ -74,3 +74,16 @@ Scenario: Engine detects two pairs
        And the FirstPairOfCards should be 'two of clubs, two of spades'
        And the SecondPairOfCards should be 'three of hearts, three of diamonds'
        And the HighestCard should be 'four of clubs'
+
+@onePair
+Scenario: Engine detects one pair
+       Given I added a card 'two of clubs' to player cards
+       And I added a card 'two of spades' to player cards
+       And I added a card 'three of hearts' to player cards
+       And I added a card 'four of diamonds' to player cards
+       And I added a card 'five of clubs' to player cards
+       When I apply the rules
+       Then the status should be 'OnePair'
+       And the PairOfCards should be 'two of clubs, two of spades'
+       And the OtherCards should be 'three of hearts, four of diamonds, five of clubs'
+       

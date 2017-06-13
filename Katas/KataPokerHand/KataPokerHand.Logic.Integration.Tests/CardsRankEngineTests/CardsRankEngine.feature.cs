@@ -253,6 +253,37 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Engine detects one pair")]
+        [NUnit.Framework.CategoryAttribute("onePair")]
+        public virtual void EngineDetectsOnePair()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Engine detects one pair", new string[] {
+                        "onePair"});
+#line 79
+this.ScenarioSetup(scenarioInfo);
+#line 80
+       testRunner.Given("I added a card \'two of clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 81
+       testRunner.And("I added a card \'two of spades\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+       testRunner.And("I added a card \'three of hearts\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 83
+       testRunner.And("I added a card \'four of diamonds\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 84
+       testRunner.And("I added a card \'five of clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 85
+       testRunner.When("I apply the rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 86
+       testRunner.Then("the status should be \'OnePair\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 87
+       testRunner.And("the PairOfCards should be \'two of clubs, two of spades\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
+       testRunner.And("the OtherCards should be \'three of hearts, four of diamonds, five of clubs\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

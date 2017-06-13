@@ -13,12 +13,12 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules
         Status Status { get; set; }
 
         [NotNull]
-        ISuit Suit { get; set; }
+        ISuit Suit { get; set; } // todo maybe moved into rules engine 2
 
         [NotNull]
-        ICard HighestCard { get; set; }
+        ICard HighestCard { get; set; } // todo maybe moved into rules engine 2
 
-        CardRank Rank { get; set; }
+        CardRank Rank { get; set; } // todo maybe moved into rules engine 2
 
         [NotNull]
         IEnumerable <ICard> TwoOfAKind { get; set; }

@@ -12,5 +12,8 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators
 
         [NotNull]
         IEnumerable <ICard> OtherCards { get; set; }
+
+        [NotNull]
+        ICard HighestCard { get; set; }
     }
 }
