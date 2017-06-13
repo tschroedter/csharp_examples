@@ -9,7 +9,10 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators
     {
         [NotNull]
         IEnumerable <ICard> ThreeOfAKind { get; }
-
         CardRank Rank { get; }
+        [NotNull]
+        IEnumerable<ICard> OtherCards { get; }
+        [NotNull]
+        ICard HighestCard { get; }
     }
 }

@@ -47,7 +47,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
         }
 
         [Test]
-        public void IsSatisfied_Returns_False_For_No_Two_Pairs()
+        public void IsValid_Returns_False_For_No_Two_Pairs()
         {
             // Arrange
             m_Sut.Cards = CreateCardsWithNoPairs();
@@ -58,7 +58,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
         }
 
         [Test]
-        public void IsSatisfied_Returns_True_For_Two_Pairs()
+        public void IsValid_Returns_True_For_Two_Pairs()
         {
             // Arrange
             m_Sut.Cards = CreateCardsWithTwoPairs();
@@ -69,7 +69,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
         }
 
         [Test]
-        public void IsSatisfied_Sets_FirstPairOfCards()
+        public void IsValid_Sets_FirstPairOfCards()
         {
             // Arrange
             m_Sut.Cards = CreateCardsWithTwoPairs();
@@ -86,7 +86,20 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
         }
 
         [Test]
-        public void IsSatisfied_Sets_SecondPairOfCards()
+        public void IsValid_Sets_HighestCard()
+        {
+            // Arrange
+            m_Sut.Cards = CreateCardsWithTwoPairs();
+
+            // Act
+            m_Sut.IsValid();
+
+            // Assert
+            Assert.True(m_Sut.HighestCard is AceOfHearts);
+        }
+
+        [Test]
+        public void IsValid_Sets_SecondPairOfCards()
         {
             // Arrange
             m_Sut.Cards = CreateCardsWithTwoPairs();

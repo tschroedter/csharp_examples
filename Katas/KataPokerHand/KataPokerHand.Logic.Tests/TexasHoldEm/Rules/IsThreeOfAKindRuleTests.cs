@@ -62,6 +62,53 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
         }
 
         [Test]
+        public void Apply_Updates_HighestCard()
+        {
+            // Arrange
+            m_Cards.AddRange(CreateCardsWithThreeSameValue());
+            m_Sut.Initialize(m_Info);
+
+            // Act
+            IPlayerHandInformation actual = m_Sut.Apply(m_Info);
+
+            // Assert
+            Assert.AreEqual("AH",
+                            actual.HighestCard.ToString());
+        }
+
+        [Test]
+        public void Apply_Updates_HighestCards()
+        {
+            // Arrange
+            m_Cards.AddRange(CreateCardsWithThreeSameValue());
+            m_Sut.Initialize(m_Info);
+
+            // Act
+            IPlayerHandInformation actual = m_Sut.Apply(m_Info);
+
+            // Assert
+            Assert.True(actual.HighestCard is AceOfHearts);
+        }
+
+        [Test]
+        public void Apply_Updates_OtherCards()
+        {
+            // Arrange
+            m_Cards.AddRange(CreateCardsWithThreeSameValue());
+            m_Sut.Initialize(m_Info);
+
+            // Act
+            IPlayerHandInformation actual = m_Sut.Apply(m_Info);
+
+            // Assert
+            ICard[] fourOfAKind = actual.OtherCards.ToArray();
+            Assert.AreEqual(2,
+                            fourOfAKind.Length);
+            Assert.True(fourOfAKind [ 0 ] is JackOfSpades);
+            Assert.True(fourOfAKind [ 1 ] is AceOfHearts);
+        }
+
+        [Test]
         public void Apply_Updates_Ranks()
         {
             // Arrange

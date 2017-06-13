@@ -47,7 +47,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
         }
 
         [Test]
-        public void IsSatisfied_Returns_False_For_Not_Three_Cards_Same_Value()
+        public void IsValid_Returns_False_For_Not_Three_Cards_Same_Value()
         {
             // Arrange
             m_Sut.Cards = CreateCardsWithNotThreeSameValue();
@@ -58,7 +58,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
         }
 
         [Test]
-        public void IsSatisfied_Returns_True_For_Three_Cards_Same_Value()
+        public void IsValid_Returns_True_For_Three_Cards_Same_Value()
         {
             // Arrange
             m_Sut.Cards = CreateCardsWithThreeSameValue();
@@ -69,7 +69,37 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
         }
 
         [Test]
-        public void IsSatisfied_Sets_Rank()
+        public void IsValid_Sets_HighestCard()
+        {
+            // Arrange
+            m_Sut.Cards = CreateCardsWithThreeSameValue();
+
+            // Act
+            m_Sut.IsValid();
+
+            // Assert
+            Assert.True(m_Sut.HighestCard is AceOfHearts);
+        }
+
+        [Test]
+        public void IsValid_Sets_OtherCards()
+        {
+            // Arrange
+            m_Sut.Cards = CreateCardsWithThreeSameValue();
+
+            // Act
+            m_Sut.IsValid();
+
+            // Assert
+            ICard[] actual = m_Sut.OtherCards.ToArray();
+            Assert.AreEqual(2,
+                            actual.Length);
+            Assert.True(actual [ 0 ] is JackOfSpades);
+            Assert.True(actual [ 1 ] is AceOfHearts);
+        }
+
+        [Test]
+        public void IsValid_Sets_Rank()
         {
             // Arrange
             m_Sut.Cards = CreateCardsWithThreeSameValue();
@@ -83,7 +113,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Conditions.Validators
         }
 
         [Test]
-        public void IsSatisfied_Sets_ThreeOfAKind()
+        public void IsValid_Sets_ThreeOfAKind()
         {
             // Arrange
             m_Sut.Cards = CreateCardsWithThreeSameValue();

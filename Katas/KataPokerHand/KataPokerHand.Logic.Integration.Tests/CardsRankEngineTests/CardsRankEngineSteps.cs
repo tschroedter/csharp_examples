@@ -52,6 +52,16 @@ namespace KataPokerHand.Logic.Integration.Tests.CardsRankEngineTests
                             m_Info.Rank);
         }
 
+        [Then(@"the FirstPairOfCards should be '(.*)'")]
+        public void ThenTheFirstPairOfCardsShouldBe(string cardsAsString)
+        {
+            List <ICard> cards = ConvertCardsStringsToList(cardsAsString);
+
+            AssertCards(m_Info.FirstPairOfCards,
+                        cards,
+                        "FirstPairOfCards");
+        }
+
         [Then(@"the FourOfAKind should be '(.*)'")]
         public void ThenTheFourOfAKindShouldBe(string cardsAsString)
         {
@@ -69,6 +79,26 @@ namespace KataPokerHand.Logic.Integration.Tests.CardsRankEngineTests
 
             Assert.AreEqual(expected.ToString(),
                             m_Info.HighestCard.ToString()); // todo implement equals for Cards
+        }
+
+        [Then(@"the OtherCards should be '(.*)'")]
+        public void ThenTheOtherCardsShouldBe(string cardsAsString)
+        {
+            List <ICard> cards = ConvertCardsStringsToList(cardsAsString);
+
+            AssertCards(m_Info.OtherCards,
+                        cards,
+                        "OtherCards");
+        }
+
+        [Then(@"the SecondPairOfCards should be '(.*)'")]
+        public void ThenTheSecondPairOfCardsShouldBe(string cardsAsString)
+        {
+            List <ICard> cards = ConvertCardsStringsToList(cardsAsString);
+
+            AssertCards(m_Info.SecondPairOfCards,
+                        cards,
+                        "SecondPairOfCards");
         }
 
         [Then(@"the status should be '(.*)'")]

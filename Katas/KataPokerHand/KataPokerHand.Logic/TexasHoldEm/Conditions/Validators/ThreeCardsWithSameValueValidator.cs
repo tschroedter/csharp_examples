@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Conditions.Validators;
 using PlayinCards.Interfaces.Decks.Cards;
+using PlayingCards.Decks.Cards;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Conditions.Validators
 {
@@ -13,6 +14,8 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions.Validators
             Cards = new ICard[0];
             Rank = CardRank.Unknown;
             ThreeOfAKind = new ICard[0];
+            OtherCards = new ICard[0];
+            HighestCard = UnknownCard.Unknown;
         }
 
         public IEnumerable <ICard> Cards { get; set; }
@@ -42,6 +45,8 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions.Validators
 
                 Rank = cardRank;
                 ThreeOfAKind = Cards.Where(x => x.Rank == cardRank);
+                OtherCards = Cards.Where(x => x.Rank != cardRank);
+                HighestCard = OtherCards.OrderBy(x => x.Rank).Last();
 
                 return true;
             }
@@ -50,7 +55,8 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions.Validators
         }
 
         public CardRank Rank { get; private set; }
-
+        public IEnumerable<ICard> OtherCards { get; private set; }
+        public ICard HighestCard { get; private set; }
         public IEnumerable <ICard> ThreeOfAKind { get; set; }
     }
 }

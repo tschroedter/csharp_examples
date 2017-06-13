@@ -36,6 +36,8 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
             info.Status = Status.ThreeOfAKind;
             info.Rank = m_Validator.Rank;
             info.ThreeOfAKind = m_Validator.ThreeOfAKind;
+            info.OtherCards = m_Validator.OtherCards;
+            info.HighestCard = m_Validator.HighestCard;
 
             return info;
         }

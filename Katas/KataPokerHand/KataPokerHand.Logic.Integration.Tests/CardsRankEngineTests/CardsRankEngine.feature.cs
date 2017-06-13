@@ -156,6 +156,103 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Engine detects straight")]
+        [NUnit.Framework.CategoryAttribute("straight")]
+        public virtual void EngineDetectsStraight()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Engine detects straight", new string[] {
+                        "straight"});
+#line 41
+this.ScenarioSetup(scenarioInfo);
+#line 42
+       testRunner.Given("I added a card \'two of clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 43
+       testRunner.And("I added a card \'three of spades\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 44
+       testRunner.And("I added a card \'four of hearts\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 45
+       testRunner.And("I added a card \'five of diamonds\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+       testRunner.And("I added a card \'six of clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 47
+       testRunner.When("I apply the rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 48
+       testRunner.Then("the status should be \'Straight\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 49
+       testRunner.And("the HighestCard should be \'six of Clubs\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Engine detects three of a kind")]
+        [NUnit.Framework.CategoryAttribute("threeOfAKind")]
+        public virtual void EngineDetectsThreeOfAKind()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Engine detects three of a kind", new string[] {
+                        "threeOfAKind"});
+#line 52
+this.ScenarioSetup(scenarioInfo);
+#line 53
+       testRunner.Given("I added a card \'two of clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 54
+       testRunner.And("I added a card \'two of spades\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+       testRunner.And("I added a card \'two of hearts\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 56
+       testRunner.And("I added a card \'three of diamonds\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 57
+       testRunner.And("I added a card \'four of clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 58
+       testRunner.When("I apply the rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 59
+       testRunner.Then("the status should be \'ThreeOfAKind\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 60
+       testRunner.And("the ThreeOfAkind should be \'two of clubs, two of spades, two of hearts\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 61
+       testRunner.And("the Rank should be \'two\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 62
+       testRunner.And("the OtherCards should be \'three of diamonds, four of clubs\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 63
+       testRunner.And("the HighestCard should be \'four of Clubs\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Engine detects two pairs")]
+        [NUnit.Framework.CategoryAttribute("twoPairs")]
+        public virtual void EngineDetectsTwoPairs()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Engine detects two pairs", new string[] {
+                        "twoPairs"});
+#line 66
+this.ScenarioSetup(scenarioInfo);
+#line 67
+       testRunner.Given("I added a card \'two of clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 68
+       testRunner.And("I added a card \'two of spades\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 69
+       testRunner.And("I added a card \'three of hearts\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+       testRunner.And("I added a card \'three of diamonds\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 71
+       testRunner.And("I added a card \'four of clubs\' to player cards", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 72
+       testRunner.When("I apply the rules", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 73
+       testRunner.Then("the status should be \'TwoPairs\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 74
+       testRunner.And("the FirstPairOfCards should be \'two of clubs, two of spades\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 75
+       testRunner.And("the SecondPairOfCards should be \'three of hearts, three of diamonds\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 76
+       testRunner.And("the HighestCard should be \'four of clubs\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

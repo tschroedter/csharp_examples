@@ -80,6 +80,20 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Rules
         }
 
         [Test]
+        public void Apply_Updates_HighestCard()
+        {
+            // Arrange
+            m_Cards.AddRange(CreateCardsWithTwoPairs());
+            m_Sut.Initialize(m_Info);
+
+            // Act
+            IPlayerHandInformation actual = m_Sut.Apply(m_Info);
+
+            // Assert
+            Assert.True(actual.HighestCard is AceOfHearts);
+        }
+
+        [Test]
         public void Apply_Updates_SecondPairOfCards()
         {
             // Arrange

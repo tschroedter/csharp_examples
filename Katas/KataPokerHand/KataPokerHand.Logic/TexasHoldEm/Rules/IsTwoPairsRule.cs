@@ -38,6 +38,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Rules
             info.Status = Status.TwoPairs;
             info.FirstPairOfCards = m_Validator.FirstPairOfCards;
             info.SecondPairOfCards = m_Validator.SecondPairOfCards;
+            info.HighestCard = m_Validator.HighestCard;
 
             return info;
         }
