@@ -28,7 +28,7 @@ namespace KataPokerHand.Logic.Integration.Tests.CardsRankEngineTests
             m_StringToCard = new StringToCardFactory();
             m_StringToCard.Initialize(new CardsBuilder().Cards);
 
-            m_Sut = new CardsRankEngine(new CardsRankRuleRepository(new CardsRankRulesBuilder().Rules));
+            m_Sut = new CardsRankEngine(new CardsRankRulesRepository(new CardsRankRulesBuilder().Rules));
         }
 
         private readonly List <ICard> m_Cards;

@@ -9,11 +9,11 @@ using Rules.Logic.Interfaces.Rules;
 namespace KataPokerHand.Logic.TexasHoldEm
 {
     [ExcludeFromCodeCoverage]
-    public class CardsRankRuleRepository
+    public class CardsRankRulesRepository
         : RuleRepository <IPlayerHandInformation>,
-          ICardsRankRuleRepository
+          ICardsRankRulesRepository
     {
-        public CardsRankRuleRepository(
+        public CardsRankRulesRepository(
             [NotNull] IEnumerable <IRule <IPlayerHandInformation>> rules)
             : base(rules)
         {

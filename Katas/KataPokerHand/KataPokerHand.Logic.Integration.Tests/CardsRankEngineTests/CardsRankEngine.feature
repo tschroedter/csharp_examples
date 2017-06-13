@@ -91,6 +91,7 @@ Scenario: Engine detects one pair
 Scenario: Engine detects highest card
        Given I added a card 'two of clubs' to player cards
        And I added a card 'four of spades' to player cards
+       And I added a card 'six of hearts' to player cards
        And I added a card 'eight of diamonds' to player cards
        And I added a card 'jack of clubs' to player cards
        When I apply the rules

@@ -3,7 +3,7 @@ using Rules.Logic.Interfaces;
 
 namespace KataPokerHand.Logic.Interfaces.TexasHoldEm
 {
-    public interface ICardsRankRuleRepository
+    public interface ICardsRankRulesRepository
         : IRuleRepository <IPlayerHandInformation>
     {
     }

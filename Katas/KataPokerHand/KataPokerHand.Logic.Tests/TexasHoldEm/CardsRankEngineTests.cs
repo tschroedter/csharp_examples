@@ -22,11 +22,11 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
         {
             m_Info = new PlayerHandInformation();
             IEnumerable <IRule <IPlayerHandInformation>> rules = CreateRules();
-            m_Repository = new CardsRankRuleRepository(rules);
+            m_Repository = new CardsRankRulesRepository(rules);
             m_Sut = new CardsRankEngine(m_Repository);
         }
 
-        private ICardsRankRuleRepository m_Repository;
+        private ICardsRankRulesRepository m_Repository;
         private CardsRankEngine m_Sut;
         private IPlayerHandInformation m_Info;
 

@@ -10,7 +10,7 @@ namespace KataPokerHand.Logic.TexasHoldEm
           ICardsRankEngine
     {
         public CardsRankEngine(
-            [NotNull] ICardsRankRuleRepository repository)
+            [NotNull] ICardsRankRulesRepository repository)
             : base(repository)
         {
         }
