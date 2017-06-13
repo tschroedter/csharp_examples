@@ -55,7 +55,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions.Validators
         }
 
         public CardRank Rank { get; private set; }
-        public IEnumerable<ICard> OtherCards { get; private set; }
+        public IEnumerable <ICard> OtherCards { get; private set; }
         public ICard HighestCard { get; private set; }
         public IEnumerable <ICard> ThreeOfAKind { get; set; }
     }
