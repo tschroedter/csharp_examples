@@ -16,7 +16,6 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
     [ExcludeFromCodeCoverage]
     internal sealed class CardsRankEngineTests
     {
-        // todo SpecFlow test using all rules
         [SetUp]
         public void Setup()
         {

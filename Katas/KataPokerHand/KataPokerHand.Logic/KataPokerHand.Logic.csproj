@@ -67,6 +67,7 @@
     <Compile Include="TexasHoldEm\Conditions\Validators\OnePairValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\ThreeCardsWithSameValueValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\TwoPairsValidator.cs" />
+    <Compile Include="TexasHoldEm\PlayerInformationGrouped.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFlushRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFourOfAKindRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFullHouseRule.cs" />
@@ -79,6 +80,7 @@
     <Compile Include="TexasHoldEm\Rules\IsTwoPairsRule.cs" />
     <Compile Include="TexasHoldEm\Rules\PlayerHandInformation.cs" />
     <Compile Include="TexasHoldEm\Rules\RulesPriority.cs" />
+    <Compile Include="TexasHoldEm\WinnerPhaser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

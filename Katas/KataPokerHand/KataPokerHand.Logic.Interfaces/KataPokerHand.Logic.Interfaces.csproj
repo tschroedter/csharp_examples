@@ -66,6 +66,7 @@
     <Compile Include="TexasHoldEm\Conditions\Validators\IValidator.cs" />
     <Compile Include="TexasHoldEm\ICardsRankEngine.cs" />
     <Compile Include="TexasHoldEm\ICardsRankRulesRepository.cs" />
+    <Compile Include="TexasHoldEm\IPlayerInformationGroupedByStatusSorted.cs" />
     <Compile Include="TexasHoldEm\Rules\IPlayerHandInformation.cs" />
     <Compile Include="TexasHoldEm\Rules\Status.cs" />
   </ItemGroup>
