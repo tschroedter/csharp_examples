@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm.Ranking;
@@ -36,41 +37,6 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
         private FullHouseRanking m_Sut;
         private IPlayerHandInformation[] m_Infos;
 
-        [TestCase(Status.Unknown,
-            false)]
-        [TestCase(Status.NumberOfCardsIncorrect,
-            false)]
-        [TestCase(Status.StraightFlush,
-            false)]
-        [TestCase(Status.FourOfAKind,
-            false)]
-        [TestCase(Status.FullHouse,
-            true)]
-        [TestCase(Status.Flush,
-            false)]
-        [TestCase(Status.Straight,
-            false)]
-        [TestCase(Status.ThreeOfAKind,
-            false)]
-        [TestCase(Status.TwoPairs,
-            false)]
-        [TestCase(Status.OnePair,
-            false)]
-        [TestCase(Status.HighCard,
-            false)]
-        public void CanApply_Returns_Expected(
-            Status status,
-            bool expected)
-        {
-            // Arrange
-            WriteLine("Testing: " + status);
-
-            // Act
-            // Assert
-            Assert.AreEqual(expected,
-                            m_Sut.CanApply(status));
-        }
-
         private IEnumerable <ICard> CreateThreeOfAKindOfTwos()
         {
             return new ICard[]
@@ -89,6 +55,27 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
                        new ThreeOfDiamonds(),
                        new ThreeOfHearts()
                    };
+        }
+
+        [Test]
+        public void Apply_Updates_Rankr_For_Twos_And_Threes()
+        {
+            // Arrange
+            m_InfoOne.ThreeOfAKind = CreateThreeOfAKindOfTwos();
+            m_InfoTwo.ThreeOfAKind = CreateThreeOfAKindOfThrees();
+
+            // Act
+            m_Sut.Apply(m_Infos);
+
+            // Assert
+            IPlayerHandInformation[] actual = m_Sut.Ranked.ToArray();
+
+            Assert.AreEqual(2,
+                            actual.Count());
+            Assert.AreEqual(m_InfoTwo,
+                            actual [ 0 ]);
+            Assert.AreEqual(m_InfoOne,
+                            actual [ 1 ]);
         }
 
         [Test]

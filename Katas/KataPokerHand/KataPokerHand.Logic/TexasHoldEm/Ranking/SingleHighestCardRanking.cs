@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Linq;
-using JetBrains.Annotations;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using PlayinCards.Interfaces.Decks.Cards;
@@ -8,25 +7,14 @@ using PlayinCards.Interfaces.Decks.Cards;
 namespace KataPokerHand.Logic.TexasHoldEm.Ranking
 {
     public abstract class SingleHighestCardRanking
-        : ISameStatusRanking
+        : BaseRanking
     {
-        protected SingleHighestCardRanking(
-            Status status)
+        protected SingleHighestCardRanking(Status status)
+            : base(status)
         {
-            m_Status = status;
         }
 
-        [NotNull]
-        private readonly List <IPlayerHandInformation> m_Ranked = new List <IPlayerHandInformation>();
-
-        private readonly Status m_Status;
-
-        public bool CanApply(Status status)
-        {
-            return m_Status == status;
-        }
-
-        public void Apply(IPlayerHandInformation[] infos)
+        public override void Apply(IPlayerHandInformation[] infos)
         {
             m_Ranked.Clear();
 
@@ -40,9 +28,5 @@ namespace KataPokerHand.Logic.TexasHoldEm.Ranking
                          ? WinnerStatus.MultipleWinners
                          : WinnerStatus.SingleWinner;
         }
-
-        public IEnumerable <IPlayerHandInformation> Ranked => m_Ranked;
-
-        public WinnerStatus Winner { get; private set; } = WinnerStatus.Unknown;
     }
 }

@@ -7,7 +7,6 @@ using NSubstitute;
 using NUnit.Framework;
 using PlayingCards.Decks.Cards.Clubs;
 using PlayingCards.Decks.Cards.Hearts;
-using static System.Console;
 
 namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
 {
@@ -47,26 +46,6 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
         private IPlayerHandInformation m_InfoTwo;
         private TestSingleHighestCardRanking m_Sut;
         private IPlayerHandInformation[] m_Infos;
-
-        [TestCase(Status.Unknown)]
-        [TestCase(Status.NumberOfCardsIncorrect)]
-        [TestCase(Status.FourOfAKind)]
-        [TestCase(Status.FullHouse)]
-        [TestCase(Status.Flush)]
-        [TestCase(Status.Straight)]
-        [TestCase(Status.ThreeOfAKind)]
-        [TestCase(Status.TwoPairs)]
-        [TestCase(Status.OnePair)]
-        [TestCase(Status.HighCard)]
-        public void CanApply_Returns_False_For_Other(Status other)
-        {
-            // Arrange
-            WriteLine("Testing: " + other);
-
-            // Act
-            // Assert
-            Assert.False(m_Sut.CanApply(other));
-        }
 
         [Test]
         public void Apply_Updates_Ranked_Not_Sorted_For_All_Same_HighestCard()
@@ -138,15 +117,6 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
 
             Assert.AreEqual(WinnerStatus.MultipleWinners,
                             m_Sut.Winner);
-        }
-
-        [Test]
-        public void CanApply_Returns_True_For_StraightFlush()
-        {
-            // Arrange
-            // Act
-            // Assert
-            Assert.True(m_Sut.CanApply(Status.StraightFlush));
         }
     }
 }
