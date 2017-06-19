@@ -26,14 +26,16 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
                           m_InfoOne,
                           m_InfoTwo
                       };
+            m_Rank = new RankByCardIndex(); // todo use NSub...
 
-            m_Sut = new HighCardRanking();
+            m_Sut = new HighCardRanking(m_Rank);
         }
 
         private IPlayerHandInformation m_InfoOne;
         private IPlayerHandInformation m_InfoTwo;
         private HighCardRanking m_Sut;
         private IPlayerHandInformation[] m_Infos;
+        private IRankByCardIndex m_Rank;
 
         [TestCase(Status.Unknown,
             false)]
