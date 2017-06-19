@@ -13,8 +13,17 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class StraightFlushRankingTests
+    internal sealed class SingleHighestCardRankingTests
     {
+        private class TestSingleHighestCardRanking
+            : SingleHighestCardRanking
+        {
+            public TestSingleHighestCardRanking()
+                : base(Status.StraightFlush)
+            {
+            }
+        }
+
         [SetUp]
         public void Setup()
         {
@@ -26,12 +35,12 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
                           m_InfoTwo
                       };
 
-            m_Sut = new StraightFlushRanking();
+            m_Sut = new TestSingleHighestCardRanking();
         }
 
         private IPlayerHandInformation m_InfoOne;
         private IPlayerHandInformation m_InfoTwo;
-        private StraightFlushRanking m_Sut;
+        private TestSingleHighestCardRanking m_Sut;
         private IPlayerHandInformation[] m_Infos;
 
         [TestCase(Status.Unknown)]

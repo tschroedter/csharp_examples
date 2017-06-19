@@ -67,6 +67,7 @@
     <Compile Include="TexasHoldEm\ICardsRankEngine.cs" />
     <Compile Include="TexasHoldEm\ICardsRankRulesRepository.cs" />
     <Compile Include="TexasHoldEm\IPlayerInformationGroupedByStatus.cs" />
+    <Compile Include="TexasHoldEm\Ranking\IFourOfAKindRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\IRankByHighCards.cs" />
     <Compile Include="TexasHoldEm\Ranking\ISameStatusRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\IStraightFlushRanking.cs" />
