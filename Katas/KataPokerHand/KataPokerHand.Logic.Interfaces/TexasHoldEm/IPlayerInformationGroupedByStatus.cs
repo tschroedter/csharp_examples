@@ -4,15 +4,15 @@ using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 
 namespace KataPokerHand.Logic.Interfaces.TexasHoldEm
 {
-    public interface IPlayerInformationGroupedByStatusSorted
+    public interface IPlayerInformationGroupedByStatus
     {
         [NotNull]
-        IEnumerable <Status> GetAllStatus();
+        IEnumerable <Status> Keys();
 
         [NotNull]
-        IEnumerable <IPlayerHandInformation> GetPlayerHandInformations(
+        IEnumerable <IPlayerHandInformation> Values(
             Status key);
 
-        void GroupBy();
+        void Group([NotNull] IEnumerable<IPlayerHandInformation> informations);
     }
 }

@@ -80,6 +80,7 @@
     <Compile Include="TexasHoldEm\Rules\IsTwoPairsRule.cs" />
     <Compile Include="TexasHoldEm\Rules\PlayerHandInformation.cs" />
     <Compile Include="TexasHoldEm\Rules\RulesPriority.cs" />
+    <Compile Include="TexasHoldEm\Ranking\StraightFlushRanking.cs" />
     <Compile Include="TexasHoldEm\WinnerPhaser.cs" />
   </ItemGroup>
   <ItemGroup>

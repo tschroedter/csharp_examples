@@ -25,48 +25,28 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
                           m_InfoThree
                       };
 
-            m_Sut = new PlayerInformationGroupedByStatusSorted(m_Infos);
+            m_Sut = new PlayerInformationGroupedByStatus();
         }
 
         private PlayerHandInformation m_InfoOne;
         private PlayerHandInformation[] m_Infos;
         private PlayerHandInformation m_InfoThree;
-        private PlayerInformationGroupedByStatusSorted m_Sut;
+        private PlayerInformationGroupedByStatus m_Sut;
         private PlayerHandInformation m_InfoTwo;
 
         [Test]
-        public void GetPlayerHandInformations_Returns_List()
-        {
-            // Arrange
-            m_InfoOne.Status = Status.StraightFlush;
-            m_InfoTwo.Status = Status.StraightFlush;
-            m_InfoThree.Status = Status.FourOfAKind;
-
-            // Act
-            m_Sut.GroupBy();
-
-            // Assert
-            IPlayerHandInformation[] actual = m_Sut.GetPlayerHandInformations(Status.StraightFlush).ToArray();
-
-            Assert.AreEqual(2,
-                            actual.Length);
-            Assert.True(actual.Contains(m_InfoOne));
-            Assert.True(actual.Contains(m_InfoTwo));
-        }
-
-        [Test]
-        public void GroupBy_Updates_Keys()
+        public void Group_Updates_Keys()
         {
             // Arrange
             m_InfoOne.Status = Status.Flush;
             m_InfoThree.Status = Status.FourOfAKind;
 
             // Act
-            m_Sut.GroupBy();
+            m_Sut.Group(m_Infos);
 
             // Assert
             Assert.AreEqual(3,
-                            m_Sut.GetAllStatus().Count());
+                            m_Sut.Keys().Count());
         }
 
         [Test]
@@ -78,10 +58,10 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
             m_InfoThree.Status = Status.FourOfAKind;
 
             // Act
-            m_Sut.GroupBy();
+            m_Sut.Group(m_Infos);
 
             // Assert
-            Status[] actual = m_Sut.GetAllStatus().ToArray();
+            Status[] actual = m_Sut.Keys().ToArray();
 
             Assert.AreEqual(actual [ 0 ],
                             Status.StraightFlush);
@@ -89,6 +69,40 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
                             Status.FourOfAKind);
             Assert.AreEqual(actual [ 2 ],
                             Status.HighCard);
+        }
+
+        [Test]
+        public void Values_Returns_List_For_Known_Key()
+        {
+            // Arrange
+            m_InfoOne.Status = Status.StraightFlush;
+            m_InfoTwo.Status = Status.StraightFlush;
+            m_InfoThree.Status = Status.FourOfAKind;
+
+            // Act
+            m_Sut.Group(m_Infos);
+
+            // Assert
+            IPlayerHandInformation[] actual = m_Sut.Values(Status.StraightFlush).ToArray();
+
+            Assert.AreEqual(2,
+                            actual.Length);
+            Assert.True(actual.Contains(m_InfoOne));
+            Assert.True(actual.Contains(m_InfoTwo));
+        }
+
+        [Test]
+        public void Values_Returns_List_For_Unknown_Key()
+        {
+            // Arrange
+            // Act
+            m_Sut.Group(m_Infos);
+
+            // Assert
+            IPlayerHandInformation[] actual = m_Sut.Values(Status.StraightFlush).ToArray();
+
+            Assert.AreEqual(0,
+                            actual.Length);
         }
     }
 }
