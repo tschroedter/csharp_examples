@@ -22,6 +22,11 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
                 : base(Status.StraightFlush)
             {
             }
+
+            private IPlayerHandInformation m_InfoOne;
+            private IPlayerHandInformation m_InfoTwo;
+            private TestSingleHighestCardRanking m_Sut;
+            private IPlayerHandInformation[] m_Infos;
         }
 
         [SetUp]
