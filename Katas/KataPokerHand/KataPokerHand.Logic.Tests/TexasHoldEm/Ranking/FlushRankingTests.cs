@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking;
@@ -6,16 +5,13 @@ using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm.Ranking;
 using NSubstitute;
 using NUnit.Framework;
-using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;
-using PlayingCards.Decks.Cards.Diamonds;
-using PlayingCards.Decks.Cards.Hearts;
 
 namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class FullHouseRankingTests
+    internal sealed class FlushRankingTests
     {
         [SetUp]
         public void Setup()
@@ -28,40 +24,20 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
                           m_InfoTwo
                       };
 
-            m_Sut = new FullHouseRanking();
+            m_Sut = new FlushRanking();
         }
 
         private IPlayerHandInformation m_InfoOne;
         private IPlayerHandInformation m_InfoTwo;
-        private FullHouseRanking m_Sut;
+        private FlushRanking m_Sut;
         private IPlayerHandInformation[] m_Infos;
-
-        private IEnumerable <ICard> CreateThreeOfAKindOfTwos()
-        {
-            return new ICard[]
-                   {
-                       new TwoOfClubs(),
-                       new TwoOfDiamonds(),
-                       new TwoOfHearts()
-                   };
-        }
-
-        private IEnumerable <ICard> CreateThreeOfAKindOfThrees()
-        {
-            return new ICard[]
-                   {
-                       new ThreeOfClubs(),
-                       new ThreeOfDiamonds(),
-                       new ThreeOfHearts()
-                   };
-        }
 
         [Test]
         public void Apply_Updates_Ranked_For_Twos_And_Threes()
         {
             // Arrange
-            m_InfoOne.ThreeOfAKind = CreateThreeOfAKindOfTwos();
-            m_InfoTwo.ThreeOfAKind = CreateThreeOfAKindOfThrees();
+            m_InfoOne.HighestCard = new TwoOfClubs();
+            m_InfoTwo.HighestCard = new ThreeOfClubs();
 
             // Act
             m_Sut.Apply(m_Infos);
@@ -78,32 +54,32 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
         }
 
         [Test]
-        public void Apply_Updates_Winner_For_Same()
+        public void Apply_Updates_Winner_To_Single_For_Two_And_Three()
         {
             // Arrange
-            m_InfoOne.ThreeOfAKind = CreateThreeOfAKindOfTwos();
-            m_InfoTwo.ThreeOfAKind = CreateThreeOfAKindOfTwos();
-
-            // Act
-            m_Sut.Apply(m_Infos);
-
-            // Assert
-            Assert.AreEqual(WinnerStatus.MultipleWinners,
-                            m_Sut.Winner);
-        }
-
-        [Test]
-        public void Apply_Updates_Winner_For_Single_Winner_For_Twos_And_Threes()
-        {
-            // Arrange
-            m_InfoOne.ThreeOfAKind = CreateThreeOfAKindOfTwos();
-            m_InfoTwo.ThreeOfAKind = CreateThreeOfAKindOfThrees();
+            m_InfoOne.HighestCard = new TwoOfClubs();
+            m_InfoTwo.HighestCard = new ThreeOfClubs();
 
             // Act
             m_Sut.Apply(m_Infos);
 
             // Assert
             Assert.AreEqual(WinnerStatus.SingleWinner,
+                            m_Sut.Winner);
+        }
+
+        [Test]
+        public void Apply_Updates_Winner_To_MultipleWinners_For_Two_And_Two()
+        {
+            // Arrange
+            m_InfoOne.HighestCard = new TwoOfClubs();
+            m_InfoTwo.HighestCard = new TwoOfClubs();
+
+            // Act
+            m_Sut.Apply(m_Infos);
+
+            // Assert
+            Assert.AreEqual(WinnerStatus.MultipleWinners,
                             m_Sut.Winner);
         }
     }

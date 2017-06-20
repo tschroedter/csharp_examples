@@ -124,8 +124,6 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
                             actual.Length);
             Assert.True(actual [ 0 ].Cards.First() is AceOfHearts);
             Assert.True(actual [ 1 ].Cards.First() is NineOfClubs);
-            Assert.AreEqual(WinnerStatus.SingleWinner,
-                            m_Sut.Winner);
         }
 
         [Test]
@@ -156,6 +154,28 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
             Assert.True(actual [ 0 ].Cards.ElementAt(1) is AceOfHearts);
             Assert.True(actual [ 1 ].Cards.ElementAt(0) is NineOfClubs);
             Assert.True(actual [ 1 ].Cards.ElementAt(1) is JackOfClubs);
+            Assert.AreEqual(WinnerStatus.SingleWinner,
+                            m_Sut.Winner);
+        }
+
+        [Test]
+        public void Apply_Updates_Winner()
+        {
+            // Arrange
+            m_InfoOne.Cards = new ICard[]
+                              {
+                                  new NineOfClubs()
+                              };
+
+            m_InfoTwo.Cards = new ICard[]
+                              {
+                                  new AceOfHearts()
+                              };
+
+            // Act
+            m_Sut.Apply(m_Infos);
+
+            // Assert
             Assert.AreEqual(WinnerStatus.SingleWinner,
                             m_Sut.Winner);
         }

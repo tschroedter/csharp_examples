@@ -76,6 +76,7 @@
     <Compile Include="TexasHoldEm\Conditions\Validators\TwoPairsValidatorTests.cs" />
     <Compile Include="TexasHoldEm\PlayerInformationGroupedByStatusSortedTests.cs" />
     <Compile Include="TexasHoldEm\Ranking\BaseRankingTests.cs" />
+    <Compile Include="TexasHoldEm\Ranking\FlushRankingTests.cs" />
     <Compile Include="TexasHoldEm\Ranking\FullHouseRankingTests.cs" />
     <Compile Include="TexasHoldEm\Ranking\HighCardRankingTests.cs" />
     <Compile Include="TexasHoldEm\Ranking\RankByCardIndexTests.cs" />
