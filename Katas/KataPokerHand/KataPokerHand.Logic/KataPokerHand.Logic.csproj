@@ -75,6 +75,7 @@
     <Compile Include="TexasHoldEm\Ranking\HighCardRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\RankByCardIndex.cs" />
     <Compile Include="TexasHoldEm\Ranking\SingleHighestCardRanking.cs" />
+    <Compile Include="TexasHoldEm\Ranking\StraightRanking.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFlushRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFourOfAKindRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFullHouseRule.cs" />

@@ -75,6 +75,7 @@
     <Compile Include="TexasHoldEm\Ranking\IRankByHighCards.cs" />
     <Compile Include="TexasHoldEm\Ranking\ISameStatusRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\IStraightFlushRanking.cs" />
+    <Compile Include="TexasHoldEm\Ranking\IStraightRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\WinnerStatus.cs" />
     <Compile Include="TexasHoldEm\Rules\IPlayerHandInformation.cs" />
     <Compile Include="TexasHoldEm\Rules\Status.cs" />
