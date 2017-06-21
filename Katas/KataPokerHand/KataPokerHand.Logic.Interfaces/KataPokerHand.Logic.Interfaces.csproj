@@ -65,8 +65,10 @@
     <Compile Include="TexasHoldEm\Conditions\Validators\ITwoPairsValidator.cs" />
     <Compile Include="TexasHoldEm\Conditions\Validators\IValidator.cs" />
     <Compile Include="TexasHoldEm\ICardsRankEngine.cs" />
+    <Compile Include="TexasHoldEm\ICardsRanking.cs" />
     <Compile Include="TexasHoldEm\ICardsRankRulesRepository.cs" />
     <Compile Include="TexasHoldEm\IPlayerInformationGroupedByStatus.cs" />
+    <Compile Include="TexasHoldEm\Ranking\ISameStatusRankingContainer.cs" />
     <Compile Include="TexasHoldEm\Ranking\SubRanking\IFirstPairRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\IFlushRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\IFourOfAKindRanking.cs" />

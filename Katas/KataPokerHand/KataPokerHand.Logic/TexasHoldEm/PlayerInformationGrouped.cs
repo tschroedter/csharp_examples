@@ -13,18 +13,7 @@ namespace KataPokerHand.Logic.TexasHoldEm
         private readonly Dictionary <Status, IEnumerable <IPlayerHandInformation>> m_Dictionary =
             new Dictionary <Status, IEnumerable <IPlayerHandInformation>>();
 
-        public IEnumerable <Status> Keys()
-        {
-            return m_Dictionary.Keys;
-        }
-
-        public IEnumerable <IPlayerHandInformation> Values(
-            Status key)
-        {
-            return !m_Dictionary.ContainsKey(key)
-                       ? new IPlayerHandInformation[0]
-                       : m_Dictionary [ key ];
-        }
+        public IEnumerable <Status> Keys => m_Dictionary.Keys;
 
         public void Group(
             IEnumerable <IPlayerHandInformation> informations)
@@ -54,6 +43,19 @@ namespace KataPokerHand.Logic.TexasHoldEm
             }
 
             return list;
+        }
+
+        public IEnumerable <IPlayerHandInformation> this[Status status]
+        {
+            get
+            {
+                IEnumerable <IPlayerHandInformation> infos;
+
+                return m_Dictionary.TryGetValue(status,
+                                                out infos)
+                           ? infos
+                           : new IPlayerHandInformation[0];
+            }
         }
     }
 }

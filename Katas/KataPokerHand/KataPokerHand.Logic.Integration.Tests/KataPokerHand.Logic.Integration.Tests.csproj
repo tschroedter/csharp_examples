@@ -61,6 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CardRankingTests\CardsRanking.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CardsRanking.feature</DependentUpon>
+    </Compile>
     <Compile Include="CardsRankEngineTests\CardsBuilder.cs" />
     <Compile Include="CardsRankEngineTests\CardsRankEngine.feature.cs">
       <AutoGen>True</AutoGen>
@@ -80,6 +85,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="CardRankingTests\CardsRanking.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>CardsRanking.feature.cs</LastGenOutput>
+    </None>
     <None Include="CardsRankEngineTests\CardsRankEngine.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
       <LastGenOutput>CardsRankEngine.feature.cs</LastGenOutput>

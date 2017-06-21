@@ -16,11 +16,10 @@ namespace KataPokerHand.Logic.TexasHoldEm
         // todo continue here
         public WinnerPhaser(
             [NotNull] ICardsRankEngine phaseOne,
-            [NotNull] IPlayerInformationGroupedByStatus phaseOneOne,
+            
             [NotNull] ICardsRanking phaseTwo)
         {
             m_PhaseOne = phaseOne;
-            m_PhaseOneOne = phaseOneOne;
             m_PhaseTwo = phaseTwo;
         }
 
@@ -28,21 +27,15 @@ namespace KataPokerHand.Logic.TexasHoldEm
         private readonly ICardsRankEngine m_PhaseOne;
 
         [NotNull]
-        private readonly IPlayerInformationGroupedByStatus m_PhaseOneOne;
-
-        [NotNull]
         private readonly ICardsRanking m_PhaseTwo;
 
         public void Phase(
-            [NotNull] IEnumerable <IEnumerable <ICard>> cards)
+            IEnumerable <IEnumerable <ICard>> cards)
         {
             IEnumerable <IPlayerHandInformation> infos = CreatePlayerHandInformations(cards).ToArray();
 
             m_PhaseOne.ApplyRules(infos);
-            m_PhaseOneOne.Group(infos);
-            m_PhaseTwo.Apply(m_PhaseOneOne.All());
-
-            // todo build ranking, m_PhaseTwo should do that
+            m_PhaseTwo.Apply(infos);
         }
 
         private IEnumerable <IPlayerHandInformation> CreatePlayerHandInformations(
@@ -62,31 +55,19 @@ namespace KataPokerHand.Logic.TexasHoldEm
 
             return infos;
         }
-    }
 
-    public interface ICardsRanking
-    {
-        void Apply(IEnumerable <IPlayerHandInformation> infos);
+
+        public WinnerStatus Winner => m_PhaseTwo.Winner;
+        public IPlayerHandInformation WinnerInformation => m_PhaseTwo.WinnerInformation;
     }
 
     public interface IWinnerPhaser
     {
-    }
+        WinnerStatus Winner { get; }
+        [NotNull]
+        IPlayerHandInformation WinnerInformation { get; }
 
-    public class CardsRanking
-        : ICardsRanking // todo testing ISameStatusRanking[]
-    {
-        private readonly IEnumerable <ISameStatusRanking> m_Rankings;
-
-        public CardsRanking(
-            [NotNull] IEnumerable <ISameStatusRanking> rankings)
-        {
-            m_Rankings = rankings;
-        }
-
-        public void Apply(IEnumerable <IPlayerHandInformation> infos)
-        {
-            throw new System.NotImplementedException(); // todo
-        }
+        void Phase(
+            [NotNull] IEnumerable <IEnumerable <ICard>> cards);
     }
 }

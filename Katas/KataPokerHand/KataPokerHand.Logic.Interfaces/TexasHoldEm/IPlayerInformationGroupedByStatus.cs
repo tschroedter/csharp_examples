@@ -7,15 +7,14 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm
     public interface IPlayerInformationGroupedByStatus
     {
         [NotNull]
-        IEnumerable <Status> Keys();
+        IEnumerable <Status> Keys { get; }
 
         [NotNull]
-        IEnumerable <IPlayerHandInformation> Values(
-            Status key);
-
-        void Group([NotNull] IEnumerable<IPlayerHandInformation> informations);
+        IEnumerable <IPlayerHandInformation> this[Status status] { get; }
 
         [NotNull]
         IEnumerable <IPlayerHandInformation> All();
+
+        void Group([NotNull] IEnumerable <IPlayerHandInformation> informations);
     }
 }

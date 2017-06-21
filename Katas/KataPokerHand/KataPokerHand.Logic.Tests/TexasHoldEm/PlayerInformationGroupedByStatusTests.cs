@@ -70,7 +70,41 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
 
             // Assert
             Assert.AreEqual(3,
-                            m_Sut.Keys().Count());
+                            m_Sut.Keys.Count());
+        }
+
+        [Test]
+        public void Indexer_Returns_List_For_Known_Key()
+        {
+            // Arrange
+            m_InfoOne.Status = Status.StraightFlush;
+            m_InfoTwo.Status = Status.StraightFlush;
+            m_InfoThree.Status = Status.FourOfAKind;
+
+            // Act
+            m_Sut.Group(m_Infos);
+
+            // Assert
+            IPlayerHandInformation[] actual = m_Sut [ Status.StraightFlush ].ToArray();
+
+            Assert.AreEqual(2,
+                            actual.Length);
+            Assert.True(actual.Contains(m_InfoOne));
+            Assert.True(actual.Contains(m_InfoTwo));
+        }
+
+        [Test]
+        public void Indexer_Returns_List_For_Unknown_Key()
+        {
+            // Arrange
+            // Act
+            m_Sut.Group(m_Infos);
+
+            // Assert
+            IPlayerHandInformation[] actual = m_Sut [ Status.StraightFlush ].ToArray();
+
+            Assert.AreEqual(0,
+                            actual.Length);
         }
 
         [Test]
@@ -85,7 +119,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
             m_Sut.Group(m_Infos);
 
             // Assert
-            Status[] actual = m_Sut.Keys().ToArray();
+            Status[] actual = m_Sut.Keys.ToArray();
 
             Assert.AreEqual(actual [ 0 ],
                             Status.StraightFlush);
@@ -93,40 +127,6 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
                             Status.FourOfAKind);
             Assert.AreEqual(actual [ 2 ],
                             Status.HighCard);
-        }
-
-        [Test]
-        public void Values_Returns_List_For_Known_Key()
-        {
-            // Arrange
-            m_InfoOne.Status = Status.StraightFlush;
-            m_InfoTwo.Status = Status.StraightFlush;
-            m_InfoThree.Status = Status.FourOfAKind;
-
-            // Act
-            m_Sut.Group(m_Infos);
-
-            // Assert
-            IPlayerHandInformation[] actual = m_Sut.Values(Status.StraightFlush).ToArray();
-
-            Assert.AreEqual(2,
-                            actual.Length);
-            Assert.True(actual.Contains(m_InfoOne));
-            Assert.True(actual.Contains(m_InfoTwo));
-        }
-
-        [Test]
-        public void Values_Returns_List_For_Unknown_Key()
-        {
-            // Arrange
-            // Act
-            m_Sut.Group(m_Infos);
-
-            // Assert
-            IPlayerHandInformation[] actual = m_Sut.Values(Status.StraightFlush).ToArray();
-
-            Assert.AreEqual(0,
-                            actual.Length);
         }
     }
 }
