@@ -69,14 +69,17 @@
     <Compile Include="TexasHoldEm\Conditions\Validators\TwoPairsValidator.cs" />
     <Compile Include="TexasHoldEm\PlayerInformationGrouped.cs" />
     <Compile Include="TexasHoldEm\Ranking\BaseRanking.cs" />
+    <Compile Include="TexasHoldEm\Ranking\FirstPairRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\FlushRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\FourOfAKindRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\FullHouseRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\HighCardRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\RankByCardIndex.cs" />
+    <Compile Include="TexasHoldEm\Ranking\SecondPairRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\SingleHighestCardRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\StraightRanking.cs" />
     <Compile Include="TexasHoldEm\Ranking\ThreeOfAKindRanking.cs" />
+    <Compile Include="TexasHoldEm\Ranking\TwoPairsRanking.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFlushRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFourOfAKindRule.cs" />
     <Compile Include="TexasHoldEm\Rules\IsFullHouseRule.cs" />
