@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking;
@@ -7,8 +6,6 @@ using KataPokerHand.Logic.TexasHoldEm.Ranking;
 using NSubstitute;
 using NUnit.Framework;
 using PlayingCards.Decks.Cards.Clubs;
-using PlayingCards.Decks.Cards.Hearts;
-using PlayinCards.Interfaces.Decks.Cards;
 
 namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
 {
@@ -19,15 +16,15 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
         [SetUp]
         public void Setup()
         {
-            m_InfoOne = Substitute.For<IPlayerHandInformation>();
-            m_InfoTwo = Substitute.For<IPlayerHandInformation>();
+            m_InfoOne = Substitute.For <IPlayerHandInformation>();
+            m_InfoTwo = Substitute.For <IPlayerHandInformation>();
             m_Infos = new[]
                       {
                           m_InfoOne,
                           m_InfoTwo
                       };
 
-            m_Ranking = Substitute.For<IHighCardRanking>();
+            m_Ranking = Substitute.For <IHighCardRanking>();
 
             m_Sut = new StraightRanking(m_Ranking);
         }
@@ -42,8 +39,8 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
         public void Apply_Updates_Ranked()
         {
             // Arrange
-            var result = Substitute.For<IPlayerHandInformation>();
-            var ranked = new IPlayerHandInformation[]
+            var result = Substitute.For <IPlayerHandInformation>();
+            var ranked = new[]
                          {
                              result
                          };
@@ -58,15 +55,15 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
             Assert.AreEqual(1,
                             actual.Count());
             Assert.AreEqual(result,
-                            actual[0]);
+                            actual [ 0 ]);
         }
 
         [Test]
         public void Apply_Updates_Ranked_Clears_Ranked()
         {
             // Arrange
-            var result = Substitute.For<IPlayerHandInformation>();
-            var ranked = new IPlayerHandInformation[]
+            var result = Substitute.For <IPlayerHandInformation>();
+            var ranked = new[]
                          {
                              result
                          };
@@ -87,8 +84,8 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
         public void Apply_Updates_Winner()
         {
             // Arrange
-            var result = Substitute.For<IPlayerHandInformation>();
-            var ranked = new IPlayerHandInformation[]
+            var result = Substitute.For <IPlayerHandInformation>();
+            var ranked = new[]
                          {
                              result
                          };
@@ -150,21 +147,6 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
         }
 
         [Test]
-        public void Apply_Updates_Winner_To_Single_For_Two_And_Three()
-        {
-            // Arrange
-            m_InfoOne.HighestCard = new TwoOfClubs();
-            m_InfoTwo.HighestCard = new ThreeOfClubs();
-
-            // Act
-            m_Sut.Apply(m_Infos);
-
-            // Assert
-            Assert.AreEqual(WinnerStatus.SingleWinner,
-                            m_Sut.Winner);
-        }
-
-        [Test]
         public void Apply_Updates_Winner_To_MultipleWinners_For_Two_And_Two()
         {
             // Arrange
@@ -176,6 +158,21 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
 
             // Assert
             Assert.AreEqual(WinnerStatus.MultipleWinners,
+                            m_Sut.Winner);
+        }
+
+        [Test]
+        public void Apply_Updates_Winner_To_Single_For_Two_And_Three()
+        {
+            // Arrange
+            m_InfoOne.HighestCard = new TwoOfClubs();
+            m_InfoTwo.HighestCard = new ThreeOfClubs();
+
+            // Act
+            m_Sut.Apply(m_Infos);
+
+            // Assert
+            Assert.AreEqual(WinnerStatus.SingleWinner,
                             m_Sut.Winner);
         }
     }
