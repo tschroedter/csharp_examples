@@ -1,6 +1,7 @@
 using System.Linq;
 using JetBrains.Annotations;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking.SubRanking;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Ranking

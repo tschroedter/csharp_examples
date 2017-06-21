@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking.SubRanking;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm.Ranking;
 using NSubstitute;

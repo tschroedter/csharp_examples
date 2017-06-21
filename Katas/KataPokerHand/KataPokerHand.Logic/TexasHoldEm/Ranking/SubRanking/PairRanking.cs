@@ -1,13 +1,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking.SubRanking;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using PlayinCards.Interfaces.Decks.Cards;
 
-namespace KataPokerHand.Logic.TexasHoldEm.Ranking
+namespace KataPokerHand.Logic.TexasHoldEm.Ranking.SubRanking
 {
-    public class SecondPairRanking
-        : ISecondPairRanking
+    public class PairRanking
+        : IPairRanking
     {
         private readonly List <IPlayerHandInformation> m_Ranked = new List <IPlayerHandInformation>();
 
@@ -15,11 +16,17 @@ namespace KataPokerHand.Logic.TexasHoldEm.Ranking
         {
             m_Ranked.Clear();
 
-            IOrderedEnumerable<IPlayerHandInformation> pair =
-                infos.OrderByDescending(x => x.SecondPairOfCards.First().Rank);
+            // todo check if we can use func to select card here
+            IOrderedEnumerable <IPlayerHandInformation> pair =
+                infos.OrderByDescending(x => x.PairOfCards
+                                              .First()
+                                              .Rank);
 
-            IGrouping<CardRank, IPlayerHandInformation>[] grouped =
-                pair.GroupBy(x => x.SecondPairOfCards.First().Rank).ToArray();
+            IGrouping <CardRank, IPlayerHandInformation>[] grouped =
+                pair.GroupBy(x => x.PairOfCards
+                                   .First()
+                                   .Rank)
+                    .ToArray();
 
             m_Ranked.AddRange(grouped.SelectMany(x => x));
 

@@ -1,14 +1,14 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
-using KataPokerHand.Logic.TexasHoldEm.Ranking;
+using KataPokerHand.Logic.TexasHoldEm.Ranking.SubRanking;
 using NSubstitute;
 using NUnit.Framework;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;
 using PlayingCards.Decks.Cards.Hearts;
 
-namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
+namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking.SubRanking
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]

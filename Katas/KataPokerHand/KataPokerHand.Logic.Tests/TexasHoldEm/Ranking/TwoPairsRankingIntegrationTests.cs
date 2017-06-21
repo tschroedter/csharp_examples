@@ -5,6 +5,7 @@ using JetBrains.Annotations;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm.Ranking;
+using KataPokerHand.Logic.TexasHoldEm.Ranking.SubRanking;
 using NSubstitute;
 using NUnit.Framework;
 using PlayinCards.Interfaces.Decks.Cards;

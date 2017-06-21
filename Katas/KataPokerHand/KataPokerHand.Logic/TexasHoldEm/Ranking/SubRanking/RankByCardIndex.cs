@@ -1,10 +1,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking;
+using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking.SubRanking;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using PlayinCards.Interfaces.Decks.Cards;
 
-namespace KataPokerHand.Logic.TexasHoldEm.Ranking
+namespace KataPokerHand.Logic.TexasHoldEm.Ranking.SubRanking
 {
     public class RankByCardIndex
         : IRankByCardIndex
