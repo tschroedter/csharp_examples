@@ -14,5 +14,8 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm
             Status key);
 
         void Group([NotNull] IEnumerable<IPlayerHandInformation> informations);
+
+        [NotNull]
+        IEnumerable <IPlayerHandInformation> All();
     }
 }

@@ -43,5 +43,17 @@ namespace KataPokerHand.Logic.TexasHoldEm
                                  infos);
             }
         }
+
+        public IEnumerable <IPlayerHandInformation> All()
+        {
+            var list = new List <IPlayerHandInformation>();
+
+            foreach ( Status key in m_Dictionary.Keys )
+            {
+                list.AddRange(m_Dictionary [ key ]);
+            }
+
+            return list;
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class PlayerInformationGroupedByStatusSortedTests
+    internal sealed class PlayerInformationGroupedByStatusTests
     {
         [SetUp]
         public void Setup()
@@ -33,6 +33,30 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm
         private PlayerHandInformation m_InfoThree;
         private PlayerInformationGroupedByStatus m_Sut;
         private PlayerHandInformation m_InfoTwo;
+
+        [Test]
+        public void All_Returns_List()
+        {
+            // Arrange
+            m_InfoOne.Status = Status.FourOfAKind;
+            m_InfoTwo.Status = Status.StraightFlush;
+            m_InfoThree.Status = Status.StraightFlush;
+
+            // Act
+            m_Sut.Group(m_Infos);
+
+            // Assert
+            IPlayerHandInformation[] actual = m_Sut.All().ToArray();
+
+            Assert.AreEqual(3,
+                            actual.Length);
+            Assert.AreEqual(m_InfoTwo,
+                            actual.ElementAt(0));
+            Assert.AreEqual(m_InfoThree,
+                            actual.ElementAt(1));
+            Assert.AreEqual(m_InfoOne,
+                            actual.ElementAt(2));
+        }
 
         [Test]
         public void Group_Updates_Keys()
