@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking;
@@ -6,6 +5,7 @@ using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
 using KataPokerHand.Logic.TexasHoldEm.Ranking;
 using NSubstitute;
 using NUnit.Framework;
+using System.Collections.Generic;
 using PlayinCards.Interfaces.Decks.Cards;
 using PlayingCards.Decks.Cards.Clubs;
 using PlayingCards.Decks.Cards.Diamonds;
@@ -20,8 +20,8 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
         [SetUp]
         public void Setup()
         {
-            m_InfoOne = Substitute.For<IPlayerHandInformation>();
-            m_InfoTwo = Substitute.For<IPlayerHandInformation>();
+            m_InfoOne = Substitute.For <IPlayerHandInformation>();
+            m_InfoTwo = Substitute.For <IPlayerHandInformation>();
             m_Infos = new[]
                       {
                           m_InfoOne,

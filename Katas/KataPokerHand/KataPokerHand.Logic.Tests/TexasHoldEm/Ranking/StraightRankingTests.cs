@@ -10,7 +10,7 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
 {
     [TestFixture]
     [ExcludeFromCodeCoverage]
-    internal sealed class FullHouseRankingTests
+    internal sealed class StraightRankingTests
     {
         [SetUp]
         public void Setup()
@@ -23,16 +23,16 @@ namespace KataPokerHand.Logic.Tests.TexasHoldEm.Ranking
                           m_InfoTwo
                       };
 
-            m_Ranking = Substitute.For <IThreeOfAKindRanking>();
+            m_Ranking = Substitute.For <IHighCardRanking>();
 
-            m_Sut = new FullHouseRanking(m_Ranking);
+            m_Sut = new StraightRanking(m_Ranking);
         }
 
         private IPlayerHandInformation m_InfoOne;
         private IPlayerHandInformation m_InfoTwo;
-        private FullHouseRanking m_Sut;
+        private StraightRanking m_Sut;
         private IPlayerHandInformation[] m_Infos;
-        private IThreeOfAKindRanking m_Ranking;
+        private IHighCardRanking m_Ranking;
 
         [Test]
         public void Apply_Updates_Ranked()

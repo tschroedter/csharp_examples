@@ -1,7 +1,6 @@
-using System.Linq;
+using JetBrains.Annotations;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Ranking;
 using KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules;
-using PlayinCards.Interfaces.Decks.Cards;
 
 namespace KataPokerHand.Logic.TexasHoldEm.Ranking
 {
@@ -9,26 +8,25 @@ namespace KataPokerHand.Logic.TexasHoldEm.Ranking
         : BaseRanking,
           IFullHouseRanking
     {
-        public FullHouseRanking()
+        [NotNull]
+        private readonly IThreeOfAKindRanking m_Ranking;
+
+        public FullHouseRanking(
+            [NotNull] IThreeOfAKindRanking ranking)
             : base(Status.FullHouse)
         {
+            m_Ranking = ranking;
         }
 
         public override void Apply(IPlayerHandInformation[] infos)
         {
             m_Ranked.Clear();
 
-            IOrderedEnumerable <IPlayerHandInformation> threeOfAKind =
-                infos.OrderByDescending(x => x.ThreeOfAKind.First().Rank);
+            m_Ranking.Apply(infos);
 
-            IGrouping <CardRank, IPlayerHandInformation>[] grouped =
-                threeOfAKind.GroupBy(x => x.ThreeOfAKind.First().Rank).ToArray();
+            m_Ranked.AddRange(m_Ranking.Ranked);
 
-            m_Ranked.AddRange(grouped.SelectMany(x => x));
-
-            Winner = grouped.Count() == infos.Length
-                         ? WinnerStatus.SingleWinner
-                         : WinnerStatus.MultipleWinners;
+            Winner = m_Ranking.Winner;
         }
     }
 }
