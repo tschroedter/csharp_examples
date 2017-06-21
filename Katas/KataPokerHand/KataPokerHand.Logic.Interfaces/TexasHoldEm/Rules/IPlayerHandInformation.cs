@@ -39,6 +39,6 @@ namespace KataPokerHand.Logic.Interfaces.TexasHoldEm.Rules
         IEnumerable <ICard> PairOfCards { get; set; }
 
         [NotNull]
-        IEnumerable <ICard> OtherCards { get; set; }
+        IEnumerable <ICard> OtherCards { get; set; }    // todo check if we use it/can use it
     }
 }

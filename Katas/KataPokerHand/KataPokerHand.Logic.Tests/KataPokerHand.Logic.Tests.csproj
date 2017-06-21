@@ -80,6 +80,8 @@
     <Compile Include="TexasHoldEm\Ranking\FlushRankingTests.cs" />
     <Compile Include="TexasHoldEm\Ranking\FullHouseRankingTests.cs" />
     <Compile Include="TexasHoldEm\Ranking\HighCardRankingTests.cs" />
+    <Compile Include="TexasHoldEm\Ranking\PairOfCardsOfCardsRankingTests.cs" />
+    <Compile Include="TexasHoldEm\Ranking\PairRankingTests.cs" />
     <Compile Include="TexasHoldEm\Ranking\RankByCardIndexTests.cs" />
     <Compile Include="TexasHoldEm\Ranking\SecondPairRankingTests.cs" />
     <Compile Include="TexasHoldEm\Ranking\SingleHighestCardRankingTests.cs" />

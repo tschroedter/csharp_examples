@@ -16,7 +16,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Ranking
             m_Ranked.Clear();
 
             IOrderedEnumerable<IPlayerHandInformation> pair =
-                infos.OrderByDescending(x => x.FirstPairOfCards.First().Rank);
+                infos.OrderByDescending(x => x.FirstPairOfCards.First().Rank);  // todo check if we can use func to select card here
 
             IGrouping<CardRank, IPlayerHandInformation>[] grouped =
                 pair.GroupBy(x => x.FirstPairOfCards.First().Rank).ToArray();
