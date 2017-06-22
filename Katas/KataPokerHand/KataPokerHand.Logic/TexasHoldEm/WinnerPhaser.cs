@@ -16,7 +16,6 @@ namespace KataPokerHand.Logic.TexasHoldEm
         // todo continue here
         public WinnerPhaser(
             [NotNull] ICardsRankEngine phaseOne,
-            
             [NotNull] ICardsRanking phaseTwo)
         {
             m_PhaseOne = phaseOne;
