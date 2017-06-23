@@ -26,7 +26,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions.Validators
             IEnumerable <CardRank> cardRanks = values as CardRank[] ?? values.ToArray();
             IEnumerable <IGrouping <CardRank, CardRank>> grouped = cardRanks.GroupBy(x => x).ToArray();
 
-            if ( grouped.Count() < 2 )
+            if ( grouped.Count() != 4 ) // todo test for this
             {
                 return false;
             }

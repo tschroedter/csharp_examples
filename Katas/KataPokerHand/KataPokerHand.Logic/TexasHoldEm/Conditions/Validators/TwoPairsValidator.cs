@@ -21,6 +21,9 @@ namespace KataPokerHand.Logic.TexasHoldEm.Conditions.Validators
 
         public bool IsValid()
         {
+            FirstPairOfCards = new ICard[0];
+            SecondPairOfCards = new ICard[0];
+
             IEnumerable <CardRank> values = Cards.Select(x => x.Rank);
 
             IEnumerable <CardRank> cardRanks = values as CardRank[] ?? values.ToArray();

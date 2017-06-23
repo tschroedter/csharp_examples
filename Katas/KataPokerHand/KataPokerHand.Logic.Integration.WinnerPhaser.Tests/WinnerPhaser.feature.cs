@@ -112,6 +112,331 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for one player with Four Of A Kind")]
+        [NUnit.Framework.CategoryAttribute("fourOfAKind")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForOnePlayerWithFourOfAKind()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for one player with Four Of A Kind", new string[] {
+                        "fourOfAKind"});
+#line 22
+this.ScenarioSetup(scenarioInfo);
+#line 23
+    testRunner.Given("player \'one\' holds the following cards \'2C,2D,2S,2H,3C\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 24
+    testRunner.And("player \'two\' holds the following cards \'2H,4C,6H,8C,JH\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 25
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 26
+    testRunner.Then("the winner should be player \'one\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 27
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 28
+    testRunner.And("the winner should have won with status \'FourOfAKind\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for two players with Four Of A Kind")]
+        [NUnit.Framework.CategoryAttribute("fourOfAKindTwoTimes")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForTwoPlayersWithFourOfAKind()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for two players with Four Of A Kind", new string[] {
+                        "fourOfAKindTwoTimes"});
+#line 31
+this.ScenarioSetup(scenarioInfo);
+#line 32
+    testRunner.Given("player \'one\' holds the following cards \'2C,2D,2S,2H,3C\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 33
+    testRunner.And("player \'two\' holds the following cards \'3C,3D,3S,3H,JH\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 34
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 35
+    testRunner.Then("the winner should be player \'two\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 36
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 37
+    testRunner.And("the winner should have won with status \'FourOfAKind\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for one player with FullHouse")]
+        [NUnit.Framework.CategoryAttribute("fullHouse")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForOnePlayerWithFullHouse()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for one player with FullHouse", new string[] {
+                        "fullHouse"});
+#line 40
+this.ScenarioSetup(scenarioInfo);
+#line 41
+    testRunner.Given("player \'one\' holds the following cards \'2C,2D,2S,3C,3C\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 42
+    testRunner.And("player \'two\' holds the following cards \'2H,4C,6H,8C,JH\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 43
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 44
+    testRunner.Then("the winner should be player \'one\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 45
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 46
+    testRunner.And("the winner should have won with status \'FullHouse\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for two players with FullHouse")]
+        [NUnit.Framework.CategoryAttribute("fullHouseTwoTimes")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForTwoPlayersWithFullHouse()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for two players with FullHouse", new string[] {
+                        "fullHouseTwoTimes"});
+#line 49
+this.ScenarioSetup(scenarioInfo);
+#line 50
+    testRunner.Given("player \'one\' holds the following cards \'2C,2D,2S,3C,3C\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 51
+    testRunner.And("player \'two\' holds the following cards \'2H,2D,4C,4H,4S\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 52
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 53
+    testRunner.Then("the winner should be player \'two\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 54
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 55
+    testRunner.And("the winner should have won with status \'FullHouse\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for one player with Flush")]
+        [NUnit.Framework.CategoryAttribute("flush")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForOnePlayerWithFlush()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for one player with Flush", new string[] {
+                        "flush"});
+#line 58
+this.ScenarioSetup(scenarioInfo);
+#line 59
+    testRunner.Given("player \'one\' holds the following cards \'2C,4C,6C,8C,JC\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 60
+    testRunner.And("player \'two\' holds the following cards \'2H,4S,6H,8S,JH\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 61
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 62
+    testRunner.Then("the winner should be player \'one\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 63
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 64
+    testRunner.And("the winner should have won with status \'Flush\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for two players with Flush")]
+        [NUnit.Framework.CategoryAttribute("flushTwoTimes")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForTwoPlayersWithFlush()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for two players with Flush", new string[] {
+                        "flushTwoTimes"});
+#line 67
+this.ScenarioSetup(scenarioInfo);
+#line 68
+    testRunner.Given("player \'one\' holds the following cards \'2C,4C,6C,8C,JC\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 69
+    testRunner.And("player \'two\' holds the following cards \'3C,5C,7C,9C,QC\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 70
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 71
+    testRunner.Then("the winner should be player \'two\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 72
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 73
+    testRunner.And("the winner should have won with status \'Flush\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for one player with Straight")]
+        [NUnit.Framework.CategoryAttribute("straight")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForOnePlayerWithStraight()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for one player with Straight", new string[] {
+                        "straight"});
+#line 76
+this.ScenarioSetup(scenarioInfo);
+#line 77
+    testRunner.Given("player \'one\' holds the following cards \'2C,3S,4C,5S,6C\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 78
+    testRunner.And("player \'two\' holds the following cards \'2H,4S,6H,8S,JH\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 79
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 80
+    testRunner.Then("the winner should be player \'one\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 81
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 82
+    testRunner.And("the winner should have won with status \'Straight\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for two players with Straight")]
+        [NUnit.Framework.CategoryAttribute("straightTwoTimes")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForTwoPlayersWithStraight()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for two players with Straight", new string[] {
+                        "straightTwoTimes"});
+#line 85
+this.ScenarioSetup(scenarioInfo);
+#line 86
+    testRunner.Given("player \'one\' holds the following cards \'2C,3S,4C,5S,6C\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 87
+    testRunner.And("player \'two\' holds the following cards \'3C,4S,5C,6S,7C\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 88
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 89
+    testRunner.Then("the winner should be player \'two\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 90
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 91
+    testRunner.And("the winner should have won with status \'Straight\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for one player with ThreeOfAKind")]
+        [NUnit.Framework.CategoryAttribute("threeOfAKind")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForOnePlayerWithThreeOfAKind()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for one player with ThreeOfAKind", new string[] {
+                        "threeOfAKind"});
+#line 94
+this.ScenarioSetup(scenarioInfo);
+#line 95
+    testRunner.Given("player \'one\' holds the following cards \'2C,2S,2H,5S,6C\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 96
+    testRunner.And("player \'two\' holds the following cards \'2H,4S,6H,8S,JH\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 97
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 98
+    testRunner.Then("the winner should be player \'one\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 99
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 100
+    testRunner.And("the winner should have won with status \'ThreeOfAKind\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for two players with ThreeOfAKind")]
+        [NUnit.Framework.CategoryAttribute("threeOfAKindTwoTimes")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForTwoPlayersWithThreeOfAKind()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for two players with ThreeOfAKind", new string[] {
+                        "threeOfAKindTwoTimes"});
+#line 103
+this.ScenarioSetup(scenarioInfo);
+#line 104
+    testRunner.Given("player \'one\' holds the following cards \'2C,2S,2H,5S,6C\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 105
+    testRunner.And("player \'two\' holds the following cards \'3H,3S,3H,8S,JH\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 106
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 107
+    testRunner.Then("the winner should be player \'two\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 108
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 109
+    testRunner.And("the winner should have won with status \'ThreeOfAKind\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for one player with TwoPairs")]
+        [NUnit.Framework.CategoryAttribute("twoPairs")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForOnePlayerWithTwoPairs()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for one player with TwoPairs", new string[] {
+                        "twoPairs"});
+#line 112
+this.ScenarioSetup(scenarioInfo);
+#line 113
+    testRunner.Given("player \'one\' holds the following cards \'2C,2S,3H,3S,6C\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 114
+    testRunner.And("player \'two\' holds the following cards \'2H,4S,6H,8S,JH\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 115
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 116
+    testRunner.Then("the winner should be player \'one\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 117
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 118
+    testRunner.And("the winner should have won with status \'TwoPairs\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for two players with TwoPairs")]
+        [NUnit.Framework.CategoryAttribute("twoPairsTwoTimes")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForTwoPlayersWithTwoPairs()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for two players with TwoPairs", new string[] {
+                        "twoPairsTwoTimes"});
+#line 121
+this.ScenarioSetup(scenarioInfo);
+#line 122
+    testRunner.Given("player \'one\' holds the following cards \'2C,2S,3H,3S,6C\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 123
+    testRunner.And("player \'two\' holds the following cards \'3C,3S,4H,4S,6S\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 124
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 125
+    testRunner.Then("the winner should be player \'two\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 126
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 127
+    testRunner.And("the winner should have won with status \'TwoPairs\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for one player with OnePair")]
+        [NUnit.Framework.CategoryAttribute("onePair")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForOnePlayerWithOnePair()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for one player with OnePair", new string[] {
+                        "onePair"});
+#line 130
+this.ScenarioSetup(scenarioInfo);
+#line 131
+    testRunner.Given("player \'one\' holds the following cards \'2C,2S,3H,4S,6C\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 132
+    testRunner.And("player \'two\' holds the following cards \'2H,4S,6H,8S,JH\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 133
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 134
+    testRunner.Then("the winner should be player \'one\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 135
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 136
+    testRunner.And("the winner should have won with status \'OnePair\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore

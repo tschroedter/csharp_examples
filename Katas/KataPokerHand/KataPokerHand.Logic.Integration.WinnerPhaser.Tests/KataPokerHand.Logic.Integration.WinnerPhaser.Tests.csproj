@@ -75,7 +75,7 @@
     <None Include="packages.config" />
     <None Include="WinnerPhaser.feature">
       <Generator>SpecFlowSingleFileGenerator</Generator>
-      <LastGenOutput>WinnerPhaser.feature.cs</LastGenOutput>
+      <LastGenOutput>WinnerPhaser1.feature.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>

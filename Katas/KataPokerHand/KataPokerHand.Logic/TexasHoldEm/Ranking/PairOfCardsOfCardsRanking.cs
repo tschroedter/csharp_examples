@@ -12,7 +12,7 @@ namespace KataPokerHand.Logic.TexasHoldEm.Ranking
         public PairOfCardsOfCardsRanking(
             [NotNull] IPairRanking pairRanking,
             [NotNull] IHighCardRanking highCardRanking)
-            : base(Status.TwoPairs)
+            : base(Status.OnePair)
         {
             m_PairRanking = pairRanking;
             m_HighCardRanking = highCardRanking;
