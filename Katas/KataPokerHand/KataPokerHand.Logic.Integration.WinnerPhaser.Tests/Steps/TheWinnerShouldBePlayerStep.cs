@@ -17,7 +17,7 @@ namespace KataPokerHand.Logic.Integration.WinnerPhaser.Tests.Steps
 
             AssertCards(playerCards,
                         winnerCards,
-                        "'the winner should be player'");
+                        "the winner should be player");
         }
     }
 }

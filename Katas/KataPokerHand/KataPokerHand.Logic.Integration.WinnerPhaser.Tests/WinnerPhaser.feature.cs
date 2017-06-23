@@ -87,6 +87,31 @@ this.ScenarioSetup(scenarioInfo);
 #line hidden
             this.ScenarioCleanup();
         }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("WinnerPhaser returns single winner for two players with Straight Flush")]
+        [NUnit.Framework.CategoryAttribute("straightFlushTwoTimes")]
+        public virtual void WinnerPhaserReturnsSingleWinnerForTwoPlayersWithStraightFlush()
+        {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("WinnerPhaser returns single winner for two players with Straight Flush", new string[] {
+                        "straightFlushTwoTimes"});
+#line 13
+this.ScenarioSetup(scenarioInfo);
+#line 14
+    testRunner.Given("player \'one\' holds the following cards \'2C,3C,4C,5C,6C\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line 15
+    testRunner.And("player \'two\' holds the following cards \'3H,4H,5H,6H,7H\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 16
+    testRunner.When("I press phase", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 17
+    testRunner.Then("the winner should be player \'two\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 18
+    testRunner.And("the winner property should show \'SingleWinner\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 19
+    testRunner.And("the winner should have won with status \'StraightFlush\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+            this.ScenarioCleanup();
+        }
     }
 }
 #pragma warning restore
