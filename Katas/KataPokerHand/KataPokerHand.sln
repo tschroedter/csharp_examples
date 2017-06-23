@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataPokerHand.Logic.Integra
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{FA207026-7F94-476C-9787-B436F3EDE3A6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KataPokerHand.Logic.Integration.WinnerPhaser.Tests", "KataPokerHand.Logic.Integration.WinnerPhaser.Tests\KataPokerHand.Logic.Integration.WinnerPhaser.Tests.csproj", "{E3E96690-F7F6-4EB0-809C-2878AF0613D8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{A9294460-07E7-4045-958A-4462566DE037}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9294460-07E7-4045-958A-4462566DE037}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9294460-07E7-4045-958A-4462566DE037}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3E96690-F7F6-4EB0-809C-2878AF0613D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3E96690-F7F6-4EB0-809C-2878AF0613D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3E96690-F7F6-4EB0-809C-2878AF0613D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3E96690-F7F6-4EB0-809C-2878AF0613D8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,5 +86,6 @@ Global
 		{F2091286-E7A6-438C-BC56-92220FC6C297} = {FA207026-7F94-476C-9787-B436F3EDE3A6}
 		{8AFB2D0F-2564-4C84-8606-B380BCCCEDA0} = {FA207026-7F94-476C-9787-B436F3EDE3A6}
 		{A9294460-07E7-4045-958A-4462566DE037} = {FA207026-7F94-476C-9787-B436F3EDE3A6}
+		{E3E96690-F7F6-4EB0-809C-2878AF0613D8} = {FA207026-7F94-476C-9787-B436F3EDE3A6}
 	EndGlobalSection
 EndGlobal

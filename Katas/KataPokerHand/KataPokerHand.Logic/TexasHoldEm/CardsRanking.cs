@@ -36,7 +36,14 @@ namespace KataPokerHand.Logic.TexasHoldEm
 
             foreach ( Status status in m_Grouped.Keys )
             {
-                IEnumerable <IPlayerHandInformation> statusInfos = m_Grouped [ status ];
+                IEnumerable <IPlayerHandInformation> statusInfos = m_Grouped [ status ].ToArray();
+
+                if ( statusInfos.Count() == 1 ) // todo testing this if
+                {
+                    Winner = WinnerStatus.SingleWinner;
+                    WinnerInformation = statusInfos.First();
+                    return;
+                }
 
                 m_Rankings.Apply(statusInfos.ToArray());
 

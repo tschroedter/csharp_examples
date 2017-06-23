@@ -10,7 +10,8 @@ namespace PlayingCards
     public sealed class StringToCardFactory
         : IStringToCardFactory
     {
-        private readonly Dictionary <string, Type> m_Dictionary = new Dictionary <string, Type>();
+        private readonly Dictionary <string, Type> m_DictionaryByDescription = new Dictionary <string, Type>();
+        private readonly Dictionary<string, Type> m_DictionaryToString = new Dictionary<string, Type>();
 
         [NotNull]
         public ICard ToCard(string name)
@@ -18,11 +19,19 @@ namespace PlayingCards
             // todo use IoC container factory
             Type type;
 
-            if ( !m_Dictionary.TryGetValue(name.ToLower(),
-                                           out type) )
+            if ( m_DictionaryByDescription.TryGetValue(name.ToLower(),
+                                                       out type) )
             {
-                type = typeof( UnknownCard );
+                return CreateCard(type);
             }
+
+            if (m_DictionaryToString.TryGetValue(name.ToLower(),    // todo testing 2C, ...
+                                                      out type))
+            {
+                return CreateCard(type);
+            }
+
+            type = typeof( UnknownCard );
 
             return CreateCard(type);
         }
@@ -31,8 +40,11 @@ namespace PlayingCards
         {
             foreach ( ICard card in cards )
             {
-                m_Dictionary.Add(card.Description().ToLower(),
+                m_DictionaryByDescription.Add(card.Description().ToLower(),
                                  card.GetType());
+
+                m_DictionaryByDescription.Add(card.ToString().ToLower(), // todo testing 2C, ...
+                                              card.GetType());
             }
         }
 
