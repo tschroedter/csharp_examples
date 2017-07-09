@@ -161,3 +161,12 @@ Scenario: WinnerPhaser returns single winner for two players with HighCard
     Then the winner should be player 'two'
     And the winner property should show 'SingleWinner'
     And the winner should have won with status 'HighCard'
+
+@highCardOneDifferent
+Scenario: WinnerPhaser returns single winner for two players with HighCard and only one card different
+    Given player 'one' holds the following cards '2C,4S,6H,8S,JC'
+    And player 'two' holds the following cards '2H,4C,6S,8H,QH'
+    When I press phase
+    Then the winner should be player 'two'
+    And the winner property should show 'SingleWinner'
+    And the winner should have won with status 'HighCard'
