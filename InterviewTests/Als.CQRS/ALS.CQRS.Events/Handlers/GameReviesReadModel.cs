@@ -2,7 +2,7 @@
 using ALS.CQRS.DataAccess.ReadModels;
 using JetBrains.Annotations;
 
-namespace ALS.CQRS.Application.EventHandlers
+namespace ALS.CQRS.Events.Handlers
 {
     [UsedImplicitly]
     public class GameReviesReadModel

@@ -1,17 +1,15 @@
-using System;
-using ALS.CQRS.Commands;
 using ALS.CQRS.Domain;
 using JetBrains.Annotations;
 using SimpleCqrs.Commanding;
 using SimpleCqrs.Domain;
 
-namespace ALS.CQRS.Application.CommandHandlers
+namespace ALS.CQRS.Commands.Handlers
 {
     [UsedImplicitly]
-    public class UpdateGameReviewCommandHandler
-        : CommandHandler <UpdateGameReviewCommand>
+    public class CreateGameReviewCommandHandler
+        : CommandHandler <CreateGameReviewCommand>
     {
-        public UpdateGameReviewCommandHandler(
+        public CreateGameReviewCommandHandler(
             [NotNull] IDomainRepository repository)
         {
             m_Repository = repository;
@@ -20,7 +18,7 @@ namespace ALS.CQRS.Application.CommandHandlers
         private readonly IDomainRepository m_Repository;
 
         public override void Handle(
-            [NotNull] UpdateGameReviewCommand command)
+            [NotNull] CreateGameReviewCommand command)
         {
             Return(ValidateCommand(command));
 
@@ -32,7 +30,7 @@ namespace ALS.CQRS.Application.CommandHandlers
         }
 
         private GameReviewHandlerStatus ValidateCommand(
-            [NotNull] UpdateGameReviewCommand command)
+            [NotNull] CreateGameReviewCommand command)
         {
             return command.Rating < 0
                        ? GameReviewHandlerStatus.Failed

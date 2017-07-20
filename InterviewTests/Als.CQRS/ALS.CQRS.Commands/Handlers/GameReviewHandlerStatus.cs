@@ -1,4 +1,4 @@
-﻿namespace ALS.CQRS.Application.CommandHandlers
+﻿namespace ALS.CQRS.Commands.Handlers
 {
     public enum GameReviewHandlerStatus
     {

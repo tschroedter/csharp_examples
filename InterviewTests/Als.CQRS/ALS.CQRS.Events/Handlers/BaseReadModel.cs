@@ -4,7 +4,7 @@ using ALS.CQRS.DataAccess.Interfaces;
 using ALS.CQRS.DataAccess.ReadModels;
 using JetBrains.Annotations;
 
-namespace ALS.CQRS.Application.EventHandlers
+namespace ALS.CQRS.Events.Handlers
 {
     public abstract class BaseReadModel <T>
         : IDbContext <T>

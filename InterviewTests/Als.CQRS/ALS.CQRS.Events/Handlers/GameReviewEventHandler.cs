@@ -1,9 +1,8 @@
 ﻿using ALS.CQRS.DataAccess.ReadModels;
-using ALS.CQRS.Events;
 using JetBrains.Annotations;
 using SimpleCqrs.Eventing;
 
-namespace ALS.CQRS.Application.EventHandlers
+namespace ALS.CQRS.Events.Handlers
 {
     [UsedImplicitly]
     public class GameReviewEventHandler
