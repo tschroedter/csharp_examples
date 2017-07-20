@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using JetBrains.Annotations;
 using SimpleCqrs.Eventing;
 
@@ -6,20 +6,21 @@ using SimpleCqrs.Eventing;
 // ReSharper disable UnusedAutoPropertyAccessor.Global
 // ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
 
-namespace ALS.CQRS.Contracts.Events
+namespace ALS.CQRS.Events
 {
     [UsedImplicitly]
-    public class GameReviewRatingChangedEvent
+    public class GameReviewTitleChangedEvent
         : DomainEvent
     {
-        public GameReviewRatingChangedEvent(
+        public GameReviewTitleChangedEvent(
             Guid movieId,
-            int rating)
+            [NotNull] string title)
         {
             AggregateRootId = movieId;
-            Rating = rating;
+            Title = title;
         }
 
-        public int Rating { get; set; }
+        [NotNull]
+        public string Title { get; set; }
     }
 }

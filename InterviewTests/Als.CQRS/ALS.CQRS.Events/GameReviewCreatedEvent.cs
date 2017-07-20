@@ -6,7 +6,7 @@ using SimpleCqrs.Eventing;
 // ReSharper disable UnusedAutoPropertyAccessor.Global
 // ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
 
-namespace ALS.CQRS.Contracts.Events
+namespace ALS.CQRS.Events
 {
     [UsedImplicitly]
     public class GameReviewCreatedEvent

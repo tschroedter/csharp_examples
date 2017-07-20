@@ -1,5 +1,5 @@
-﻿using ALS.CQRS.Contracts.Events;
-using ALS.CQRS.DataAccess.ReadModels;
+﻿using ALS.CQRS.DataAccess.ReadModels;
+using ALS.CQRS.Events;
 using JetBrains.Annotations;
 using SimpleCqrs.Eventing;
 

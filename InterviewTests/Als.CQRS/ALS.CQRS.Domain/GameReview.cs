@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
+using ALS.CQRS.Events;
 using JetBrains.Annotations;
 using SimpleCqrs.Domain;
 
@@ -14,16 +15,19 @@ namespace ALS.CQRS.Domain
         : AggregateRoot
     {
         public GameReview(
-            Guid reviewId,
             [NotNull] string title,
             [NotNull] string description,
             int rating)
         {
-            Id = reviewId;
+            Id = Guid.NewGuid();
             Title = title;
             Description = description;
             Rating = rating;
-            //todo Implementation done in Step 6
+
+            Apply(new GameReviewCreatedEvent(Id,
+                                             title,
+                                             description,
+                                             rating));
         }
 
         [NotNull]

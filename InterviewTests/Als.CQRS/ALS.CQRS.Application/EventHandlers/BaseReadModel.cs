@@ -1,6 +1,5 @@
 using System;
 using System.Linq;
-using ALS.CQRS.DataAccess;
 using ALS.CQRS.DataAccess.Interfaces;
 using ALS.CQRS.DataAccess.ReadModels;
 using JetBrains.Annotations;

@@ -6,21 +6,21 @@ using SimpleCqrs.Eventing;
 // ReSharper disable UnusedAutoPropertyAccessor.Global
 // ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
 
-namespace ALS.CQRS.Contracts.Events
+namespace ALS.CQRS.Events
 {
     [UsedImplicitly]
-    public class GameReviewTitleChangedEvent
+    public class GameReviewDescriptionChangedEvent
         : DomainEvent
     {
-        public GameReviewTitleChangedEvent(
+        public GameReviewDescriptionChangedEvent(
             Guid movieId,
-            [NotNull] string title)
+            [NotNull] string description)
         {
             AggregateRootId = movieId;
-            Title = title;
+            Description = description;
         }
 
         [NotNull]
-        public string Title { get; set; }
+        public string Description { get; set; }
     }
 }

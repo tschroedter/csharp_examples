@@ -9,8 +9,4 @@
     <PackageReference Include="SimpleCqrs" Version="1.0.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\ALS.CQRS.Events\ALS.CQRS.Events.csproj" />
-  </ItemGroup>
-
 </Project>

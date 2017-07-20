@@ -1,5 +1,5 @@
 using System;
-using ALS.CQRS.Contracts.Commands;
+using ALS.CQRS.Commands;
 using ALS.CQRS.Domain;
 using JetBrains.Annotations;
 using SimpleCqrs.Commanding;
@@ -24,8 +24,7 @@ namespace ALS.CQRS.Application.CommandHandlers
         {
             Return(ValidateCommand(command));
 
-            var review = new GameReview(Guid.NewGuid(),
-                                        command.Title,
+            var review = new GameReview(command.Title,
                                         command.Description,
                                         command.Rating);
 

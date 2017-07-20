@@ -1,24 +1,21 @@
-using System;
-using JetBrains.Annotations;
+﻿using JetBrains.Annotations;
 using SimpleCqrs.Commanding;
 
 // ReSharper disable MemberCanBePrivate.Global
 // ReSharper disable UnusedAutoPropertyAccessor.Global
 // ReSharper disable AutoPropertyCanBeMadeGetOnly.Global
 
-namespace ALS.CQRS.Contracts.Commands
+namespace ALS.CQRS.Commands
 {
     [UsedImplicitly]
-    public class UpdateGameReviewCommand
-        : CommandWithAggregateRootId
+    public class CreateGameReviewCommand
+        : ICommand
     {
-        public UpdateGameReviewCommand(
-            Guid movieId,
+        public CreateGameReviewCommand(
             [NotNull] string title,
             [NotNull] string description,
             int rating)
         {
-            AggregateRootId = movieId;
             Title = title;
             Description = description;
             Rating = rating;
