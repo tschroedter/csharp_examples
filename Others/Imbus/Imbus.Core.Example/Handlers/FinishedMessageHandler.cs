@@ -39,12 +39,14 @@ namespace Imbus.Core.Example.Handlers
             m_FinishedHandlers [ message.SubscriptionId ] = true;
             WriteLine($"[{message.BusName}] {message.SubscriptionId} has finished!");
 
-            if ( m_FinishedHandlers.Values.All(x => x) )
+            if ( !m_FinishedHandlers.Values.All(x => x) )
             {
-                ForegroundColor = ConsoleColor.Green;
-                WriteLine($"[{m_Id}] Handled all messages!");
-                ForegroundColor = ConsoleColor.Gray;
+                return;
             }
+
+            ForegroundColor = ConsoleColor.Green;
+            WriteLine($"[{m_Id}] Handled all messages!");
+            ForegroundColor = ConsoleColor.Gray;
         }
     }
 }
