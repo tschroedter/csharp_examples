@@ -15,6 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Imbus.Core.Autofac\Imbus.Core.Autofac.csproj" />
     <ProjectReference Include="..\Imbus.Core.Example\Imbus.Core.Example.csproj" />
     <ProjectReference Include="..\Imbus.Core\Imbus.Core.csproj" />
   </ItemGroup>

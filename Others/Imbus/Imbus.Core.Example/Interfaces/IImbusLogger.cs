@@ -1,7 +1,7 @@
 ﻿using System;
 using JetBrains.Annotations;
 
-namespace Imbus.Core.Interfaces
+namespace Imbus.Core.Example.Interfaces
 {
     public interface IImbusLogger
     {

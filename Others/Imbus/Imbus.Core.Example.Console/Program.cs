@@ -5,6 +5,7 @@ using Autofac.Extras.NLog;
 using Imbus.Core.Autofac;
 using Imbus.Core.Example.Autofac;
 using Imbus.Core.Example.Handlers;
+using Imbus.Core.Example.Interfaces;
 using Imbus.Core.Example.Interfaces.Buses;
 using Imbus.Core.Interfaces;
 using JetBrains.Annotations;

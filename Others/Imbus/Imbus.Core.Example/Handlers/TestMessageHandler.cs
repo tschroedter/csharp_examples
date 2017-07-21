@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
+using Imbus.Core.Example.Interfaces;
 using Imbus.Core.Example.Messages;
 using Imbus.Core.Interfaces;
 using JetBrains.Annotations;

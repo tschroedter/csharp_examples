@@ -1,9 +1,9 @@
 using System;
 using Autofac.Extras.NLog;
-using Imbus.Core.Interfaces;
+using Imbus.Core.Example.Interfaces;
 using JetBrains.Annotations;
 
-namespace Imbus.Core
+namespace Imbus.Core.Example
 {
     [UsedImplicitly]
     public class ImbusLogger

@@ -14,6 +14,8 @@ namespace Imbus.Core.Example.Autofac
     {
         protected override void Load(ContainerBuilder builder)
         {
+            builder.RegisterType <ImbusLogger>()
+                   .AsImplementedInterfaces();
             builder.RegisterType <FirstBus>()
                    .AsImplementedInterfaces()
                    .SingleInstance();
