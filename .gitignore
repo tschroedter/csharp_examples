@@ -191,3 +191,4 @@ nunit-test-reports.xml
 Katas/KataPokerHand/KataPokerHand.VC.VC.opendb
 *.ncrunchsolution
 *.ncrunchproject
+Others/Imbus/.vs/
