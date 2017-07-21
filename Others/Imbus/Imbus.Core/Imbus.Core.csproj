@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Authors>Thomas Schroedter</Authors>
+    <Company>Thomas Schroedter</Company>
+    <Description>A simple in memory IBus using .Net Core 2.0a</Description>
   </PropertyGroup>
 
   <ItemGroup>

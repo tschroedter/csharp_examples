@@ -2,6 +2,9 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Authors>Thomas Schroedter</Authors>
+    <Company>Thomas Schroedter</Company>
+    <Description>NUnit tests for Imbus.Core classes</Description>
   </PropertyGroup>
 
   <ItemGroup>

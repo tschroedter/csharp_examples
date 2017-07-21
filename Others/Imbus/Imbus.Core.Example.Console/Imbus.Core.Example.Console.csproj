@@ -3,6 +3,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Authors>Thomas Schroedter</Authors>
+    <Company>Thomas Schroedter</Company>
+    <Description>Imbus.Core example console application sending messages on 2 different buses at the same time.</Description>
   </PropertyGroup>
 
   <ItemGroup>

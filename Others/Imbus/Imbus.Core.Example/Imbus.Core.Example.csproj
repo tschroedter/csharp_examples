@@ -2,6 +2,10 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <Authors>Thomas Schroedter</Authors>
+    <Company>Thomas Schroedter</Company>
+    <Product>Imbus.Core.Example</Product>
+    <Description>Example library for Imbus.Core.Example.Console</Description>
   </PropertyGroup>
 
   <ItemGroup>
