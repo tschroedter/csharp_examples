@@ -13,10 +13,12 @@ namespace Imbus.Core.Example
     {
         public MessageBusTester(
             [NotNull] IContainer container,
-            [NotNull] IMessageBus bus)
+            [NotNull] IMessageBus bus,
+            [NotNull] string id)
         {
             m_Container = container;
             m_Bus = bus;
+            m_Id = id;
 
             NumberOfHandlers = 1;
             NumberOfMessages = 1;
@@ -31,6 +33,8 @@ namespace Imbus.Core.Example
         [NotNull]
         private readonly IContainer m_Container;
 
+        private readonly string m_Id;
+
         private FinishedMessageHandler m_FinishedHandler;
 
         [UsedImplicitly]
@@ -38,10 +42,13 @@ namespace Imbus.Core.Example
 
         public void Initialize()
         {
-            m_FinishedHandler = m_Container.Resolve <FinishedMessageHandler>();
-            m_Bus.Subscribe(m_FinishedHandler);
-
             m_Handlers = CreateHandlers();
+
+            m_FinishedHandler = m_Container.Resolve <FinishedMessageHandler>();
+            m_FinishedHandler.Initialize(m_Id,
+                                         m_Handlers);
+
+            m_Bus.Subscribe(m_FinishedHandler);
         }
 
         public void Run()

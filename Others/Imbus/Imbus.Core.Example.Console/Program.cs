@@ -15,8 +15,8 @@ namespace Imbus.Core.Example.Console
 {
     public static class Program
     {
-        private static readonly int NumberOfHandlers = 100;
-        private static readonly int NumberOfMessages = 10;
+        private static readonly int NumberOfHandlers = 10;
+        private static readonly int NumberOfMessages = 1000;
 
         [UsedImplicitly]
         private static TestMessageHandler[] s_Handlers;
@@ -36,10 +36,12 @@ namespace Imbus.Core.Example.Console
                 var secondBus = container.Resolve <ISecondBus>();
 
                 s_TesterOne = CreateTester(container,
-                                           firstBus);
+                                           firstBus,
+                                           "Test For First Bus");
 
                 s_TesterTwo = CreateTester(container,
-                                           secondBus);
+                                           secondBus,
+                                           "Test For Second Bus");
 
                 s_TesterOne.NumberOfHandlers = NumberOfHandlers;
                 s_TesterOne.NumberOfMessages = NumberOfMessages;
@@ -55,6 +57,8 @@ namespace Imbus.Core.Example.Console
             catch ( Exception exception )
             {
                 logger.Error(exception);
+
+                WriteLine(exception);
             }
 
             WriteLine("Press key to continue...");
@@ -77,17 +81,21 @@ namespace Imbus.Core.Example.Console
 
         private static MessageBusTester CreateTester(
             [NotNull] IContainer container,
-            [NotNull] IMessageBus bus)
+            [NotNull] IMessageBus bus,
+            [NotNull] string subscriberId)
         {
             var one = new NamedParameter("container",
                                          container);
             var two = new NamedParameter("bus",
                                          bus);
+            var three = new NamedParameter("id",
+                                           subscriberId);
 
             Parameter[] parameters =
             {
                 one,
-                two
+                two,
+                three
             };
 
             var tester = container.Resolve <MessageBusTester>(parameters);
