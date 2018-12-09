@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CroppingApplication", "CroppingApplication\CroppingApplication.csproj", "{ABCA8A3F-74C7-4D11-BB12-84B5BB3096D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cropping", "Cropping\Cropping.csproj", "{8EA14C57-A5BE-481D-98F2-3CA8DEC1633F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ABCA8A3F-74C7-4D11-BB12-84B5BB3096D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ABCA8A3F-74C7-4D11-BB12-84B5BB3096D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ABCA8A3F-74C7-4D11-BB12-84B5BB3096D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ABCA8A3F-74C7-4D11-BB12-84B5BB3096D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EA14C57-A5BE-481D-98F2-3CA8DEC1633F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EA14C57-A5BE-481D-98F2-3CA8DEC1633F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EA14C57-A5BE-481D-98F2-3CA8DEC1633F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EA14C57-A5BE-481D-98F2-3CA8DEC1633F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF978152-B2B3-4D1C-98D3-00E966700F52}
+	EndGlobalSection
+EndGlobal
