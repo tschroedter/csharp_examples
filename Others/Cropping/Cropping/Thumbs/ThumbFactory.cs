@@ -18,7 +18,8 @@ namespace Cropping.Thumbs
             BottomRight,
             BottomMiddle,
             BottomLeft,
-            LeftMiddle
+            LeftMiddle,
+            Center
         }
 
         /// <summary>
@@ -68,6 +69,8 @@ namespace Cropping.Thumbs
                     return Cursors.SizeNESW;
                 case ThumbPosition.LeftMiddle:
                     return Cursors.SizeWE;
+                case ThumbPosition.Center:
+                    return Cursors.Cross;
                 default:
                     return null;
             }

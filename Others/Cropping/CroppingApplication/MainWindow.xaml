@@ -19,7 +19,8 @@
                            ShowMenu="True"
                            ShowMenuMode="Always"
                            Width="{Binding ActualWidth, ElementName=CanvasPanel}"
-                           Height="{Binding ActualHeight, ElementName=CanvasPanel}"/>
+                           Height="{Binding ActualHeight, ElementName=CanvasPanel}"
+                           Source="C:\Users\Tom\Pictures\DSC_0621.JPG"/>
         </Canvas>
     </DockPanel>
 </Window>

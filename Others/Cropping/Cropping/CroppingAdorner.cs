@@ -52,6 +52,15 @@ namespace Cropping
                                                               .UpdateSizeText();
                                                        };
 
+            _rectangleManager.RectangleMoved += (sender,
+                                                 args) =>
+                                                {
+                                                    _overlayManager
+                                                       .UpdateOverlay();
+                                                    _displayTextManager
+                                                       .UpdateSizeText();
+                                                };
+
             _rectangleManager.OnRectangleDoubleClickEvent += (sender,
                                                                args) =>
                                                               {

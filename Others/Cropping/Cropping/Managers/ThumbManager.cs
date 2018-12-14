@@ -61,6 +61,11 @@ namespace Cropping.Managers
                                          _canvas,
                                          _thumbSize);
 
+            _center =
+                ThumbFactory.CreateThumb(ThumbFactory.ThumbPosition.Center,
+                                         _canvas,
+                                         _thumbSize);
+
             //  subscribe to mouse events
             _bottomMiddle.DragDelta += BottomMiddleDragDeltaEventHandler;
             _bottomMiddle.PreviewMouseLeftButtonDown +=
@@ -109,6 +114,13 @@ namespace Cropping.Managers
                 PreviewMouseLeftButtonDownGenericHandler;
             _bottomRight.PreviewMouseLeftButtonUp +=
                 PreviewMouseLeftButtonUpGenericHandler;
+
+            _center.DragDelta += CenterDragDeltaEventHandler;
+            _center.PreviewMouseLeftButtonDown +=
+                PreviewMouseLeftButtonDownGenericHandler;
+            _center.PreviewMouseLeftButtonUp +=
+                PreviewMouseLeftButtonUpGenericHandler;
+
         }
 
         private readonly ThumbCrop _bottomMiddle,
@@ -118,11 +130,15 @@ namespace Cropping.Managers
                                    _topLeft,
                                    _topRight,
                                    _bottomLeft,
-                                   _bottomRight;
+                                   _bottomRight,
+                                   _center;
 
         private readonly Canvas           _canvas;
         private readonly RectangleManager _rectangleManager;
         private readonly double           _thumbSize;
+        private bool _isDragging;
+        private Point _mouseStartPoint;
+        private Point _mouseLastPoint;
 
         /// <summary>
         ///     Manage thumbs visibility
@@ -142,6 +158,7 @@ namespace Cropping.Managers
                 _topRight.Visibility     = Visibility.Visible;
                 _bottomLeft.Visibility   = Visibility.Visible;
                 _bottomRight.Visibility  = Visibility.Visible;
+                _center.Visibility = Visibility.Visible;
             }
             else
             {
@@ -153,6 +170,7 @@ namespace Cropping.Managers
                 _topRight.Visibility     = Visibility.Hidden;
                 _bottomLeft.Visibility   = Visibility.Hidden;
                 _bottomRight.Visibility  = Visibility.Hidden;
+                _center.Visibility = Visibility.Hidden;
             }
         }
 
@@ -190,6 +208,10 @@ namespace Cropping.Managers
                                           _rectangleManager.RectangleWidth,
                                           _rectangleManager.TopLeft.Y +
                                           _rectangleManager.RectangleHeight);
+                _center.SetPosition(_rectangleManager.TopLeft.X +
+                                         _rectangleManager.RectangleWidth / 2.0,
+                                         _rectangleManager.TopLeft.Y +
+                                         _rectangleManager.RectangleHeight / 2.0);
             }
         }
 
@@ -412,6 +434,60 @@ namespace Cropping.Managers
 
             return Tuple.Create(resultTop,
                                 resultHeight);
+        }
+
+        private void CenterDragDeltaEventHandler(
+            object             sender,
+            DragDeltaEventArgs args)
+        {
+            Tuple <double, double> topLeftCorner = CenterCalculation(sender,
+                                                               args);
+
+            UpdateRectangleSize(topLeftCorner.Item1,
+                                topLeftCorner.Item2,
+                                null,
+                                null);
+        }
+
+        private Tuple<double, double> CenterCalculation(
+            object sender,
+                                                        DragDeltaEventArgs
+                                                            args)
+        {
+            Tuple<double, double> topSide = TopSideCalculation(sender,
+                                                               args);
+            Tuple<double, double> leftSide = LeftSideCalculation(sender,
+                                                                 args);
+
+            double topLeftCornerX = leftSide.Item1  - _rectangleManager.RectangleWidth  / 2.0;
+            double topLeftCornerY = topSide.Item1 - _rectangleManager.RectangleHeight / 2.0;
+
+            topLeftCornerX = ValidateTopLeftCornerX(topLeftCornerX);
+            topLeftCornerY = ValidateTopLeftCornerY(topLeftCornerY);
+
+            return new Tuple<double, double>(topLeftCornerX,
+                                             topLeftCornerY);
+        }
+
+        private double ValidateTopLeftCornerY(double topLeftCornerY)
+        {
+            if ( topLeftCornerY < 0 )
+                topLeftCornerY = 0.0;
+            if ( topLeftCornerY + _rectangleManager.RectangleHeight >
+                 _canvas.ActualHeight )
+                topLeftCornerY =
+                    _canvas.ActualHeight - _rectangleManager.RectangleHeight;
+            return topLeftCornerY;
+        }
+
+        private double ValidateTopLeftCornerX(double topLeftCornerX)
+        {
+            if ( topLeftCornerX < 0 )
+                topLeftCornerX = 0.0;
+            if ( topLeftCornerX + _rectangleManager.RectangleWidth >
+                 _canvas.ActualWidth )
+                topLeftCornerX = _canvas.ActualWidth - _rectangleManager.RectangleWidth;
+            return topLeftCornerX;
         }
 
         /// <summary>

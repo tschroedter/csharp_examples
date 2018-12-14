@@ -89,7 +89,7 @@ namespace Cropping.Managers
 
         private readonly Rectangle _rectangle;
         private          Point     _bottomRight;
-        private          bool      _isDragging;
+        internal         bool      _isDragging;
         private          bool      _isDrawing;
         private          Point     _mouseLastPoint;
 
@@ -267,6 +267,8 @@ namespace Cropping.Managers
 
         public event EventHandler RectangleSizeChanged;
 
+        public event EventHandler RectangleMoved;
+
         /// <summary>
         ///     Update rectangle size and position
         /// </summary>
@@ -286,6 +288,11 @@ namespace Cropping.Managers
                 return;
             }
 
+            double oldY = Canvas.GetLeft(_rectangle);
+            double oldX = Canvas.GetTop(_rectangle);
+
+            bool isMoved = ( Math.Abs(newX - oldX) > Tolerance || Math.Abs(newY - oldY) > Tolerance);
+
             Canvas.SetLeft(_rectangle,
                            newX);
 
@@ -297,6 +304,9 @@ namespace Cropping.Managers
 
             //we need to update dashed rectangle too
             UpdateDashedRectangle();
+
+            if ( isMoved )
+                RectangleMoved?.Invoke(_rectangle, new EventArgs());
         }
 
         /// <summary>
