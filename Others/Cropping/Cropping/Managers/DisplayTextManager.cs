@@ -15,13 +15,13 @@ namespace Cropping.Managers
             _rectangleManager = rectangleManager;
 
             _sizeTextBlock = new TextBlock
-                              {
-                                  Text       = "Size counter",
-                                  FontSize   = 14,
-                                  Foreground = Brushes.White,
-                                  Background = Brushes.Black,
-                                  Visibility = Visibility.Hidden
-                              };
+                             {
+                                 Text       = "Size counter",
+                                 FontSize   = 14,
+                                 Foreground = Brushes.White,
+                                 Background = Brushes.Black,
+                                 Visibility = Visibility.Hidden
+                             };
 
             canvas.Children.Add(_sizeTextBlock);
         }
@@ -37,8 +37,8 @@ namespace Cropping.Managers
         public void ShowText(bool isVisible)
         {
             _sizeTextBlock.Visibility = isVisible
-                                             ? Visibility.Visible
-                                             : Visibility.Hidden;
+                                            ? Visibility.Visible
+                                            : Visibility.Hidden;
         }
 
         /// <summary>

@@ -17,10 +17,10 @@ namespace Cropping.Managers
             _rectangleManager = rectangleManager;
 
             _pathOverlay = new Path
-                            {
-                                Fill    = Brushes.Black,
-                                Opacity = 0.5
-                            };
+                           {
+                               Fill    = Brushes.Black,
+                               Opacity = 0.5
+                           };
 
             _canvas.Children.Add(_pathOverlay);
         }
@@ -46,7 +46,8 @@ namespace Cropping.Managers
                 new RectangleGeometry(new Rect(_rectangleManager.TopLeft.X,
                                                _rectangleManager.TopLeft.Y,
                                                _rectangleManager.RectangleWidth,
-                                               _rectangleManager.RectangleHeight));
+                                               _rectangleManager
+                                                  .RectangleHeight));
 
             _geometryGroup.Children.Add(geometry1);
             _geometryGroup.Children.Add(geometry2);

@@ -1,4 +1,4 @@
-﻿<Window x:Class="CroppingApplication.MainWindow"
+﻿<!--<Window x:Class="CroppingApplication.MainWindow"-->
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,21 +6,21 @@
         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         mc:Ignorable="d"
-        Title="MainWindow" Loaded="Window_Loaded"  Height="450" Width="800">
+        Title="MainWindow" Loaded="Window_Loaded" Height="450" Width="800">
     <DockPanel>
         <StackPanel DockPanel.Dock="Left">
             <dx:SimpleButton Click="OnClickOpenFileDialog">Import Photo</dx:SimpleButton>
             <dx:SimpleButton Click="OnClickTakePictureDialog">Capture Photo</dx:SimpleButton>
             <dx:SimpleButton Click="OnCropPicture">Crop Photo</dx:SimpleButton>
         </StackPanel>
-        <Canvas x:Name="CanvasPanel"
+            <Canvas x:Name="CanvasPanel"
                 DockPanel.Dock="Right">
-            <dxe:ImageEdit x:Name="ProfilePhoto"
-                           ShowMenu="True"
-                           ShowMenuMode="Always"
+                <dxe:ImageEdit x:Name="ProfilePhoto"
+                           ShowMenu="False"
+                           ShowMenuMode="Hover"
                            Width="{Binding ActualWidth, ElementName=CanvasPanel}"
                            Height="{Binding ActualHeight, ElementName=CanvasPanel}"
-                           Source="C:\Users\Tom\Pictures\DSC_0621.JPG"/>
-        </Canvas>
+                           Source="C:\Users\Tom\Pictures\DSC_0621.JPG" />
+            </Canvas>
     </DockPanel>
 </Window>

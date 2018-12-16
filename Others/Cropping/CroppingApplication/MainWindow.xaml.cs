@@ -1,7 +1,6 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
-using System.Windows.Media.Imaging;
 using Cropping;
 using DevExpress.Xpf.Core;
 using DevExpress.Xpf.Editors;
@@ -17,12 +16,15 @@ namespace CroppingApplication
         public MainWindow()
         {
             InitializeComponent();
-
-            _profilePhotoCanvas = ProfilePhoto.Parent as Canvas;
         }
 
-        private Canvas          _profilePhotoCanvas;
         private CroppingAdorner _croppingAdorner;
+
+        private void OnClickOpenFileDialog(object          sender,
+                                           RoutedEventArgs e)
+        {
+            ProfilePhoto.Load();
+        }
 
         private void OnClickTakePictureDialog(object          sender,
                                               RoutedEventArgs args)
@@ -53,10 +55,10 @@ namespace CroppingApplication
             takePictureWindow.ShowDialog();
         }
 
-        private void OnClickOpenFileDialog(object          sender,
-                                           RoutedEventArgs e)
+        private void OnCropPicture(object          sender,
+                                   RoutedEventArgs e)
         {
-            ProfilePhoto.Load();
+            ProfilePhoto.Source = _croppingAdorner.GetCroppedBitmapFrame();
         }
 
         private void Window_Loaded(object          sender,
@@ -64,14 +66,10 @@ namespace CroppingApplication
         {
             AdornerLayer adornerLayer =
                 AdornerLayer.GetAdornerLayer(CanvasPanel);
-            _croppingAdorner = new CroppingAdorner(CanvasPanel);
-            adornerLayer.Add(_croppingAdorner);
-        }
 
-        private void OnCropPicture(object          sender,
-                                   RoutedEventArgs e)
-        {
-            ProfilePhoto.Source = _croppingAdorner.GetCroppedBitmapFrame();
+            _croppingAdorner = new CroppingAdorner(CanvasPanel);
+
+            adornerLayer.Add(_croppingAdorner);
         }
     }
 }

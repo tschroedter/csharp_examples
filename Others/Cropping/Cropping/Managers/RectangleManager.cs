@@ -20,24 +20,24 @@ namespace Cropping.Managers
 
             // init crop rectangle
             _rectangle = new Rectangle
-                          {
-                              Height          = 0,
-                              Width           = 0,
-                              Stroke          = Brushes.Black,
-                              StrokeThickness = 1.5
-                          };
+                         {
+                             Height          = 0,
+                             Width           = 0,
+                             Stroke          = Brushes.Black,
+                             StrokeThickness = 1.5
+                         };
 
             //init second rectangle to fake dashed lines
             _dashedRectangle = new Rectangle
-                                {
-                                    Stroke = Brushes.White,
-                                    StrokeDashArray =
-                                        new DoubleCollection(new double[]
-                                                             {
-                                                                 4,
-                                                                 4
-                                                             })
-                                };
+                               {
+                                   Stroke = Brushes.White,
+                                   StrokeDashArray =
+                                       new DoubleCollection(new double[]
+                                                            {
+                                                                4,
+                                                                4
+                                                            })
+                               };
 
             //add both rectangles, so it will be rendered
             _canvas.Children.Add(_rectangle);
@@ -51,11 +51,11 @@ namespace Cropping.Managers
                           0);
 
             _rectangle.SizeChanged += (sender,
-                                        args) =>
-                                       {
-                                           RectangleSizeChanged?.Invoke(sender,
-                                                                        args);
-                                       };
+                                       args) =>
+                                      {
+                                          RectangleSizeChanged?.Invoke(sender,
+                                                                       args);
+                                      };
         }
 
         private const double Tolerance = 0.1;
@@ -76,7 +76,7 @@ namespace Cropping.Managers
             get
             {
                 _bottomRight.X = Canvas.GetLeft(_rectangle) + _rectangle.Width;
-                _bottomRight.Y = Canvas.GetTop(_rectangle) + _rectangle.Height;
+                _bottomRight.Y = Canvas.GetTop(_rectangle)  + _rectangle.Height;
 
                 return _bottomRight;
             }
@@ -88,8 +88,8 @@ namespace Cropping.Managers
         private readonly Rectangle _dashedRectangle;
 
         private readonly Rectangle _rectangle;
-        private          Point     _bottomRight;
         internal         bool      _isDragging;
+        private          Point     _bottomRight;
         private          bool      _isDrawing;
         private          Point     _mouseLastPoint;
 
@@ -138,7 +138,7 @@ namespace Cropping.Managers
             //if rectangle is created and we click inside rectangle - start dragging
             if ( Math.Abs(_rectangle.Height) > Tolerance &&
                  Math.Abs(_rectangle.Width)  > Tolerance &&
-                 touch                        != TouchPoint.OutsideRectangle )
+                 touch                       != TouchPoint.OutsideRectangle )
             {
                 if ( e.ClickCount == 2 )
                 {
@@ -175,8 +175,10 @@ namespace Cropping.Managers
             if ( _isDrawing )
             {
                 //allow to draw rectangle at any direction;
-                double left = Math.Min(mouseClick.X, _mouseStartPoint.X);
-                double top = Math.Min(mouseClick.Y, _mouseStartPoint.Y);
+                double left = Math.Min(mouseClick.X,
+                                       _mouseStartPoint.X);
+                double top = Math.Min(mouseClick.Y,
+                                      _mouseStartPoint.Y);
                 double width  = Math.Abs(mouseClick.X - _mouseStartPoint.X);
                 double height = Math.Abs(mouseClick.Y - _mouseStartPoint.Y);
 
@@ -265,9 +267,9 @@ namespace Cropping.Managers
 
         public event EventHandler OnRectangleDoubleClickEvent;
 
-        public event EventHandler RectangleSizeChanged;
-
         public event EventHandler RectangleMoved;
+
+        public event EventHandler RectangleSizeChanged;
 
         /// <summary>
         ///     Update rectangle size and position
@@ -291,7 +293,8 @@ namespace Cropping.Managers
             double oldY = Canvas.GetLeft(_rectangle);
             double oldX = Canvas.GetTop(_rectangle);
 
-            bool isMoved = ( Math.Abs(newX - oldX) > Tolerance || Math.Abs(newY - oldY) > Tolerance);
+            bool isMoved = Math.Abs(newX - oldX) > Tolerance ||
+                           Math.Abs(newY - oldY) > Tolerance;
 
             Canvas.SetLeft(_rectangle,
                            newX);
@@ -306,7 +309,10 @@ namespace Cropping.Managers
             UpdateDashedRectangle();
 
             if ( isMoved )
-                RectangleMoved?.Invoke(_rectangle, new EventArgs());
+            {
+                RectangleMoved?.Invoke(_rectangle,
+                                       new EventArgs());
+            }
         }
 
         /// <summary>

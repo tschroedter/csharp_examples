@@ -16,19 +16,19 @@ namespace Cropping
     public class CroppingAdorner : Adorner
     {
         // todo !!!dispose missing & -= missing!!!
-        public CroppingAdorner(UIElement adornedElement)
+        public CroppingAdorner(Canvas adornedElement)
             : base(adornedElement)
         {
             _visualCollection = new VisualCollection(this);
-            _originalCanvas   = ( Canvas ) adornedElement;
+            _originalCanvas   = adornedElement;
             _canvasOverlay    = new Canvas();
             _rectangleManager = new RectangleManager(_canvasOverlay);
             _overlayManager = new OverlayManager(_canvasOverlay,
-                                                  _rectangleManager);
+                                                 _rectangleManager);
             _thumbManager = new ThumbManager(_canvasOverlay,
-                                              _rectangleManager);
+                                             _rectangleManager);
             _displayTextManager = new DisplayTextManager(_canvasOverlay,
-                                                          _rectangleManager);
+                                                         _rectangleManager);
             _visualCollection.Add(_canvasOverlay);
 
             MouseLeftButtonDown += MouseLeftButtonDownEventHandler;
@@ -44,13 +44,13 @@ namespace Cropping
 
             //if rectangle finalSize changed, re-draw overlay
             _rectangleManager.RectangleSizeChanged += (sender,
-                                                        args) =>
-                                                       {
-                                                           _overlayManager
-                                                              .UpdateOverlay();
-                                                           _displayTextManager
-                                                              .UpdateSizeText();
-                                                       };
+                                                       args) =>
+                                                      {
+                                                          _overlayManager
+                                                             .UpdateOverlay();
+                                                          _displayTextManager
+                                                             .UpdateSizeText();
+                                                      };
 
             _rectangleManager.RectangleMoved += (sender,
                                                  args) =>
@@ -62,17 +62,17 @@ namespace Cropping
                                                 };
 
             _rectangleManager.OnRectangleDoubleClickEvent += (sender,
-                                                               args) =>
-                                                              {
-                                                                  OnRectangleDoubleClickEvent
-                                                                    ?.Invoke(sender,
-                                                                             new
-                                                                             DoubleClickEventArgs
-                                                                             {
-                                                                                 BitmapFrame
-                                                                                     = GetCroppedBitmapFrame()
-                                                                             });
-                                                              };
+                                                              args) =>
+                                                             {
+                                                                 OnRectangleDoubleClickEvent
+                                                                   ?.Invoke(sender,
+                                                                            new
+                                                                            DoubleClickEventArgs
+                                                                            {
+                                                                                BitmapFrame
+                                                                                    = GetCroppedBitmapFrame()
+                                                                            });
+                                                             };
         }
 
         private const double Tolerance = 0.1;
@@ -187,9 +187,9 @@ namespace Cropping
             Size newFinalSize = base.ArrangeOverride(finalSize);
 
             _canvasOverlay.Arrange(new Rect(0,
-                                             0,
-                                             AdornedElement.RenderSize.Width,
-                                             AdornedElement.RenderSize.Height));
+                                            0,
+                                            AdornedElement.RenderSize.Width,
+                                            AdornedElement.RenderSize.Height));
 
             return newFinalSize;
         }
