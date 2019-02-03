@@ -1,0 +1,101 @@
+﻿<UserControl x:Class="Controls.ProfilePhotoControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:Controls"
+             xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <local:UniformScaleMatrixMultiValueConverter x:Key="UniformScaleMatrixMultiValueConverter" />
+    </UserControl.Resources>
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Top">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="DragCanvas.Left" />
+                <Label Content="{Binding ElementName=ProfilePhoto, Path=(local:DragCanvas.Left), Mode=TwoWay}" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <Label Content="DragCanvas.Top" />
+                <Label Content="{Binding ElementName=ProfilePhoto, Path=(local:DragCanvas.Top), Mode=TwoWay}" />
+            </StackPanel>
+            <Button Content="Crop" Command="{Binding CropCommand}" />
+        </StackPanel>
+
+        <!-- Profile Photo -->
+        <Border x:Name="ProfilePhotoBorder">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Loaded">
+                    <i:InvokeCommandAction Command="{Binding BorderLoadedCommand}"
+                                           CommandParameter="{Binding ElementName=ProfilePhotoBorder}" />
+                </i:EventTrigger>
+                <i:EventTrigger EventName="LayoutUpdated">
+                    <i:InvokeCommandAction Command="{Binding LayoutUpdatedCommand}" />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+            <Grid x:Name="ProfilePhotoGrid"
+                  DockPanel.Dock="Bottom"
+                  UseLayoutRounding="True">
+                <local:DragCanvas x:Name="ProfilePhotoCanvas"
+                                  Background="Transparent"
+                                  ClipToBounds="True"
+                                  AllowDragOutOfView="True"
+                                  Height="{Binding ElementName=ProfilePhotoGrid, Path=ActualHeight}"
+                                  Width="{Binding ElementName=ProfilePhotoGrid, Path=ActualWidth}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="Loaded">
+                            <i:InvokeCommandAction Command="{Binding CanvasLoadedCommand}"
+                                                   CommandParameter="{Binding ElementName=ProfilePhotoCanvas}" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                    <Image Name="ProfilePhoto"
+                           Source="C:\Users\Tom\Pictures\DSC_0621.JPG"
+                           Width="100"
+                           Height="200"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Stretch="Uniform"
+                           local:DragCanvas.Left="200"
+                           local:DragCanvas.Top="100">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Loaded">
+                                <i:InvokeCommandAction Command="{Binding ImageLoadedCommand}"
+                                                       CommandParameter="{Binding ElementName=ProfilePhoto}" />
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                        <Image.RenderTransform>
+                            <MultiBinding Converter="{StaticResource UniformScaleMatrixMultiValueConverter}">
+                                <Binding Path="ImageScale" />
+                                <Binding ElementName="ProfilePhoto" Path="ActualWidth" />
+                                <Binding ElementName="ProfilePhoto" Path="ActualHeight" />
+                            </MultiBinding>
+                        </Image.RenderTransform>
+                    </Image>
+                    <!-- Gray Overlay -->
+                    <Path Fill="Gray"
+                          Stroke="Gray"
+                          StrokeThickness="1"
+                          Opacity="0.85"
+                          IsHitTestVisible="False">
+                        <Path.Data>
+                            <CombinedGeometry GeometryCombineMode="Exclude">
+                                <CombinedGeometry.Geometry1>
+                                    <RectangleGeometry Rect="0,0,10000,10000" />
+                                </CombinedGeometry.Geometry1>
+                                <CombinedGeometry.Geometry2>
+                                    <RectangleGeometry>
+                                        <RectangleGeometry.Rect>
+                                            <Binding Path="CroppingRect"/>
+                                        </RectangleGeometry.Rect>
+                                    </RectangleGeometry>
+                                </CombinedGeometry.Geometry2>
+                            </CombinedGeometry>
+                        </Path.Data>
+                    </Path>
+                </local:DragCanvas>
+            </Grid>
+        </Border>
+    </DockPanel>
+</UserControl>
